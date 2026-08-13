@@ -2,14 +2,14 @@
 
 Student developer focused on reliable software systems, reproducible engineering, and clearly bounded experiments. I separate verified behavior from future plans through tests, documented constraints, and explicit evidence states.
 
-> 项目状态记录截至 2026-08-11（北京时间）。工程范围已经闭环，不一定等于作品在我心中已经停止生长。
+> 项目状态记录截至 2026-08-14（北京时间）。工程范围已经闭环，不一定等于作品在我心中已经停止生长。
 
 ## Projects
 
 - [DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary) - a full-stack library workflow system built with Spring Boot, Vue 3, MySQL, Redis, and RabbitMQ. Its verified delivery baseline is complete and maintained. [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/)
 - [PlainJournal](https://github.com/NoctilumeDev/PlainJournal) - a verified M0-M8 e-commerce reference baseline with consistency, middleware degradation, multi-instance, and browser-level evidence. The frontend visual redesign is still pending. [Online preview](https://noctilumedev.github.io/PlainJournal/)
 - [InkNarratives](https://github.com/NoctilumeDev/InkNarratives) - five dependency-free, single-file HTML experiments in Chinese literary narrative and visual expression. The pages run, but their text and editorial content are still being refined.
-- [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) - an actively developed evidence and acceptance workbench for controlled, reproducible engineering experiments.
+- [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) - an evidence and acceptance workbench for controlled, reproducible engineering experiments. M0-M10 are frozen; M11-M14 remain planned.
 - [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - a planning repository for the future M9+ multi-merchant evolution; implementation waits for a machine resource upgrade.
 - [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - a long-term research planning repository for lifecycle-aware, continuity-preserving, AI-assisted resource scheduling; implementation has not started.
 
@@ -33,13 +33,13 @@ Student developer focused on reliable software systems, reproducible engineering
 
 - **2026 年 8 月 · VeriTrail / 验迹**
 
-  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。VeriTrail 也是一个认知放大器和工程脚手架，目前仍在活跃开发。
+  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。VeriTrail 也是一个认知放大器和工程脚手架；M0-M10 已形成可寻址冻结基线，下一步是预注册 M11 的真实项目功能全链路。
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 
 ## Current Focus
 
-- Controlled project bootstrap, evidence integrity, deterministic verdicts, and failure recovery in VeriTrail
+- Pre-registered real-project end-to-end validation for VeriTrail M11, built on the frozen M0-M10 foundation
 - Frontend architecture and visual redesign for PlainJournal
 - Resource-aware validation on constrained single-machine environments
 - Clear Java and Go service ownership for future multi-merchant systems
