@@ -1,17 +1,32 @@
 # NoctilumeDev
 
-Student developer focused on reliable software systems, reproducible engineering, and clearly bounded experiments. I separate verified behavior from future plans through tests, documented constraints, and explicit evidence states.
+Student developer focused on reliable software systems, reproducible engineering, and clearly bounded experiments. I build business systems, examine their reliability limits, turn the acceptance method into tooling, and study the framework mechanisms underneath them.
 
-> 项目状态记录截至 2026-08-14（北京时间）。工程范围已经闭环，不一定等于作品在我心中已经停止生长。
+> 精确里程碑、冻结基线与当前任务由各项目仓库的 README / Release 维护；本页只描述稳定的项目角色，避免复制状态后发生漂移。工程范围已经闭环，不一定等于作品在我心中已经停止生长。
 
-## Projects
+## Flagship Work
 
-- [DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary) - a full-stack library workflow system built with Spring Boot, Vue 3, MySQL, Redis, and RabbitMQ. Its verified delivery baseline is complete and maintained. [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/)
-- [PlainJournal](https://github.com/NoctilumeDev/PlainJournal) - a verified M0-M8 e-commerce reference baseline with consistency, middleware degradation, multi-instance, and browser-level evidence. The frontend visual redesign is still pending. [Online preview](https://noctilumedev.github.io/PlainJournal/)
-- [InkNarratives](https://github.com/NoctilumeDev/InkNarratives) - five dependency-free, single-file HTML experiments in Chinese literary narrative and visual expression. The pages run, but their text and editorial content are still being refined.
-- [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) - an evidence and acceptance workbench for controlled, reproducible engineering experiments. M0-M10 are frozen; the M11 contract and entry governance are frozen, while implementation remains planned.
-- [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - a planning repository for the future M9+ multi-merchant evolution; implementation waits for a machine resource upgrade.
-- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - a long-term research planning repository for lifecycle-aware, continuity-preserving, AI-assisted resource scheduling; implementation has not started.
+| Project | What it demonstrates | Open it |
+| --- | --- | --- |
+| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and live status](https://github.com/NoctilumeDev/VeriTrail#当前状态) |
+| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
+| **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
+| **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | A complete Spring Boot + Vue library workflow product with MySQL, Redis, RabbitMQ, role boundaries and frozen multi-instance acceptance evidence. | [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release evidence](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
+| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | Five dependency-free HTML experiments in Chinese literary narrative, typography and visual expression. | [Works and editorial status](https://github.com/NoctilumeDev/InkNarratives) |
+
+The engineering thread is intentional:
+
+```text
+complete business systems
+→ distributed reliability and failure boundaries
+→ reproducible evidence and deterministic verdicts
+→ framework mechanisms rebuilt from first principles
+```
+
+## Research / Planned
+
+- [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
+- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - long-term research planning for lifecycle-aware, continuity-preserving resource scheduling; implementation has not started.
 
 ## Project Journey / 项目沿革
 
@@ -33,20 +48,38 @@ Student developer focused on reliable software systems, reproducible engineering
 
 - **2026 年 8 月 · VeriTrail / 验迹**
 
-  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。VeriTrail 也是一个认知放大器和工程脚手架；M0-M10 已形成可寻址冻结基线，M11 的单节点能力与真实项目双门合同及入口治理已经冻结，下一步才进入目标无关 Gate A 实现。
+  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。VeriTrail 也是一个认知放大器和工程脚手架；它已经形成多轮可寻址冻结基线，并继续演进 Workbench 表现与最终验收。精确进度只在[仓库当前状态](https://github.com/NoctilumeDev/VeriTrail#当前状态)维护。
+
+- **2026 年 8 月 · MiniSpringBoot**
+
+  在使用 Spring Boot 构建完整系统之后，我回到底层重新实现 IoC、AOP、配置、Web/MVC、JDBC、事务与启动机制，并用真实 React + MySQL 链路验证它不是只能通过单测的纸面框架。它补上了“会使用框架”之外的机制理解，也为将来由冻结版 VeriTrail 验收多实例与故障边界建立了被验对象。
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 
 ## Current Focus
 
-- Target-neutral Gate A implementation for VeriTrail M11, after its contract and pre-entry governance freeze
+- VeriTrail Workbench implementation and evidence-driven validation; exact milestone state lives in the repository
+- MiniSpringBoot multi-instance and failure-contract preparation before any VeriTrail verdict is attempted
 - Frontend architecture and visual redesign for PlainJournal
+- Public CI, dependency gates, and concise evidence entry points across the flagship repositories
 - Resource-aware validation on constrained single-machine environments
-- Clear Java and Go service ownership for future multi-merchant systems
-- Long-term research planning for lifecycle-aware operating-system resource policy
 
 Detailed architecture decisions, test evidence, and release artifacts live in each project repository.
 
-## Engineering Notes / 工程札记
+## Solo Engineering Toolkit / 单兵工程三剑客
 
-- [硅谷中国特色改良版：拖鞋版单兵工程法](docs/solo-engineering-method.md) - 一套面向个人开发的工程折中：压扁组织，保留需求、架构、实现、验收、发布与冻结的职责。
+一个人不需要复制一整套组织，但必须补齐环境认知、工程施工和公共验证三种职责：
+
+```text
+看清机器
+→ 把项目做成
+→ 让公共证据链也成立
+```
+
+1. **[单机工程环境全景认知法](docs/single-machine-engineering-environment.md)** - 开工前先认识硬件、系统、工具链、中间件、网络、项目拓扑与资源停止线；PlainJournal 的[本地开发网络与 Windows 故障边界](https://github.com/NoctilumeDev/PlainJournal/blob/main/docs/07-local-development-network.md)是其中一份实战手册。
+2. **[硅谷中国特色改良版_拖鞋（妥协）版单兵工程法](docs/solo-engineering-method.md)** - 压扁组织，保留需求、架构、实现、验收、发布与冻结；妥协的是单人协调成本，不是工程质量。
+3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
+
+### Afterword / 番外
+
+- **[一个人的大厂](docs/one-person-big-company.pdf)** - 当一个人把部门、角色、会议和流程全部复制给自己，唯一没有出现的东西可能就是项目进度。
