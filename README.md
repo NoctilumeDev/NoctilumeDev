@@ -66,6 +66,20 @@ complete business systems
 
 Detailed architecture decisions, test evidence, and release artifacts live in each project repository.
 
-## Engineering Notes / 工程札记
+## Solo Engineering Toolkit / 单兵工程三剑客
 
-- [硅谷中国特色改良版：拖鞋版单兵工程法](docs/solo-engineering-method.md) - 一套面向个人开发的工程折中：压扁组织，保留需求、架构、实现、验收、发布与冻结的职责。
+一个人不需要复制一整套组织，但必须补齐环境认知、工程施工和公共验证三种职责：
+
+```text
+看清机器
+→ 把项目做成
+→ 让公共证据链也成立
+```
+
+1. **[单机工程环境全景认知法](docs/single-machine-engineering-environment.md)** - 开工前先认识硬件、系统、工具链、中间件、网络、项目拓扑与资源停止线；PlainJournal 的[本地开发网络与 Windows 故障边界](https://github.com/NoctilumeDev/PlainJournal/blob/main/docs/07-local-development-network.md)是其中一份实战手册。
+2. **[硅谷中国特色改良版_拖鞋（妥协）版单兵工程法](docs/solo-engineering-method.md)** - 压扁组织，保留需求、架构、实现、验收、发布与冻结；妥协的是单人协调成本，不是工程质量。
+3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
+
+### Afterword / 番外
+
+- **[一个人的大厂](docs/one-person-big-company.pdf)** - 当一个人把部门、角色、会议和流程全部复制给自己，唯一没有出现的东西可能就是项目进度。
