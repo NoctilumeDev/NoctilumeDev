@@ -12,7 +12,7 @@ Student developer focused on reliable software systems, reproducible engineering
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | A complete Spring Boot + Vue library workflow product with MySQL, Redis, RabbitMQ, role boundaries and frozen multi-instance acceptance evidence. | [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release evidence](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
-| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | Five dependency-free HTML experiments in Chinese literary narrative, typography and visual expression. | [Works and editorial status](https://github.com/NoctilumeDev/InkNarratives) |
+| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | Five dependency-free HTML experiments in Chinese literary narrative, typography and visual expression. | [Online gallery](https://noctilumedev.github.io/InkNarratives/) |
 
 The engineering thread is intentional:
 
