@@ -80,6 +80,14 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 2. **[硅谷中国特色改良版_拖鞋（妥协）版单兵工程法](docs/solo-engineering-method.md)** - 压扁组织，保留需求、架构、实现、验收、发布与冻结；妥协的是单人协调成本，不是工程质量。
 3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
 
+## Unconventional / 不拘一格
+
+### [从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)
+
+`论文体工程复盘 · 初稿`
+
+借论文之形，复盘连续个人工程实践中，人、模型、Agent 工作流、上下文与公共验证如何共同影响交付结果。它不是学术论文，只取论文的结构与表达形式；保留“初稿”身份，按现状封存。
+
 ### Afterword / 番外
 
 - **[一个人的大厂](docs/one-person-big-company.pdf)** - 当一个人把部门、角色、会议和流程全部复制给自己，唯一没有出现的东西可能就是项目进度。
