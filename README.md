@@ -8,7 +8,7 @@ Student developer focused on reliable software systems, reproducible engineering
 
 | Project | What it demonstrates | Open it |
 | --- | --- | --- |
-| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and live status](https://github.com/NoctilumeDev/VeriTrail#当前状态) |
+| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and release status](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | A complete Spring Boot + Vue library workflow product with MySQL, Redis, RabbitMQ, role boundaries and frozen multi-instance acceptance evidence. | [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release evidence](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
@@ -48,7 +48,7 @@ complete business systems
 
 - **2026 年 8 月 · VeriTrail / 验迹**
 
-  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。VeriTrail 也是一个认知放大器和工程脚手架；它已经形成多轮可寻址冻结基线，并继续演进 Workbench 表现与最终验收。精确进度只在[仓库当前状态](https://github.com/NoctilumeDev/VeriTrail#当前状态)维护。
+  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。Core M0-M14 已冻结并以 `v0.12.0` 发布；后置入口层也已发布 [Starter 0.2.0](https://github.com/NoctilumeDev/VeriTrail/releases/tag/starter-v0.2.0) 与 [Authoring Skill 0.2.0](https://github.com/NoctilumeDev/VeriTrail/releases/tag/authoring-skill-v0.2.0)。入口层只提供 `single-webapp` / `static-site` 有界草案，保持 `DRAFT / NOT SEALED`，封存与裁决仍由 Core 完成。精确坐标只在[仓库发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态)维护。
 
 - **2026 年 8 月 · MiniSpringBoot**
 
@@ -58,8 +58,8 @@ complete business systems
 
 ## Current Focus
 
-- VeriTrail Workbench implementation and evidence-driven validation; exact milestone state lives in the repository
-- MiniSpringBoot multi-instance and failure-contract preparation before any VeriTrail verdict is attempted
+- MiniSpringBoot M10 multi-instance and failure-contract validation against the frozen VeriTrail Core and released entry layer
+- VeriTrail release maintenance: preserve deterministic verdict authority while keeping the bounded Starter and Authoring Skill reproducible
 - Frontend architecture and visual redesign for PlainJournal
 - Public CI, dependency gates, and concise evidence entry points across the flagship repositories
 - Resource-aware validation on constrained single-machine environments
