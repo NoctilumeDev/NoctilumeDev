@@ -52,13 +52,13 @@ complete business systems
 
 - **2026 年 8 月 · MiniSpringBoot**
 
-  在使用 Spring Boot 构建完整系统之后，我回到底层重新实现 IoC、AOP、配置、Web/MVC、JDBC、事务与启动机制，并用真实 React + MySQL 链路验证它不是只能通过单测的纸面框架。它补上了“会使用框架”之外的机制理解，也为将来由冻结版 VeriTrail 验收多实例与故障边界建立了被验对象。
+  在使用 Spring Boot 构建完整系统之后，我回到底层重新实现 IoC、AOP、配置、Web/MVC、JDBC、事务与启动机制，并用真实 React + MySQL 链路验证它不是只能通过单测的纸面框架。它补上了“会使用框架”之外的机制理解；M10 又由冻结版 VeriTrail 对多实例、故障、事务与就绪证据做了独立复验，同时明确保留未被证明的全拓扑生命周期边界。
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 
 ## Current Focus
 
-- MiniSpringBoot M10 multi-instance and failure-contract validation against the frozen VeriTrail Core and released entry layer
+- MiniSpringBoot post-M10 maintenance: preserve the frozen multi-instance and failure-contract evidence without extending its stated boundary
 - VeriTrail release maintenance: preserve deterministic verdict authority while keeping the bounded Starter and Authoring Skill reproducible
 - Frontend architecture and visual redesign for PlainJournal
 - Public CI, dependency gates, and concise evidence entry points across the flagship repositories
