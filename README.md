@@ -11,6 +11,11 @@ Student developer focused on reliable software systems, reproducible engineering
 | **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and release status](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
+
+## Selected Experiments
+
+| Project | What it explores | Open it |
+| --- | --- | --- |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | A complete Spring Boot + Vue library workflow product with MySQL, Redis, RabbitMQ, role boundaries and frozen multi-instance acceptance evidence. | [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release evidence](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
 | **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | Five dependency-free HTML experiments in Chinese literary narrative, typography and visual expression. | [Online gallery](https://noctilumedev.github.io/InkNarratives/) |
 
@@ -23,12 +28,20 @@ complete business systems
 → framework mechanisms rebuilt from first principles
 ```
 
+These projects were developed through AI-assisted solo engineering. I own problem definition, architecture,
+acceptance contracts, failure analysis, release decisions and freeze boundaries; models and agents assist with
+implementation, review and repeatable execution. Public repository creation dates reflect publication or
+restructuring, not necessarily project inception.
+
 ## Research / Planned
 
 - [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
 - [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - long-term research planning for lifecycle-aware, continuity-preserving resource scheduling; implementation has not started.
 
-## Project Journey / 项目沿革
+<details>
+<summary><strong>Project Journey / 展开项目沿革与时间说明</strong></summary>
+
+### Project Journey / 项目沿革
 
 这些仓库不是预先规划好的一条产品线，而是我在不同阶段真正想解决的问题。这里把“已验证的工程边界”和“个人心中的最终完成度”分开记录。
 
@@ -56,13 +69,15 @@ complete business systems
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 
-## Current Focus
+</details>
 
-- MiniSpringBoot post-M10 maintenance: preserve the frozen multi-instance and failure-contract evidence without extending its stated boundary
-- VeriTrail release maintenance: preserve deterministic verdict authority while keeping the bounded Starter and Authoring Skill reproducible
-- Frontend architecture and visual redesign for PlainJournal
-- Public CI, dependency gates, and concise evidence entry points across the flagship repositories
-- Resource-aware validation on constrained single-machine environments
+## Maintenance Posture
+
+- Preserve MiniSpringBoot's frozen multi-instance and failure-contract evidence without extending its stated boundary.
+- Preserve VeriTrail's deterministic verdict authority while keeping the bounded Starter and Authoring Skill reproducible.
+- Keep PlainJournal's M0-M8 reference baseline stable; visual work may evolve separately without changing business facts.
+- Keep public claims, CI, Releases and concise evidence entry points aligned across maintained repositories.
+- Keep FlowKernel and PlainJournalPro visibly planned until executable evidence changes their status.
 
 Detailed architecture decisions, test evidence, and release artifacts live in each project repository.
 
