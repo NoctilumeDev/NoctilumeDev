@@ -9,7 +9,7 @@ Student developer focused on reliable software systems, reproducible engineering
 | Project | What it demonstrates | Open it |
 | --- | --- | --- |
 | **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and release status](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
-| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
+| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) · [Teaching → Engineering experiment](https://github.com/NoctilumeDev/MiniSpringBoot/blob/main/docs/teaching-to-engineering.md) |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
 
 ## Selected Experiments
@@ -99,13 +99,17 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 
 - **[从对话记忆到工程记忆：Fresh Checkout 三阶段独立复验](docs/fresh-checkout-independent-audit.md)** - 三个串行、相互隔离的 Codex 角色只依靠公开 GitHub 资产完成发现、修复与再审：首轮 `F1` 的 4 项问题全部闭环，新 `HEAD` 又独立暴露 3 项残余维护问题。它为“上下文应沉淀为工程记忆”提供可复核的工程证据，但不宣称学术证明或零缺陷。
 
-## Unconventional / 不拘一格
+## Essays / 工程复盘与方法论
 
-### [从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)
+这三篇文章分别讨论能力生产、事实资格与验收方法。它们来自同一段连续工程实践，但不互相代替：
 
-`论文体工程复盘 · 初稿`
+| Writing | It asks | Status |
+| --- | --- | --- |
+| **[从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)** | 人、模型、工作流、上下文和历史资产怎样共同影响单位经验证交付？ | `论文体工程复盘 · 初稿`，按原始观察封存 |
+| **[保护零：从答案生成到事实成立](docs/protecting-zero.md)** | 当生成者、测试和审查都可能共享错误前提时，一个声明凭什么取得事实资格？ | 理论续篇；保留模型边界与可反驳性 |
+| **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.md)** | 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？ | 八仓收尾的方法复盘与可执行协议 |
 
-借论文之形，复盘连续个人工程实践中，人、模型、Agent 工作流、上下文与公共验证如何共同影响交付结果。它不是学术论文，只取论文的结构与表达形式；保留“初稿”身份，按现状封存。
+第一篇解释“能力如何共同产生”；第二篇解释“未知为什么必须被保护”；第三篇解释“如何把原则变成工程事实”。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
 
 ### Afterword / 番外
 
