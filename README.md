@@ -106,10 +106,12 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 | Writing | It asks | Status |
 | --- | --- | --- |
 | **[从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)** | 人、模型、工作流、上下文和历史资产怎样共同影响单位经验证交付？ | `论文体工程复盘 · 初稿`，按原始观察封存 |
-| **[保护零：从答案生成到事实成立](docs/protecting-zero.md)** | 当生成者、测试和审查都可能共享错误前提时，一个声明凭什么取得事实资格？ | 理论续篇；保留模型边界与可反驳性 |
-| **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.md)** | 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？ | 八仓收尾的方法复盘与可执行协议 |
+| **[保护零：从答案生成到事实成立](docs/protecting-zero-from-answer-to-fact.pdf)** | 当生成者、测试和审查都可能共享错误前提时，一个声明凭什么取得事实资格？ | `论文体工程复盘 · 理论续篇 · 归档修订版`，20 页 PDF |
+| **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.pdf)** | 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？ | `论文体工程复盘 · 归档方法篇`，19 页 PDF |
 
 第一篇解释“能力如何共同产生”；第二篇解释“未知为什么必须被保护”；第三篇解释“如何把原则变成工程事实”。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
+
+需要网页内概念检索或沿链接复核时，可使用两份配套导读：[《保护零》导读](docs/protecting-zero.md)与[《对抗性工程验收》导读](docs/adversarial-engineering-validation.md)。导读不是 PDF 正文的缩写替代品。
 
 ### Afterword / 番外
 
