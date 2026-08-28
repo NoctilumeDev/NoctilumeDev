@@ -9,6 +9,8 @@ const requiredFiles = [
   "docs/solo-engineering-method.md",
   "docs/public-verification-loop.md",
   "docs/fresh-checkout-independent-audit.md",
+  "docs/adversarial-engineering-validation.md",
+  "docs/protecting-zero.md",
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/one-person-big-company.pdf",
 ];
@@ -92,6 +94,7 @@ for (const heading of [
   "## Research / Planned",
   "## Maintenance Posture",
   "## Solo Engineering Toolkit / 单兵工程三剑客",
+  "## Essays / 工程复盘与方法论",
 ]) {
   if (!readme.includes(heading)) fail(`README.md: missing stable profile section ${heading}`);
 }
@@ -109,6 +112,13 @@ if (!readme.includes("explicitly not presented as implemented software")) {
 }
 if (readme.includes("/releases/tag/")) {
   fail("README.md: duplicated release tag coordinate; keep exact versions in project repositories");
+}
+for (const article of [
+  "docs/from-tool-gain-to-collaborative-compounding.pdf",
+  "docs/protecting-zero.md",
+  "docs/adversarial-engineering-validation.md",
+]) {
+  if (!readme.includes(article)) fail(`README.md: missing essay entry ${article}`);
 }
 
 const audit = fs.readFileSync(path.join(root, "docs/fresh-checkout-independent-audit.md"), "utf8");
