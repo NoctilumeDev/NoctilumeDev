@@ -1,8 +1,8 @@
-# 保护零：从答案生成到事实成立
+# 《保护零：从答案生成到事实成立》导读与复核索引
 
-> 《从工具增益到协同复利》的理论续篇 · 2026-08-28 修订版
+> 正式全文：[20 页 PDF · 论文体工程复盘 · 归档修订版](protecting-zero-from-answer-to-fact.pdf)
 >
-> 本文从一份 20 页论文体初稿重新整理而来。公式只用于解释机制，不是经过大样本估计的定理；案例只对本次八仓归档、独立复现和单机资源边界负责。
+> 本页只承担站内检索、概念定位和公开证据跳转，不替代 20 页正文。PDF 以作者原始稿为母本，只作少量事实与版面修订，保留原来的章节、公式、表格、附录和叙述节奏。
 
 > **模型可以产生答案，但不能拥有事实。**
 
@@ -160,7 +160,7 @@ Model claim
 
 ## 7. 从原则到可执行方法
 
-[《对抗性工程验收》](adversarial-engineering-validation.md)把保护零落成九层事实链：Source、Build、Runtime、Browser、Failure、Artifact、Governance、Cleanup 和 Public Readability。
+[《对抗性工程验收》](adversarial-engineering-validation.pdf)把保护零落成九层事实链：Source、Build、Runtime、Browser、Failure、Artifact、Governance、Cleanup 和 Public Readability。
 
 本轮实际出现的状态转换包括：
 

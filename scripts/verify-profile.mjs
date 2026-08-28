@@ -10,7 +10,9 @@ const requiredFiles = [
   "docs/public-verification-loop.md",
   "docs/fresh-checkout-independent-audit.md",
   "docs/adversarial-engineering-validation.md",
+  "docs/adversarial-engineering-validation.pdf",
   "docs/protecting-zero.md",
+  "docs/protecting-zero-from-answer-to-fact.pdf",
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/one-person-big-company.pdf",
 ];
@@ -115,8 +117,8 @@ if (readme.includes("/releases/tag/")) {
 }
 for (const article of [
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
-  "docs/protecting-zero.md",
-  "docs/adversarial-engineering-validation.md",
+  "docs/protecting-zero-from-answer-to-fact.pdf",
+  "docs/adversarial-engineering-validation.pdf",
 ]) {
   if (!readme.includes(article)) fail(`README.md: missing essay entry ${article}`);
 }
