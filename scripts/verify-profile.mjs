@@ -20,6 +20,7 @@ const publicRepositories = [
   "DarkRoomLibrary",
   "FlowKernel",
   "InkNarratives",
+  "JPyxis",
   "MiniSpringBoot",
   "PlainJournal",
   "PlainJournalPro",
