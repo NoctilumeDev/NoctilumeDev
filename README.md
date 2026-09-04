@@ -11,6 +11,7 @@ Student developer focused on reliable software systems, reproducible engineering
 | **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and release status](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) · [Teaching → Engineering experiment](https://github.com/NoctilumeDev/MiniSpringBoot/blob/main/docs/teaching-to-engineering.md) |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
+| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | A contract-driven heterogeneous-compute framework that separates control authority, definition frontends and runtime execution behind explicit, replaceable capability boundaries. | [Repository and current evidence boundary](https://github.com/NoctilumeDev/JPyxis#status) |
 
 ## Selected Experiments
 
@@ -26,6 +27,7 @@ complete business systems
 → distributed reliability and failure boundaries
 → reproducible evidence and deterministic verdicts
 → framework mechanisms rebuilt from first principles
+→ contract-governed heterogeneous compute
 ```
 
 These projects were developed through AI-assisted solo engineering. I own problem definition, architecture,
@@ -76,6 +78,7 @@ restructuring, not necessarily project inception.
 - Preserve MiniSpringBoot's frozen multi-instance and failure-contract evidence without extending its stated boundary.
 - Preserve VeriTrail's deterministic verdict authority while keeping the bounded Starter and Authoring Skill reproducible.
 - Keep PlainJournal's M0-M8 reference baseline stable; visual work may evolve separately without changing business facts.
+- Preserve JPyxis's control, definition and runtime ownership boundaries; exact frozen milestones and evolution claims remain authoritative only in its project repository.
 - Keep public claims, CI, Releases and concise evidence entry points aligned across maintained repositories.
 - Keep FlowKernel and PlainJournalPro visibly planned until executable evidence changes their status.
 
