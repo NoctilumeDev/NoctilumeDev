@@ -5,6 +5,7 @@ const root = process.cwd();
 const failures = [];
 const requiredFiles = [
   "README.md",
+  "docs/repository-system-map.md",
   "docs/single-machine-engineering-environment.md",
   "docs/solo-engineering-method.md",
   "docs/public-verification-loop.md",
@@ -94,6 +95,7 @@ const readme = fs.readFileSync(path.join(root, "README.md"), "utf8");
 for (const heading of [
   "## Flagship Work",
   "## Selected Experiments",
+  "## Repository System Map / 仓库关系图",
   "## Research / Planned",
   "## Maintenance Posture",
   "## Solo Engineering Toolkit / 单兵工程三剑客",
@@ -105,6 +107,22 @@ for (const heading of [
 for (const repository of publicRepositories) {
   const url = `https://github.com/NoctilumeDev/${repository}`;
   if (!readme.includes(url)) fail(`README.md: missing public repository entry ${repository}`);
+}
+
+const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
+for (const invariant of [
+  "JPyxis != VeriTrail Plugin",
+  "FlowKernel != Agent Harness",
+  "GitHub != Truth Oracle",
+  "Review Attention != Verdict Engine",
+  "NoctilumeDev != Project Authority",
+  "Intent / Claim",
+  "!= Human Disposition",
+  "!= Reality / Truth",
+]) {
+  if (!systemMap.includes(invariant)) {
+    fail(`repository system map: missing authority invariant ${invariant}`);
+  }
 }
 
 if (!readme.includes("implementation has not started")) {

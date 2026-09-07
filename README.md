@@ -35,6 +35,24 @@ acceptance contracts, failure analysis, release decisions and freeze boundaries;
 implementation, review and repeatable execution. Public repository creation dates reflect publication or
 restructuring, not necessarily project inception.
 
+## Repository System Map / 仓库关系图
+
+这些仓库不是一条彼此强依赖的调用链，而是一组可以按问题组合、仍各自拥有状态与里程碑的工程边界：
+
+```text
+FlowKernel       限定系统级能力与资源边界（Planned）
+JPyxis           管理异构计算合同与执行
+Evidence Adapter 有界观察来源系统事实
+VeriTrail        按 sealed Plan 推导确定性 Verdict
+Review Attention 提议人应优先检查哪里
+Human            拥有前提、Seal 与最终处置
+Reality          拥有真相
+```
+
+GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
+引擎。更完整的双层结构、九库角色、插件接缝与禁止越界见
+**[Repository System Map / 仓库体系关系图](docs/repository-system-map.md)**。
+
 ## Research / Planned
 
 - [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
