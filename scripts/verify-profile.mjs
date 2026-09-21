@@ -8,6 +8,7 @@ const requiredFiles = [
   "docs/repository-system-map.md",
   "docs/single-machine-engineering-environment.md",
   "docs/solo-engineering-method.md",
+  "docs/solo-engineering-runtime-diagnostics.md",
   "docs/public-verification-loop.md",
   "docs/fresh-checkout-independent-audit.md",
   "docs/adversarial-engineering-validation.md",

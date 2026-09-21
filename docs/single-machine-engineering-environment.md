@@ -424,3 +424,7 @@ Docker Desktop / WSL
 这套方法的核心不是“把电脑信息收集得越多越好”，而是：
 
 > **在动手之前，先建立一张足以解释成败、支持回退、约束实验的环境事实图。**
+
+环境事实图建立后，进入[《单兵工程法 V1》](solo-engineering-method.md)施工；系统真实运行中的
+故障定位、控制变量、恢复与清理验收，继续见
+[《单兵工程法 V2：运行诊断与运维验收篇》](solo-engineering-runtime-diagnostics.md)。

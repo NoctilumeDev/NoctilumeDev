@@ -104,16 +104,20 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 
 ## Solo Engineering Toolkit / 单兵工程三剑客
 
-一个人不需要复制一整套组织，但必须补齐环境认知、工程施工和公共验证三种职责：
+一个人不需要复制一整套组织，但必须补齐环境认知、工程施工和公共验证三种职责。工程施工
+又分两层：先把系统做出来，再让运行中的系统可诊断、可恢复、可验收。
 
 ```text
 看清机器
-→ 把项目做成
+→ 把项目做成（V1）
+→ 让运行状态可解释（V2）
 → 让公共证据链也成立
 ```
 
 1. **[单机工程环境全景认知法](docs/single-machine-engineering-environment.md)** - 开工前先认识硬件、系统、工具链、中间件、网络、项目拓扑与资源停止线；PlainJournal 的[本地开发网络与 Windows 故障边界](https://github.com/NoctilumeDev/PlainJournal/blob/main/docs/07-local-development-network.md)是其中一份实战手册。
-2. **[硅谷中国特色改良版_拖鞋（妥协）版单兵工程法](docs/solo-engineering-method.md)** - 压扁组织，保留需求、架构、实现、验收、发布与冻结；妥协的是单人协调成本，不是工程质量。
+2. **单兵工程法** - 压扁组织，保留不能丢的工程职责；妥协的是单人协调成本，不是工程质量。
+   - **[V1：施工与交付](docs/solo-engineering-method.md)** - 从需求、架构、实现和粗糙可操作前端一路推进到验收、发布与冻结。
+   - **[V2：运行诊断与运维验收](docs/solo-engineering-runtime-diagnostics.md)** - 用 F12 进入真实用户链，再沿 HTTP、进程、端口、runtime、中间件和宿主分层诊断；保存首败、控制变量、验证恢复与清理，不用“重启后好了”冒充根因。
 3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
 
 ### 本机故障边界附录
