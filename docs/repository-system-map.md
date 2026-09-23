@@ -16,7 +16,7 @@
 VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 sealed Plan、标准 Evidence 与确定性规则
 产生有边界的 `PASS / FAIL / INCONCLUSIVE / PENDING`。
 
-## 九个公开仓库不是一棵调用树
+## 十个公开仓库不是一棵调用树
 
 | 仓库 | 稳定角色 | 拥有的事实或责任 | 不拥有的责任 |
 | --- | --- | --- | --- |
@@ -27,10 +27,11 @@ VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 分布式业务与可靠性参考系统 | 自身业务、数据和交易状态，以及已声明范围内的运行证据 | 基础设施项目的状态或通用真理 |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 完整增强型单体业务样本 | 图书业务、角色边界、协作流程及其项目证据 | VeriTrail、JPyxis 或 FlowKernel 的实现证明 |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 框架机制重建与真实全栈验证样本 | IoC、AOP、Web/MVC、JDBC、事务与启动机制的项目事实 | Spring 官方实现等价性或其他仓库的验收结论 |
+| **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 操作系统机制教学与底层实验支线 | 自身构建、启动、串口、调试与逐轮机制实验事实 | Linux 兼容性、FlowKernel 实现或其他仓库的系统事实 |
 | **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** | 多商户未来架构研究 | 已声明的未来问题、边界与设计方向 | 尚未实现能力或可运行产品事实 |
 | **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | 内容、排版与叙事视觉实验 | 自身静态作品与内容状态 | 工程基础设施的验证责任 |
 
-业务系统、框架实验和内容实验提供真实问题、控制组与证据来源；基础设施仓库提炼可复用的合同、
+业务系统、框架与系统机制实验、内容实验提供真实问题、控制组与证据来源；基础设施仓库提炼可复用的合同、
 执行或验收方法。前者不是后者的“测试附件”，后者也不能反向接管前者的业务状态。
 
 ## 两张正交图
@@ -178,5 +179,5 @@ human premise and Seal
 任何一步若必须共享可变状态、复制对方的 Verdict 或绕过对方 authority 才能成立，就停止组合并回到
 合同层，而不是继续增加兼容分支。
 
-这张图描述的是可组合体系，不是强制部署拓扑，也不是把九个仓库改造成一组互相启动才能工作的
+这张图描述的是可组合体系，不是强制部署拓扑，也不是把十个仓库改造成一组互相启动才能工作的
 微服务。仓库之间共享方法和版本化产物，不共享可变控制状态。

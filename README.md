@@ -1,34 +1,57 @@
 # NoctilumeDev
 
-Student developer focused on reliable software systems, reproducible engineering, and clearly bounded experiments. I build business systems, examine their reliability limits, turn the acceptance method into tooling, and study the framework mechanisms underneath them.
+AI-assisted solo engineer studying how unreliable code generation can enter reliable software systems without quietly acquiring authority.
+
+大模型可以很快写出代码，但“生成了代码”“测试出现绿灯”和“一个工程事实已经成立”不是同一件事。我的项目从五个单文件 HTML 开始，经过完整业务系统、微服务训练场和真实单机停止线，逐步把问题拆成三个权责独立的试验台。
 
 > 精确里程碑、冻结基线与当前任务由各项目仓库的 README / Release 维护；本页只描述稳定的项目角色，避免复制状态后发生漂移。工程范围已经闭环，不一定等于作品在我心中已经停止生长。
 
+## 一张图看懂这些项目 / Project Journey
+
+![从五个 HTML、暗室藏书和素简记，到 VeriTrail、JPyxis 与 FlowKernel 的工程演化图](assets/project-journey.svg)
+
+<p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。</sub></p>
+
+这条主线不是事后编出来的产品矩阵，而是前一个项目留下的问题，逼出了后一个边界：
+
+1. **[InkNarratives / 墨叙](https://github.com/NoctilumeDev/InkNarratives)** 保留五个零依赖 HTML，训练叙事、排版、交互与公开展示。
+2. **[DarkRoomLibrary / 暗室藏书](https://github.com/NoctilumeDev/DarkRoomLibrary)** 把页面推进成第一个完整业务系统，开始面对角色、数据、协作和交付闭环。
+3. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 成为分布式业务、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
+4. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
+5. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
+6. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。三者各自拥有独立问题与状态；已经实现的部分可以单独使用，未来也可以通过版本化合同形成更大系统的候选地基。
+
+### 三个试验台分别回答什么
+
+| 试验台 | 核心问题 | 当前事实边界 |
+| --- | --- | --- |
+| **VeriTrail / 验迹** | 这次运行究竟证明了什么？证据是否足以支持 sealed 条件？ | 已有独立可用的 local-first Core、Workbench、Entry 与 GitHub Evidence；不拥有来源系统事实和世界真相 |
+| **JPyxis** | 谁定义计算、谁决定调用、谁执行、谁解释生命周期和失败？ | 已形成冻结的单节点异构计算基线；不因此获得宿主资源权或业务真相 |
+| **FlowKernel / 流核** | 不可靠的 Agent、模型或规则，在什么 Capability 与资源边界内可以行动？ | 目前仍是研究计划；implementation has not started，不把理念写成已有内核能力 |
+
+### 为什么验迹被单独放大
+
+VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、静态站点或 GitHub 公开事实时，不需要等待 JPyxis 或 FlowKernel。它也可以进入更大的组合，但只负责 `Plan + Evidence → deterministic Verdict`；它不会因为位于中间就接管计算执行、系统权限、资源调度或人的最终处置。
+
+这三个试验台也没有消灭素简记的问题。当前已经成立的边界仍从单机或单节点起步；一旦组合成更大的系统，资源容量、真实部署、恢复、跨机状态与验收成本会重新出现。于是素简记不只是早期项目，而是下一阶段基础设施必须持续回看的真实经验源。
+
 ## Flagship Work
 
-| Project | What it demonstrates | Open it |
+| Project | Stable role | Open it |
 | --- | --- | --- |
-| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | A local-first evidence and acceptance workbench for controlled, reproducible engineering experiments. This is the current methodology and verification mainline. | [Repository and release status](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
-| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A from-scratch teaching implementation of Spring-style IoC, AOP, Web/MVC, configuration, JDBC, transactions and bootstrapping, proven through a real React + MySQL demo. | [Architecture and verified milestones](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) · [Teaching → Engineering experiment](https://github.com/NoctilumeDev/MiniSpringBoot/blob/main/docs/teaching-to-engineering.md) |
-| **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A verified self-operated e-commerce reference baseline focused on consistency, degradation, multi-instance behavior and browser-level evidence. | [Online preview](https://noctilumedev.github.io/PlainJournal/) · [Repository](https://github.com/NoctilumeDev/PlainJournal) |
-| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | A contract-driven heterogeneous-compute framework that separates control authority, definition frontends and runtime execution behind explicit, replaceable capability boundaries. | [Repository and current evidence boundary](https://github.com/NoctilumeDev/JPyxis#status) |
+| **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 真实分布式业务与可靠性训练场，也是后续单机边界、Evidence 与运行问题的经验来源 | [在线预览](https://noctilumedev.github.io/PlainJournal/) · [仓库](https://github.com/NoctilumeDev/PlainJournal) |
+| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | 把控制变量、不可变证据、真实浏览器观察和确定性裁决做成可独立使用的本地系统 | [仓库与发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
+| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 通过显式合同拆开 Control、definition frontend 与 runtime 的异构计算框架 | [仓库与证据边界](https://github.com/NoctilumeDev/JPyxis#status) |
+| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 研究不可靠策略怎样被限制在确定性的 Capability、资源、恢复与来源边界内 | [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel) |
 
 ## Selected Experiments
 
-| Project | What it explores | Open it |
+| Project | What it contributes to the journey | Open it |
 | --- | --- | --- |
-| **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | A complete Spring Boot + Vue library workflow product with MySQL, Redis, RabbitMQ, role boundaries and frozen multi-instance acceptance evidence. | [Online preview](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release evidence](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
-| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | Five dependency-free HTML experiments in Chinese literary narrative, typography and visual expression. | [Online gallery](https://noctilumedev.github.io/InkNarratives/) |
-
-The engineering thread is intentional:
-
-```text
-complete business systems
-→ distributed reliability and failure boundaries
-→ reproducible evidence and deterministic verdicts
-→ framework mechanisms rebuilt from first principles
-→ contract-governed heterogeneous compute
-```
+| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | 五个零依赖 HTML 作品与统一展厅；保留早期视觉、内容和交互实验 | [在线展厅](https://noctilumedev.github.io/InkNarratives/) |
+| **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 从页面走向完整 Spring Boot + Vue 业务闭环的第一块产品基线 | [在线预览](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release 证据](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
+| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 从头拆解 IoC、AOP、Web/MVC、配置、JDBC、事务与启动机制，并用真实 React + MySQL 链路反证纸面实现 | [架构与里程碑](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
+| **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 从可启动 C 内核实验台逐步学习内存、CPU、用户边界与文件字节；当前不冒充 Linux 兼容实现 | [实验台与路线图](https://github.com/NoctilumeDev/MiniLinux) |
 
 These projects were developed through AI-assisted solo engineering. I own problem definition, architecture,
 acceptance contracts, failure analysis, release decisions and freeze boundaries; models and agents assist with
@@ -37,26 +60,16 @@ restructuring, not necessarily project inception.
 
 ## Repository System Map / 仓库关系图
 
-这些仓库不是一条彼此强依赖的调用链，而是一组可以按问题组合、仍各自拥有状态与里程碑的工程边界：
-
-```text
-FlowKernel       限定系统级能力与资源边界（Planned）
-JPyxis           管理异构计算合同与执行
-Evidence Adapter 有界观察来源系统事实
-VeriTrail        按 sealed Plan 推导确定性 Verdict
-Review Attention 提议人应优先检查哪里
-Human            拥有前提、Seal 与最终处置
-Reality          拥有真相
-```
+主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。真正组合时，每个系统仍保留自己的状态与权威：FlowKernel 未来只约束系统能力与资源；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有前提、Seal 与最终处置；Reality 拥有真相。
 
 GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
-引擎。更完整的双层结构、九库角色、插件接缝与禁止越界见
+引擎。更完整的双层结构、十库角色、插件接缝与禁止越界见
 **[Repository System Map / 仓库体系关系图](docs/repository-system-map.md)**。
 
 ## Research / Planned
 
 - [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
-- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - long-term research planning for lifecycle-aware, continuity-preserving resource scheduling; implementation has not started.
+- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - long-term research planning for bounded AI action, authority, lifecycle-aware resources and recovery; implementation has not started.
 
 <details>
 <summary><strong>Project Journey / 展开项目沿革与时间说明</strong></summary>
@@ -86,6 +99,18 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 - **2026 年 8 月 · MiniSpringBoot**
 
   在使用 Spring Boot 构建完整系统之后，我回到底层重新实现 IoC、AOP、配置、Web/MVC、JDBC、事务与启动机制，并用真实 React + MySQL 链路验证它不是只能通过单测的纸面框架。它补上了“会使用框架”之外的机制理解；M10 又由冻结版 VeriTrail 对多实例、故障、事务与就绪证据做了独立复验，同时明确保留未被证明的全拓扑生命周期边界。
+
+- **2026 年 9 月 · JPyxis**
+
+  验迹解决“什么声明取得了事实资格”，却不拥有计算执行本身。JPyxis 因此把 Control、definition frontend 与 runtime 拆开，通过版本化合同保存制品、部署、调用、生命周期和失败解释的所有权；当前成立的是完整可复现的单节点基线，不把它扩写成分布式计算平台。
+
+- **2026 年 9 月 · MiniLinux**
+
+  为了把系统机制理解继续向下推进，MiniLinux 从一个可启动、可调试、可复验的 C 内核实验台开始。当前只有 M0 成立；内存、调度、用户态、系统调用和文件系统仍要逐轮取得自己的证据。它为底层机制学习提供支线，不冒充 FlowKernel 的实现。
+
+- **2026 年 9 月 · FlowKernel / 流核**
+
+  当问题继续追到“Agent、模型或规则凭什么获得系统能力和资源”时，FlowKernel 作为第三个试验台被提出。它研究 Capability、硬资源边界、生命周期、恢复与 provenance，但当前只保存研究问题和合同路线；实现尚未开始。
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 
