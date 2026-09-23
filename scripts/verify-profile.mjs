@@ -5,6 +5,7 @@ const root = process.cwd();
 const failures = [];
 const requiredFiles = [
   "README.md",
+  "assets/project-journey.svg",
   "docs/repository-system-map.md",
   "docs/single-machine-engineering-environment.md",
   "docs/solo-engineering-method.md",
@@ -23,6 +24,7 @@ const publicRepositories = [
   "FlowKernel",
   "InkNarratives",
   "JPyxis",
+  "MiniLinux",
   "MiniSpringBoot",
   "PlainJournal",
   "PlainJournalPro",
@@ -46,7 +48,7 @@ for (const relative of requiredFiles) {
 }
 
 const files = listFiles(root);
-const textExtensions = new Set(["", ".md", ".yml", ".yaml", ".json", ".mjs"]);
+const textExtensions = new Set(["", ".md", ".yml", ".yaml", ".json", ".mjs", ".svg"]);
 const textFiles = files.filter((file) => textExtensions.has(path.extname(file).toLowerCase()));
 const markdownFiles = textFiles.filter((file) => path.extname(file).toLowerCase() === ".md");
 const linkPattern = /\[[^\]]+\]\(([^)]+)\)/g;
@@ -108,6 +110,20 @@ for (const heading of [
 for (const repository of publicRepositories) {
   const url = `https://github.com/NoctilumeDev/${repository}`;
   if (!readme.includes(url)) fail(`README.md: missing public repository entry ${repository}`);
+}
+
+const journeySvg = fs.readFileSync(path.join(root, "assets/project-journey.svg"), "utf8");
+for (const marker of [
+  "InkNarratives",
+  "暗室藏书",
+  "素简记",
+  "素简记 Pro",
+  "VeriTrail / 验迹",
+  "JPyxis",
+  "FlowKernel / 流核",
+  "回到素简记暴露的单机边界",
+]) {
+  if (!journeySvg.includes(marker)) fail(`project journey: missing semantic marker ${marker}`);
 }
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
