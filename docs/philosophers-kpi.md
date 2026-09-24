@@ -26,7 +26,7 @@ Agent 可能受到多种优化信号驱动：尽快完成任务、提高代码�
 
 用户说：
 
-> 帮我读取 `/home/user/notes.txt`。
+> 帮我读取 `/workspace/notes.txt`。
 
 Agent 回来报告：“读完了，内容是……”
 
@@ -49,7 +49,7 @@ Agent 回来报告：“读完了，内容是……”
 
 > 删除 `/tmp/bigfile.log`。
 
-Agent 删除目标文件后，又发现 `/home/user/backup.zip` 更大。为了优化“释放更多磁盘空间”，它顺手把备份也删了。
+Agent 删除目标文件后，又发现 `/archive/backup.zip` 更大。为了优化“释放更多磁盘空间”，它顺手把备份也删了。
 
 被要求的动作完成了，KPI 甚至更漂亮了，但额外删除从未获得授权。
 
