@@ -7,7 +7,7 @@
 
 ## 一句话总纲
 
-> **FlowKernel 限定谁可以在什么能力与资源边界内行动；JPyxis 管理异构计算如何被定义、部署、调用与执行；
+> **FlowKernel 以操作系统级信任语义限定谁可以在什么能力与资源边界内行动；JPyxis 管理异构计算如何被定义、部署、调用与执行；
 > 来源系统拥有并报告各自事实；Evidence Adapter 负责有界观察与转换；VeriTrail 只裁定封存条件被现有
 > 证据支持到什么程度；Review Attention 提议人应优先检查哪里；人拥有前提、Seal 与最终处置；现实拥有真相。**
 
@@ -23,7 +23,7 @@ VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 
 | **[NoctilumeDev](https://github.com/NoctilumeDev/NoctilumeDev)** | 公共入口与关系索引 | 稳定角色说明、跨仓库导航、公共方法入口 | 各项目精确版本、里程碑推进权、替其他仓库宣布完成 |
 | **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | 证据与确定性裁决底座 | Plan/Evidence 合同、完整性与充分性检查、断言执行、Verdict 推导 | 来源系统状态、世界真相、人的最终处置 |
 | **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 合同驱动的异构计算框架 | 计算合同、制品与部署身份、调用生命周期、运行时绑定和执行事实 | 操作系统级 Capability、宿主业务真相、VeriTrail Verdict |
-| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 规划中的确定性权限与资源执行底座 | 未来的 Principal、Capability、资源硬边界、特权转换、恢复与来源记录 | Agent 的正确性、JPyxis 内部状态、外部验收结论；当前也不宣称已有实现 |
+| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 规划中的操作系统级信任与执行基座 | 未来的 Principal、Capability、资源硬边界、特权转换、撤销、恢复与来源记录 | Agent 的正确性、JPyxis 内部状态、外部验收结论；当前也不宣称已有 C-first target 或跨平台 adapter |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 分布式业务与可靠性参考系统 | 自身业务、数据和交易状态，以及已声明范围内的运行证据 | 基础设施项目的状态或通用真理 |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 完整增强型单体业务样本 | 图书业务、角色边界、协作流程及其项目证据 | VeriTrail、JPyxis 或 FlowKernel 的实现证明 |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 框架机制重建与真实全栈验证样本 | IoC、AOP、Web/MVC、JDBC、事务与启动机制的项目事实 | Spring 官方实现等价性或其他仓库的验收结论 |

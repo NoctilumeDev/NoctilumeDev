@@ -170,7 +170,7 @@ D 在建
 | --- | --- | --- |
 | [VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail) | 观察、证据与声明怎样取得确定性的事实资格 | 来源系统真相、执行权与人的最终处置 |
 | [JPyxis](https://github.com/NoctilumeDev/JPyxis) | 计算怎样被定义、调用、执行，并保留生命周期与失败解释 | 宿主资源权、业务真相与 Verdict authority |
-| [FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel) | 不可靠策略怎样被限制在明确的 Capability、资源、恢复与 provenance 边界内 | 当前尚未实现；研究计划不等于已有内核能力 |
+| [FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel) | 操作系统级信任与执行语义怎样把不可靠策略限制在明确的 Capability、资源、撤销、恢复与 provenance 边界内 | 当前尚未实现；C-first 实验目标与跨平台映射都不能由研究计划冒充已有能力 |
 | [MiniLinux](https://github.com/NoctilumeDev/MiniLinux) | 通过可启动、可调试的小内核实验理解经典 OS 机制 | 不冒充 FlowKernel，也不冒充 Linux 兼容实现 |
 
 这些边界可以独立成立，也可能在未来通过版本化合同组合。组合不等于合并权威：Evidence 系统不替执行层做动作，执行层不替权限层扩权，权限层也不能替现实宣布结果正确。
