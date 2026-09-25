@@ -36,7 +36,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 3. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 成为分布式业务、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
 4. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
 5. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
-6. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。三者各自拥有独立问题与状态；已经实现的部分可以单独使用，未来也可以通过版本化合同形成更大系统的候选地基。
+6. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。三者各自拥有独立问题与状态；已经实现的部分可以单独使用，未来也可以通过版本化合同形成更大系统的候选地基。
 
 ### 三个试验台分别回答什么
 
@@ -44,7 +44,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 | --- | --- | --- |
 | **VeriTrail / 验迹** | 这次运行究竟证明了什么？证据是否足以支持 sealed 条件？ | 已有独立可用的 local-first Core、Workbench、Entry 与 GitHub Evidence；不拥有来源系统事实和世界真相 |
 | **JPyxis** | 谁定义计算、谁决定调用、谁执行、谁解释生命周期和失败？ | 已形成冻结的单节点异构计算基线；不因此获得宿主资源权或业务真相 |
-| **FlowKernel / 流核** | 不可靠的 Agent、模型或规则，在什么 Capability 与资源边界内可以行动？ | 目前仍是研究计划；implementation has not started，不把理念写成已有内核能力 |
+| **FlowKernel / 流核** | 不可靠的 Agent、模型或规则，怎样在可撤销、可归属、可观察的 Capability 与资源边界内行动？ | 规划中的操作系统级信任与执行基座；implementation has not started，跨平台 adapter 与 C-first target 都不能写成已有能力 |
 
 ### 为什么验迹被单独放大
 
@@ -59,7 +59,7 @@ VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、�
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 真实分布式业务与可靠性训练场，也是后续单机边界、Evidence 与运行问题的经验来源 | [在线预览](https://noctilumedev.github.io/PlainJournal/) · [仓库](https://github.com/NoctilumeDev/PlainJournal) |
 | **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | 把控制变量、不可变证据、真实浏览器观察和确定性裁决做成可独立使用的本地系统 | [仓库与发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
 | **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 通过显式合同拆开 Control、definition frontend 与 runtime 的异构计算框架 | [仓库与证据边界](https://github.com/NoctilumeDev/JPyxis#status) |
-| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 研究不可靠策略怎样被限制在确定性的 Capability、资源、恢复与来源边界内 | [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel) |
+| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 面向不可信智能体的操作系统级信任与执行基座研究；策略可提案，确定性边界保留授权与落实权 | [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel) |
 
 ## Selected Experiments
 
@@ -77,7 +77,7 @@ restructuring, not necessarily project inception.
 
 ## Repository System Map / 仓库关系图
 
-主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。真正组合时，每个系统仍保留自己的状态与权威：FlowKernel 未来只约束系统能力与资源；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有前提、Seal 与最终处置；Reality 拥有真相。
+主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。真正组合时，每个系统仍保留自己的状态与权威：FlowKernel 未来以操作系统级信任语义约束系统能力、资源、撤销与恢复；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有前提、Seal 与最终处置；Reality 拥有真相。
 
 GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
 引擎。更完整的双层结构、十库角色、插件接缝与禁止越界见
@@ -86,7 +86,7 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 ## Research / Planned
 
 - [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) - reference architecture for a future multi-merchant evolution; explicitly not presented as implemented software.
-- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - long-term research planning for bounded AI action, authority, lifecycle-aware resources and recovery; implementation has not started.
+- [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) - a planned OS-level trust and execution substrate for bounded agentic action, authority, lifecycle-aware resources and recovery; implementation has not started.
 
 <details>
 <summary><strong>Project Journey / 展开项目沿革与时间说明</strong></summary>
@@ -127,7 +127,7 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
 - **2026 年 9 月 · FlowKernel / 流核**
 
-  当问题继续追到“Agent、模型或规则凭什么获得系统能力和资源”时，FlowKernel 作为第三个试验台被提出。它研究 Capability、硬资源边界、生命周期、恢复与 provenance，但当前只保存研究问题和合同路线；实现尚未开始。
+  当问题继续追到“Agent、模型或规则凭什么获得系统能力和资源”时，FlowKernel 作为第三个试验台被提出。它把这个问题定位成面向不可信智能体的操作系统级信任与执行基座，并以 C-first target 与 Linux reference lab 作为候选实验载体。它研究 Capability、硬资源边界、生命周期、撤销、恢复与 provenance，但当前只保存研究问题和合同路线；实现尚未开始，也没有跨平台 adapter。
 
 工程闭环可以冻结，审美、内容、认知和下一阶段仍会继续生长。敬请期待。
 

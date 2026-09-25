@@ -104,10 +104,10 @@
     <text x="720" y="741" class="status center">单节点基线 · FROZEN</text>
 
     <rect x="980" y="568" width="390" height="190" rx="22" fill="#29293f" stroke="#8b82b6" stroke-dasharray="8 7"/>
-    <text x="1175" y="610" class="eyebrow center">ACTION + RESOURCE AUTHORITY</text>
+    <text x="1175" y="610" class="eyebrow center">OS-LEVEL TRUST SUBSTRATE</text>
     <text x="1175" y="648" class="card-title center">FlowKernel / 流核</text>
     <text x="1175" y="682" class="card-copy center">不可靠策略可以被允许做什么？</text>
-    <text x="1175" y="710" class="small center">Capability · resource · recovery</text>
+    <text x="1175" y="710" class="small center">Capability · revocation · recovery</text>
     <rect x="1081" y="724" width="188" height="24" rx="12" fill="#4b466d"/>
     <text x="1175" y="741" class="status center">研究计划 · PLANNED</text>
   </g>
