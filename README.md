@@ -4,6 +4,8 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 大模型可以很快写出代码，但“生成了代码”“测试出现绿灯”和“一个工程事实已经成立”不是同一件事。我的项目从五个单文件 HTML 开始，经过完整业务系统、微服务训练场和真实单机停止线，逐步把问题拆成三个权责独立的试验台。
 
+> **认知支线：** AI 加速了认知变异，却不自动带来认知进步。真正决定结果的，是选择是否有效、失败能否被保留，以及谁拥有目标、证据、否决权与修改权。完整文章见 **[《AI 的上限，不在答案里》](docs/ai-cognitive-feedback-loop.md)**。
+
 ## 哲学家的 KPI / The KPI Philosophers
 
 ![四个拥有各自目标函数的 Agent 在共享状态上执行查、删、改、增，由此暴露报告、授权、完整事实与执行过程的边界](assets/philosophers-kpi.svg)
@@ -173,15 +175,16 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 
 ## Essays / 工程复盘与方法论
 
-这三篇文章分别讨论能力生产、事实资格与验收方法。它们来自同一段连续工程实践，但不互相代替：
+这些文章分别讨论能力生产、事实资格、验收方法，以及 AI 进入人的认知反馈回路以后怎样接受选择与治理。它们来自同一段连续实践，但不互相代替：
 
 | Writing | It asks | Status |
 | --- | --- | --- |
+| **[AI 的上限，不在答案里](docs/ai-cognitive-feedback-loop.md)** | 当 AI 从任务工具进入人的认知反馈回路，什么机制负责生成变化、有效选择、保留经验并约束权力？ | `认知系统治理 · 长文初稿`，三轴观察模型，不作成熟度排名 |
 | **[从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)** | 人、模型、工作流、上下文和历史资产怎样共同影响单位经验证交付？ | `论文体工程复盘 · 初稿`，按原始观察封存 |
 | **[保护零：从答案生成到事实成立](docs/protecting-zero-from-answer-to-fact.pdf)** | 当生成者、测试和审查都可能共享错误前提时，一个声明凭什么取得事实资格？ | `论文体工程复盘 · 理论续篇 · 归档修订版`，20 页 PDF |
 | **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.pdf)** | 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？ | `论文体工程复盘 · 归档方法篇`，19 页 PDF |
 
-第一篇解释“能力如何共同产生”；第二篇解释“未知为什么必须被保护”；第三篇解释“如何把原则变成工程事实”。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
+《AI 的上限，不在答案里》讨论认知耦合、选择机制与治理；其后三篇依次解释“能力如何共同产生”“未知为什么必须被保护”以及“如何把原则变成工程事实”。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
 
 需要网页内概念检索或沿链接复核时，可使用两份配套导读：[《保护零》导读](docs/protecting-zero.md)与[《对抗性工程验收》导读](docs/adversarial-engineering-validation.md)。导读不是 PDF 正文的缩写替代品。
 
