@@ -12,6 +12,7 @@ const requiredFiles = [
   "docs/solo-engineering-runtime-diagnostics.md",
   "docs/public-verification-loop.md",
   "docs/fresh-checkout-independent-audit.md",
+  "docs/ai-cognitive-feedback-loop.md",
   "docs/adversarial-engineering-validation.md",
   "docs/adversarial-engineering-validation.pdf",
   "docs/protecting-zero.md",
@@ -152,6 +153,7 @@ if (readme.includes("/releases/tag/")) {
   fail("README.md: duplicated release tag coordinate; keep exact versions in project repositories");
 }
 for (const article of [
+  "docs/ai-cognitive-feedback-loop.md",
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/protecting-zero-from-answer-to-fact.pdf",
   "docs/adversarial-engineering-validation.pdf",
