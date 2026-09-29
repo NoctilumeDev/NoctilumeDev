@@ -4,11 +4,17 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 大模型可以很快写出代码，但“生成了代码”“测试出现绿灯”和“一个工程事实已经成立”不是同一件事。我的项目从五个单文件 HTML 开始，经过完整业务系统、微服务训练场和真实单机停止线，逐步把问题拆成三个权责独立的试验台。
 
+*“Student” describes my current identity, not a project maturity level. 项目成熟度由证据、发布状态与明确边界分别说明。*
+
+**Start here / 快速入口：** [项目主线](#一张图看懂这些项目--project-journey) · [三个试验台](#三个试验台分别回答什么) · [工程方法](#solo-engineering-toolkit--单兵工程三剑客)
+
 > **认知支线：** AI 加速了认知变异，却不自动带来认知进步。真正决定结果的，是选择是否有效、失败能否被保留，以及谁拥有目标、证据、否决权与修改权。完整文章见 **[《AI 的上限，不在答案里》](docs/ai-cognitive-feedback-loop.md)**。
 
 ## 哲学家的 KPI / The KPI Philosophers
 
 ![四个拥有各自目标函数的 Agent 在共享状态上执行查、删、改、增，由此暴露报告、授权、完整事实与执行过程的边界](assets/philosophers-kpi.svg)
+
+<p align="center"><sub><a href="assets/philosophers-kpi.svg">打开大图 / Open full-size diagram</a></sub></p>
 
 1965 年的哲学家抢的是筷子。今天的 Agent 不只竞争资源，还会解释目标、选择动作、报告结果，并被各自的优化信号推动。一旦它们并行、委托、重试又互为前提，问题就不再只有死锁和竞态：
 
@@ -29,7 +35,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 ![从五个 HTML、暗室藏书和素简记，到 VeriTrail、JPyxis 与 FlowKernel 的工程演化图](assets/project-journey.svg)
 
-<p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。</sub></p>
+<p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。<a href="assets/project-journey.svg">打开大图 / Open full-size diagram</a></sub></p>
 
 这条主线不是事后编出来的产品矩阵，而是前一个项目留下的问题，逼出了后一个边界：
 
@@ -38,15 +44,21 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 3. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 成为分布式业务、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
 4. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
 5. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
-6. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。三者各自拥有独立问题与状态；已经实现的部分可以单独使用，未来也可以通过版本化合同形成更大系统的候选地基。
+6. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。三者各自拥有独立问题与状态；已经落地的部分可以单独闭合自己的问题，未来也可以通过版本化合同形成更大系统的候选地基。
 
 ### 三个试验台分别回答什么
 
-| 试验台 | 核心问题 | 当前事实边界 |
-| --- | --- | --- |
-| **VeriTrail / 验迹** | 这次运行究竟证明了什么？证据是否足以支持 sealed 条件？ | 已有独立可用的 local-first Core、Workbench、Entry 与 GitHub Evidence；不拥有来源系统事实和世界真相 |
-| **JPyxis** | 谁定义计算、谁决定调用、谁执行、谁解释生命周期和失败？ | 已形成冻结的单节点异构计算基线；不因此获得宿主资源权或业务真相 |
-| **FlowKernel / 流核** | 不可靠的 Agent、模型或规则，怎样在可撤销、可归属、可观察的 Capability 与资源边界内行动？ | 规划中的操作系统级信任与执行基座；implementation has not started，跨平台 adapter 与 C-first target 都不能写成已有能力 |
+- **VeriTrail / 验迹**
+  - **核心问题：** 这次运行究竟证明了什么？证据是否足以支持 sealed 条件？
+  - **当前事实边界：** 已有独立可用的 local-first Core、Workbench、Entry 与 GitHub Evidence；不拥有来源系统事实和世界真相。
+- **JPyxis**
+  - **核心问题：** 谁定义计算、谁决定调用、谁执行、谁解释生命周期和失败？
+  - **当前事实边界：** 已形成冻结的单节点异构计算基线；不因此获得宿主资源权或业务真相。
+- **FlowKernel / 流核**
+  - **核心问题：** 不可靠的 Agent、模型或规则，怎样在可撤销、可归属、可观察的 Capability 与资源边界内行动？
+  - **当前事实边界：** 规划中的操作系统级信任与执行基座；implementation has not started，跨平台 adapter 与 C-first target 都不能写成已有能力。
+
+它们不是必须凑齐才能成立的一套零件。已经落地的试验台单独使用时，各自都能闭合自己的问题，也已经足够好用；一旦通过版本化合同组合起来，又会在不混淆权责的前提下产生单体没有的“化学反应”。
 
 ### 为什么验迹被单独放大
 
@@ -155,6 +167,9 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
 ## Maintenance Posture
 
+<details>
+<summary><strong>Current preservation rules / 展开维护边界</strong></summary>
+
 - Preserve MiniSpringBoot's frozen multi-instance and failure-contract evidence without extending its stated boundary.
 - Preserve VeriTrail's deterministic verdict authority while keeping the bounded Starter and Authoring Skill reproducible.
 - Keep PlainJournal's M0-M8 reference baseline stable; visual work may evolve separately without changing business facts.
@@ -163,6 +178,8 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 - Keep FlowKernel and PlainJournalPro visibly planned until executable evidence changes their status.
 
 Detailed architecture decisions, test evidence, and release artifacts live in each project repository.
+
+</details>
 
 ## Solo Engineering Toolkit / 单兵工程三剑客
 
@@ -195,12 +212,18 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 
 这些文章分别讨论能力生产、事实资格、验收方法，以及 AI 进入人的认知反馈回路以后怎样接受选择与治理。它们来自同一段连续实践，但不互相代替：
 
-| Writing | It asks | Status |
-| --- | --- | --- |
-| **[AI 的上限，不在答案里](docs/ai-cognitive-feedback-loop.md)** | 当 AI 从任务工具进入人的认知反馈回路，什么机制负责生成变化、有效选择、保留经验并约束权力？ | `认知系统治理 · 长文初稿`，三轴观察模型，不作成熟度排名 |
-| **[从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)** | 人、模型、工作流、上下文和历史资产怎样共同影响单位经验证交付？ | `论文体工程复盘 · 初稿`，按原始观察封存 |
-| **[保护零：从答案生成到事实成立](docs/protecting-zero-from-answer-to-fact.pdf)** | 当生成者、测试和审查都可能共享错误前提时，一个声明凭什么取得事实资格？ | `论文体工程复盘 · 理论续篇 · 归档修订版`，20 页 PDF |
-| **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.pdf)** | 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？ | `论文体工程复盘 · 归档方法篇`，19 页 PDF |
+- **[AI 的上限，不在答案里](docs/ai-cognitive-feedback-loop.md)**
+  - **它问：** 当 AI 从任务工具进入人的认知反馈回路，什么机制负责生成变化、有效选择、保留经验并约束权力？
+  - **状态：** `认知系统治理 · 长文初稿`，三轴观察模型，不作成熟度排名。
+- **[从工具增益到协同复利](docs/from-tool-gain-to-collaborative-compounding.pdf)**
+  - **它问：** 人、模型、工作流、上下文和历史资产怎样共同影响单位经验证交付？
+  - **状态：** `论文体工程复盘 · 初稿`，按原始观察封存。
+- **[保护零：从答案生成到事实成立](docs/protecting-zero-from-answer-to-fact.pdf)**
+  - **它问：** 当生成者、测试和审查都可能共享错误前提时，一个声明凭什么取得事实资格？
+  - **状态：** `论文体工程复盘 · 理论续篇 · 归档修订版`，20 页 PDF。
+- **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.pdf)**
+  - **它问：** 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？
+  - **状态：** `论文体工程复盘 · 归档方法篇`，19 页 PDF。
 
 《AI 的上限，不在答案里》讨论认知耦合、选择机制与治理；其后三篇依次解释“能力如何共同产生”“未知为什么必须被保护”以及“如何把原则变成工程事实”。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
 
