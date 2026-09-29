@@ -165,8 +165,8 @@ for (const invariant of [
 
 const protectingZero = fs.readFileSync(path.join(root, "docs/protecting-zero.md"), "utf8");
 for (const invariant of [
-  "Epistemic state / 命题的认知状态",
-  "Observation or qualification disposition / 本轮观察或验收结果",
+  "Epistemic state / 命题状态",
+  "Run result / 本轮观察或验收结果",
   "它们不是命题本身的认知状态",
 ]) {
   if (!protectingZero.includes(invariant)) {
