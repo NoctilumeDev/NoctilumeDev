@@ -141,10 +141,14 @@ T 低，C 高
 
 ```text
 Epistemic state / 命题状态
-UNKNOWN → UNVERIFIED → VERIFIED / REFUTED
+UNKNOWN
+→ UNVERIFIED
+→ VERIFIED / REFUTED
 
 Run result / 本轮观察或验收结果
-PENDING → PASS / FAIL / INCONCLUSIVE / BOUNDARY
+PENDING
+→ PASS / FAIL
+→ INCONCLUSIVE / BOUNDARY
 ```
 
 第一个轴回答“这个命题现在知道到什么程度”：
