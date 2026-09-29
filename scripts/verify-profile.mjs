@@ -20,7 +20,7 @@ const requiredFiles = [
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/one-person-big-company.pdf",
 ];
-const publicRepositories = [
+const mappedRepositories = [
   "DarkRoomLibrary",
   "FlowKernel",
   "InkNarratives",
@@ -108,9 +108,9 @@ for (const heading of [
   if (!readme.includes(heading)) fail(`README.md: missing stable profile section ${heading}`);
 }
 
-for (const repository of publicRepositories) {
+for (const repository of mappedRepositories) {
   const url = `https://github.com/NoctilumeDev/${repository}`;
-  if (!readme.includes(url)) fail(`README.md: missing public repository entry ${repository}`);
+  if (!readme.includes(url)) fail(`README.md: missing mapped repository entry ${repository}`);
 }
 
 const journeySvg = fs.readFileSync(path.join(root, "assets/project-journey.svg"), "utf8");
@@ -173,5 +173,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Profile verification passed: ${textFiles.length} text files, ${markdownFiles.length} Markdown files, ${publicRepositories.length + 1} public repositories represented.`,
+  `Profile verification passed: ${textFiles.length} text files, ${markdownFiles.length} Markdown files, ${mappedRepositories.length + 1} mapped repositories represented.`,
 );
