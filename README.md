@@ -56,21 +56,39 @@ VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、�
 
 ## Flagship Work
 
-| Project | Stable role | Open it |
-| --- | --- | --- |
-| **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 真实分布式业务与可靠性训练场，也是后续单机边界、Evidence 与运行问题的经验来源 | [在线预览](https://noctilumedev.github.io/PlainJournal/) · [仓库](https://github.com/NoctilumeDev/PlainJournal) |
-| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | 把控制变量、不可变证据、真实浏览器观察和确定性裁决做成可独立使用的本地系统 | [仓库与发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态) |
-| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 通过显式合同拆开 Control、definition frontend 与 runtime 的异构计算框架 | [仓库与证据边界](https://github.com/NoctilumeDev/JPyxis#status) |
-| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 面向不可信智能体的操作系统级信任与执行基座研究；策略可提案，确定性边界保留授权与落实权 | [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel) |
+- **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** — 真实分布式业务与可靠性训练场，也是后续单机边界、Evidence 与运行问题的经验来源
+
+  [在线预览](https://noctilumedev.github.io/PlainJournal/) · [仓库](https://github.com/NoctilumeDev/PlainJournal)
+
+- **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** — 把控制变量、不可变证据、真实浏览器观察和确定性裁决做成可独立使用的本地系统
+
+  [仓库与发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态)
+
+- **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** — 通过显式合同拆开 Control、definition frontend 与 runtime 的异构计算框架
+
+  [仓库与证据边界](https://github.com/NoctilumeDev/JPyxis#status)
+
+- **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** — 面向不可信智能体的操作系统级信任与执行基座研究；策略可提案，确定性边界保留授权与落实权
+
+  [研究计划与当前边界](https://github.com/NoctilumeDev/FlowKernel)
 
 ## Selected Experiments
 
-| Project | What it contributes to the journey | Open it |
-| --- | --- | --- |
-| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | 五个零依赖 HTML 作品与统一展厅；保留早期视觉、内容和交互实验 | [在线展厅](https://noctilumedev.github.io/InkNarratives/) |
-| **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 从页面走向完整 Spring Boot + Vue 业务闭环的第一块产品基线 | [在线预览](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release 证据](https://github.com/NoctilumeDev/DarkRoomLibrary/releases) |
-| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 从头拆解 IoC、AOP、Web/MVC、配置、JDBC、事务与启动机制，并用真实 React + MySQL 链路反证纸面实现 | [架构与里程碑](https://github.com/NoctilumeDev/MiniSpringBoot#路线图) |
-| **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 从可启动 C 内核实验台逐步学习内存、CPU、用户边界与文件字节；当前不冒充 Linux 兼容实现 | [实验台与路线图](https://github.com/NoctilumeDev/MiniLinux) |
+- **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** — 五个零依赖 HTML 作品与统一展厅；保留早期视觉、内容和交互实验
+
+  [在线展厅](https://noctilumedev.github.io/InkNarratives/)
+
+- **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** — 从页面走向完整 Spring Boot + Vue 业务闭环的第一块产品基线
+
+  [在线预览](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release 证据](https://github.com/NoctilumeDev/DarkRoomLibrary/releases)
+
+- **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** — 从头拆解 IoC、AOP、Web/MVC、配置、JDBC、事务与启动机制，并用真实 React + MySQL 链路反证纸面实现
+
+  [架构与里程碑](https://github.com/NoctilumeDev/MiniSpringBoot#路线图)
+
+- **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** — 从可启动 C 内核实验台逐步学习内存、CPU、用户边界与文件字节；当前不冒充 Linux 兼容实现
+
+  [实验台与路线图](https://github.com/NoctilumeDev/MiniLinux)
 
 These projects were developed through AI-assisted solo engineering. I own problem definition, architecture,
 acceptance contracts, failure analysis, release decisions and freeze boundaries; models and agents assist with
