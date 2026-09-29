@@ -164,6 +164,20 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
    - **[V2：运行诊断与运维验收](docs/solo-engineering-runtime-diagnostics.md)** - 用 F12 进入真实用户链，再沿 HTTP、进程、端口、runtime、中间件和宿主分层诊断；保存首败、控制变量、验证恢复与清理，不用“重启后好了”冒充根因。
 3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
 
+### Evidence-feedback loop / 证据反馈施工回路
+
+这些工具不按线性路线自动推进。每一轮先把当前远端、工作树、目标、边界和最小计划绑到同一坐标，再主动寻找会推翻前提的反例；值得复用的教训进入仓库规则、检查、模板或轮次记录，而不是只留在聊天里。
+
+```text
+固定坐标与最小计划
+→ 主动寻找并分类反例
+→ 执行最小变更
+→ 分开确认：计划 / 已执行 / 已取得资格 / 已成为公开状态 / 已授权下一步
+→ 用新证据修订后续计划，再回到起点
+```
+
+一次执行完成、测试绿灯或文档写成，都不会自动让后一状态成立，也不会自动授权下一步；如果反例击穿前提，就先缩小或重写计划。具体门禁由各仓库自己的风险与合同决定，不把 VeriTrail 的流程原样套给所有项目。日常记录方法见[每轮决策与事实记录](docs/iteration-decision-fact-record.md)，反例设计与公共资格分别见[对抗性工程验收](docs/adversarial-engineering-validation.md)和[公共验证闭环](docs/public-verification-loop.md)。
+
 ### 本机故障边界附录
 
 - **[Docker Desktop Windows 套接字崩溃：无损恢复与停止边界](docs/docker-desktop-windows-socket-recovery.md)** - 从宿主故障与项目失败的分层开始，只隔离已确认的纯运行时 socket，以 `status + daemon + 真实容器` 完成恢复验收；不以恢复出厂、重装或清空数据代替诊断。
