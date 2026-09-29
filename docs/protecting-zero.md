@@ -137,24 +137,36 @@ T 低，C 高
 
 现实存在中间地带；未经约束的生成系统却容易把 `UNKNOWN` 压缩成 `Plausible Completion`。
 
-保护零，就是拒绝让未知在没有证据时被包装成正数：
+保护零，就是拒绝让未知在没有证据时被包装成正数。这里必须保留两个彼此关联、但不能合并的轴：
 
 ```text
-Model claim
+Epistemic state / 命题状态
+UNKNOWN
 → UNVERIFIED
-→ Evidence
-→ VERIFIED / REFUTED / BOUNDARY / INCONCLUSIVE
+→ VERIFIED / REFUTED
+
+Run result / 本轮观察或验收结果
+PENDING
+→ PASS / FAIL
+→ INCONCLUSIVE / BOUNDARY
 ```
 
-一套诚实的状态语言至少需要：
+第一个轴回答“这个命题现在知道到什么程度”：
 
-| 状态 | 含义 | 允许动作 | 禁止解释 |
-| --- | --- | --- | --- |
-| VERIFIED | 在冻结合同和坐标下已有独立证据 | 发布、引用、复算 | 不等于域外也正确 |
-| UNVERIFIED | 有声明或候选结果，证据不足 | 收集证据、保持未知 | 不得写成“基本已证实” |
-| REFUTED | 已有反例或事实冲突 | 修复、收窄、保留现场 | 不得用新叙事覆盖失败 |
-| BOUNDARY | 合同外、资源外或基础设施外 | 延期、标记 NOT PROVEN | 不得冒充 PASS 或 FAIL |
-| INCONCLUSIVE | 已执行但无法可靠归因 | 冻结现场、重新设计实验 | 不得凭倾向裁决 |
+- **UNKNOWN** — 还没有形成可检验声明，或当前信息不足以确定声明内容。允许继续观察、定义问题与边界；不得自动压缩成“看起来可行”。
+- **UNVERIFIED** — 已有声明或候选结果，但证据不足。允许继续收集证据并保持未知；不得写成“基本已证实”。
+- **VERIFIED** — 在冻结合同和坐标下已有独立证据。允许发布、引用与复算；不等于合同范围之外也正确。
+- **REFUTED** — 已有反例或事实冲突。允许修复、收窄并保留现场；不得用新叙事覆盖失败。
+
+第二个轴回答“这一次观察或验收怎样结束”：
+
+- **PENDING** — 计划、执行或资格链仍未闭合。允许继续执行或等待所需证据；不得提前写成 `PASS` 或 `FAIL`。
+- **PASS** — 本轮证据满足冻结条件。允许进入该层声明的后续资格步骤；不会自动把命题升级为 `VERIFIED`。
+- **FAIL** — 本轮证据与冻结条件冲突。应保留首败、分类并最小修复；不得扩张成合同范围外的全面反驳。
+- **INCONCLUSIVE** — 已执行但无法可靠归因。应冻结现场并重新设计实验；不得凭倾向裁决。
+- **BOUNDARY** — 位于合同、资源或基础设施边界之外。允许延期并标记 `NOT PROVEN`；不得冒充 `PASS` 或 `FAIL`。
+
+两条轴之间不能机械换算。`PASS` 只有在坐标、合同、证据身份和该层资格门同时成立时，才能支持相应范围内的 `VERIFIED`；`FAIL` 也只能在声明覆盖范围内支持 `REFUTED`。`INCONCLUSIVE` 与 `BOUNDARY` 说明为什么本轮不能支持更强结论，它们不是命题本身的认知状态。
 
 一个可信系统最基础的能力，不是永远给答案，而是在证据尚未到来时维持“不知道”。
 
@@ -188,7 +200,7 @@ State / Context / Provenance / Recovery
 
 Acceptance layer
 API / DB / Browser / Git / Release
-VERIFIED / REFUTED / BOUNDARY / INCONCLUSIVE
+PASS / FAIL / INCONCLUSIVE / BOUNDARY / PENDING
 ```
 
 底层执行系统回答“AI 实际做了什么、能接触什么、修改了什么”；上层验收系统回答“行动后的世界究竟变成了什么”。两层共同削弱模型自报结果的裁决权。

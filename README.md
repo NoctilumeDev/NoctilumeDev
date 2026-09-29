@@ -29,7 +29,7 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 现阶段，我会先在现有操作系统之上验证这些 authority、execution 与 evidence 边界。只有真实反例证明用户态边界不足时，才讨论是否需要新的 kernel primitive。完整思想实验见 **[《哲学家的 KPI：当执行者开始解释目标》](docs/philosophers-kpi.md)**。
 
-> 精确里程碑、冻结基线与当前任务由各项目仓库的 README / Release 维护；本页只描述稳定的项目角色，避免复制状态后发生漂移。工程范围已经闭环，不一定等于作品在我心中已经停止生长。
+> 精确里程碑、冻结基线与当前任务由各项目仓库的 README / Release 维护；本页只描述稳定的项目角色，避免复制状态后发生漂移。某个阶段的工程范围已经闭环，不一定等于作品在我心中已经停止生长。
 
 ## 一张图看懂这些项目 / Project Journey
 
@@ -74,7 +74,7 @@ VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、�
 
 - **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** — 把控制变量、不可变证据、真实浏览器观察和确定性裁决做成可独立使用的本地系统
 
-  [仓库与发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态)
+  [仓库与当前状态](https://github.com/NoctilumeDev/VeriTrail#当前状态)
 
 - **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** — 通过显式合同拆开 Control、definition frontend 与 runtime 的异构计算框架
 
@@ -112,7 +112,7 @@ restructuring, not necessarily project inception.
 主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。真正组合时，每个系统仍保留自己的状态与权威：FlowKernel 未来以操作系统级信任语义约束系统能力、资源、撤销与恢复；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有前提、Seal 与最终处置；Reality 拥有真相。
 
 GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
-引擎。更完整的双层结构、十库角色、插件接缝与禁止越界见
+引擎。更完整的双层结构、十个被映射工程仓库的角色、插件接缝与禁止越界见
 **[Repository System Map / 仓库体系关系图](docs/repository-system-map.md)**。
 
 ## Research / Planned
@@ -139,11 +139,11 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
   在暗室藏书收尾期间，我开始尝试微服务，并于 **2026-07-16** 建立 PlainJournal 的可运行基线。M0-M8 完成后，项目于 **2026-08-03** 首次公开。后来确认 M9+ 的多商户、平台账本和 Java/Go 异构协作无法在当前 16GB 单机上完成同等严格的真实验收，因此把它们独立为 PlainJournalPro，等扩容后继续。
 
-  PlainJournal 不是不成熟的 Basic 版：M0-M8 的业务、可靠性和验收范围已经闭环。但我对当前前端视觉仍不满意，视觉重构尚未开始，所以从作品完成度看，它仍在继续打磨。
+  PlainJournal 不是不成熟的 Basic 版：M0-M8 在当时声明的运行条件下形成了业务、可靠性和验收的冻结参考基线；这不等于当前完整拓扑已重新取得同等级资格，当前运行状态仍以项目仓库为准。但我对当前前端视觉仍不满意，视觉重构尚未开始，所以从作品完成度看，它仍在继续打磨。
 
 - **2026 年 8 月 · VeriTrail / 验迹**
 
-  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。Core M0-M14 已冻结并发布；后置入口层也已分别发布 Starter 与 Authoring Skill。入口层只提供 `single-webapp` / `static-site` 有界草案，保持 `DRAFT / NOT SEALED`，封存与裁决仍由 Core 完成。精确版本与发布坐标只在[仓库发布状态](https://github.com/NoctilumeDev/VeriTrail#发布状态)维护。
+  前面的项目到达各自阶段边界后，我不想继续在存量里无边界堆功能，于是把反复遇到的验收痛点沉淀为一个独立工具：用控制变量、不可变证据、真实浏览器、资源停止线和确定性裁决回答“这次运行究竟证明了什么”。Core M0-M14 已冻结并发布；后置入口层也已分别发布 Starter 与 Authoring Skill。入口层只提供 `single-webapp` / `static-site` 有界草案，保持 `DRAFT / NOT SEALED`，封存与裁决仍由 Core 完成。精确版本与发布坐标只在[仓库发布坐标](https://github.com/NoctilumeDev/VeriTrail#发布坐标)维护。
 
 - **2026 年 8 月 · MiniSpringBoot**
 
@@ -198,6 +198,25 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
    - **[V1：施工与交付](docs/solo-engineering-method.md)** - 从需求、架构、实现和粗糙可操作前端一路推进到验收、发布与冻结。
    - **[V2：运行诊断与运维验收](docs/solo-engineering-runtime-diagnostics.md)** - 用 F12 进入真实用户链，再沿 HTTP、进程、端口、runtime、中间件和宿主分层诊断；保存首败、控制变量、验证恢复与清理，不用“重启后好了”冒充根因。
 3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
+
+### Evidence-feedback loop / 证据反馈施工回路
+
+这些工具不按线性路线自动推进。每一轮都重新绑定当前远端、工作树、目标和边界，再定义最小计划并主动寻找会推翻前提的反例；值得复用的教训进入仓库规则、检查、模板或轮次记录，而不是只留在聊天里。
+
+```text
+绑定当前坐标与最小计划
+→ 主动寻找并分类反例
+→ 执行最小变更
+→ 用新证据修订后续计划，再回到起点
+
+计划已定义
+≠ 执行完成
+≠ 资格成立
+≠ 状态生效
+≠ 下一步已授权
+```
+
+一次执行完成、测试绿灯或文档写成，都不会自动让后一状态成立，也不会自动授权下一步；如果反例击穿前提，就先缩小或重写计划。具体门禁由各仓库自己的风险与合同决定，不把 VeriTrail 的流程原样套给所有项目。日常记录方法见[每轮决策与事实记录](docs/iteration-decision-fact-record.md)，反例设计与公共资格分别见[对抗性工程验收](docs/adversarial-engineering-validation.md)和[公共验证闭环](docs/public-verification-loop.md)。
 
 ### 本机故障边界附录
 

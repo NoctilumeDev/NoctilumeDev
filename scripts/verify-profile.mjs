@@ -20,7 +20,7 @@ const requiredFiles = [
   "docs/from-tool-gain-to-collaborative-compounding.pdf",
   "docs/one-person-big-company.pdf",
 ];
-const publicRepositories = [
+const mappedRepositories = [
   "DarkRoomLibrary",
   "FlowKernel",
   "InkNarratives",
@@ -31,6 +31,7 @@ const publicRepositories = [
   "PlainJournalPro",
   "VeriTrail",
 ];
+const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
 
 function fail(message) {
   failures.push(message);
@@ -108,9 +109,25 @@ for (const heading of [
   if (!readme.includes(heading)) fail(`README.md: missing stable profile section ${heading}`);
 }
 
-for (const repository of publicRepositories) {
+for (const invariant of [
+  "### Evidence-feedback loop / 证据反馈施工回路",
+  "绑定当前坐标与最小计划",
+  "计划已定义\n≠ 执行完成\n≠ 资格成立\n≠ 状态生效\n≠ 下一步已授权",
+  "具体门禁由各仓库自己的风险与合同决定",
+]) {
+  if (!readme.includes(invariant)) fail(`README.md: missing evidence-feedback invariant ${invariant}`);
+}
+
+if (readme.includes("VeriTrail#发布状态")) {
+  fail("README.md: stale VeriTrail release-status anchor must not return");
+}
+for (const anchor of ["VeriTrail#当前状态", "VeriTrail#发布坐标"]) {
+  if (!readme.includes(anchor)) fail(`README.md: missing current VeriTrail anchor ${anchor}`);
+}
+
+for (const repository of mappedRepositories) {
   const url = `https://github.com/NoctilumeDev/${repository}`;
-  if (!readme.includes(url)) fail(`README.md: missing public repository entry ${repository}`);
+  if (!readme.includes(url)) fail(`README.md: missing mapped repository entry ${repository}`);
 }
 
 const journeySvg = fs.readFileSync(path.join(root, "assets/project-journey.svg"), "utf8");
@@ -129,6 +146,9 @@ for (const marker of [
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
+  "十个被映射的体系仓库",
+  "dome](https://github.com/NoctilumeDev/dome)",
+  "历史归档保留在体系图之外",
   "JPyxis != VeriTrail Plugin",
   "FlowKernel != Agent Harness",
   "GitHub != Truth Oracle",
@@ -141,6 +161,28 @@ for (const invariant of [
   if (!systemMap.includes(invariant)) {
     fail(`repository system map: missing authority invariant ${invariant}`);
   }
+}
+
+const protectingZero = fs.readFileSync(path.join(root, "docs/protecting-zero.md"), "utf8");
+for (const invariant of [
+  "Epistemic state / 命题状态",
+  "Run result / 本轮观察或验收结果",
+  "它们不是命题本身的认知状态",
+]) {
+  if (!protectingZero.includes(invariant)) {
+    fail(`protecting zero: missing two-axis invariant ${invariant}`);
+  }
+}
+if (protectingZero.includes("VERIFIED / REFUTED / BOUNDARY / INCONCLUSIVE")) {
+  fail("protecting zero: epistemic state and run disposition are merged again");
+}
+
+const singleMachineEnvironment = fs.readFileSync(
+  path.join(root, "docs/single-machine-engineering-environment.md"),
+  "utf8",
+);
+if (singleMachineEnvironment.includes("七个仓库")) {
+  fail("single-machine environment: live guidance must not depend on a historical repository count");
 }
 
 if (!readme.includes("implementation has not started")) {
@@ -173,5 +215,5 @@ if (failures.length > 0) {
 }
 
 console.log(
-  `Profile verification passed: ${textFiles.length} text files, ${markdownFiles.length} Markdown files, ${publicRepositories.length + 1} public repositories represented.`,
+  `Profile verification passed: ${textFiles.length} text files, ${markdownFiles.length} Markdown files, ${mappedRepositoryCount} mapped repositories represented.`,
 );
