@@ -200,7 +200,7 @@ State / Context / Provenance / Recovery
 
 Acceptance layer
 API / DB / Browser / Git / Release
-VERIFIED / REFUTED / BOUNDARY / INCONCLUSIVE
+PASS / FAIL / INCONCLUSIVE / BOUNDARY / PENDING
 ```
 
 底层执行系统回答“AI 实际做了什么、能接触什么、修改了什么”；上层验收系统回答“行动后的世界究竟变成了什么”。两层共同削弱模型自报结果的裁决权。
