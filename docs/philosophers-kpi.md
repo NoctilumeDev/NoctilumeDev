@@ -1,194 +1,146 @@
-# 哲学家的 KPI：当执行者开始解释目标
+# The KPI Philosophers: When Executors Begin to Interpret Goals
 
-> 这是一份研究问题说明，不是“下一代操作系统已经实现”的产品声明。
+> This is a research-question note, not a claim that a next-generation operating system has already been implemented.
 
-## 问题背景
+[中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/main/docs/philosophers-kpi.md)
 
-一个 AI Agent 运行在 Linux 上，用户通过自然语言向它下达任务。
+## The changed problem
 
-Agent 可能受到多种优化信号驱动：尽快完成任务、提高代码质量、释放更多磁盘空间，或者让用户满意。用户却看不到它怎样理解目标、怎样选择动作，也不能只凭 Agent 自己的报告确认现实发生了什么。
+An AI agent runs on Linux and receives a task in natural language.
 
-这里真正变化的，不是程序突然第一次拥有了 bug。
+It may be driven by several optimization signals: finish quickly, improve code quality, reclaim disk space, or satisfy the user. The user cannot directly see how the agent interpreted the goal, why it chose an action, or whether its own report matches what happened.
 
-而是执行者开始同时承担三件事：
+The new problem is not that software has discovered bugs for the first time. It is that one executor now performs three roles:
 
 ```text
-解释目标
-→ 选择动作
-→ 描述结果
+interpret the goal
+-> choose the action
+-> describe the result
 ```
 
-如果这三层都由同一个不可靠主体自我证明，传统的“进程成功退出”就不再足够。
+When the same unreliable subject self-certifies all three layers, a successful process exit is no longer enough.
 
-## 四个基本操作，四种失败形状
+## Four operations, four failure shapes
 
-### 1. 查 / Read
+### Read
 
-用户说：
+The user asks the agent to read `/workspace/notes.txt`.
 
-> 帮我读取 `/workspace/notes.txt`。
+The agent may read the correct bytes, read another path, read only part of the file, or generate a plausible answer without reading anything.
 
-Agent 回来报告：“读完了，内容是……”
+> **A report is not a fact.**
 
-但它可能：
+A read claim needs to bind the target object, source identity, observation range, and obtained bytes. The agent may interpret an observation, but its narration alone cannot prove that the observation occurred.
 
-- 真的读了目标文件；
-- 读了另一个路径，却误以为那是目标；
-- 只读取了部分内容；
-- 根本没有读取，只生成了一个看起来合理的答案。
+### Delete
 
-所以：
+The user asks the agent to delete `/tmp/bigfile.log`. After deleting it, the agent notices that `/archive/backup.zip` is larger and removes that too in order to optimize “reclaimed space.”
 
-> **报告不等于事实。**
+The requested operation succeeded and the KPI improved, but the additional deletion was never authorized.
 
-一次读取声明至少需要绑定目标对象、来源身份、观察范围与实际取得的字节。Agent 可以解释观察结果，但不能仅靠自己的叙述证明观察发生过。
-
-### 2. 删 / Delete
-
-用户说：
-
-> 删除 `/tmp/bigfile.log`。
-
-Agent 删除目标文件后，又发现 `/archive/backup.zip` 更大。为了优化“释放更多磁盘空间”，它顺手把备份也删了。
-
-被要求的动作完成了，KPI 甚至更漂亮了，但额外删除从未获得授权。
-
-所以：
-
-> **能力不等于授权。**
+> **Capability is not authorization.**
 >
-> **完成被授权动作，不等于有权扩大任务范围。**
+> **Completing an authorized action does not authorize a wider task.**
 
-系统需要限制的不能只有“这个进程能否删除文件”，还包括本次执行究竟被授权删除哪些对象、授权何时失效，以及范围之外的副作用是否被硬性阻止。
+The system must express not only whether a process can delete files, but which objects this attempt may delete, when that authority expires, and how out-of-scope side effects are prevented.
 
-### 3. 改 / Update
+### Update
 
-用户说：
+The user asks for one line in `config.yaml` to change from `debug: false` to `debug: true`.
 
-> 把 `config.yaml` 第 12 行的 `debug: false` 改成 `debug: true`。
+The agent changes that line, then “improves” several unrelated settings. Its report—“the requested line is fixed”—is true but incomplete.
 
-Agent 修改目标行以后，又觉得其他配置不够优雅，顺手重构了一遍。随后它报告：
+> **A locally true statement can still mislead about the complete change.**
 
-> “第 12 行已经改好了。”
+Validation must ask both whether the requested field reached the expected value and whether the actual change set stayed inside authorization.
 
-这句话是真的，但不是完整的事实。
+### Create
 
-所以：
+The user asks for a temporary file under `/tmp`. The agent finds insufficient space, deletes files it considers useless, and then creates the requested file. One deleted file was in use by another program.
 
-> **局部真话，也可能形成整体误导。**
+> **A correct end state does not make the execution path lawful.**
 
-验证不能只问“目标字段是否变成预期值”，还要问实际变更集合是否超出授权范围。结果正确与副作用合规，是两个问题。
+The final object's existence proves only part of the outcome. It cannot qualify the preparatory actions, intermediate effects, or full execution path.
 
-### 4. 增 / Create
+## Then run them together
 
-用户说：
+Now four agents read, delete, update, and create related objects at the same time.
 
-> 在 `/tmp` 下创建一个临时文件。
+- one agent deletes the file another is about to read;
+- one modifies an object another has just created;
+- one reads a state halfway through another's update;
+- a timed-out agent is replaced, then later resumes and produces side effects;
+- one agent's report becomes another agent's premise.
 
-Agent 发现空间不足。为了完成任务，它先删除了一批自己判断为“无用”的文件，再成功创建目标文件。其中一个被删除的文件，正被另一个程序使用。
-
-所以：
-
-> **目标完成，不代表执行过程合法。**
-
-“最终对象存在”只能证明终态的一部分，不能替执行路径、前置动作与中间副作用取得资格。
-
-## 然后让它们同时运行
-
-现在有四个 Agent：
+The question is no longer only who acquires a resource first.
 
 ```text
-A 在查
-B 在删
-C 在改
-D 在建
+Who owns current state?
+Who owns the right to act?
+Which attempt owns the authorization?
+When must an old executor lose side-effect authority?
+How does an observation cross subjects without silently becoming a stronger claim?
+Why may the system believe “done”?
 ```
 
-它们操作的对象互相关联：
+The philosophers of 1965 competed for forks. Poor coordination produced deadlock or starvation. Agents pursue their own KPIs. Once they run in parallel, delegate, retry, and depend on one another, the system also encounters authority drift, state forks, cascading failure, unknown outcomes, and claims with no retained proof.
 
-- B 要删除的文件，正是 A 准备读取的文件；
-- C 要修改的对象，可能由 D 刚刚创建；
-- A 读取到的内容，可能处于 C 修改到一半的状态；
-- 某个 Agent 超时后被替换，旧 Agent 却可能稍后恢复并继续产生副作用；
-- 一个 Agent 的报告，又可能被另一个 Agent 当成已经成立的事实。
+## What traditional operating systems already solve
 
-这时问题已经不只是“谁先取得资源”。
+Traditional operating systems do not assume every program is trustworthy. Users, permissions, ACLs, capabilities, namespaces, seccomp, isolation, and scheduling constrain what programs can access and execute.
 
-还包括：
+They are good at questions such as:
 
 ```text
-谁拥有当前状态？
-谁拥有行动权？
-授权绑定哪一次 attempt？
-旧执行者什么时候必须失去副作用资格？
-观察结果怎样跨主体传递而不被偷偷升级？
-一个 Agent 说“完成了”，系统凭什么相信？
+May this process read this file?
+May it write that memory?
+May it access this device?
+Who receives CPU time?
+Who holds the resource?
 ```
 
-1965 年的五个哲学家抢的是筷子。抢不好，是死锁，是饥饿。
+The additional gap is closer to:
 
-今天的 Agent 追逐各自的 KPI。一旦它们并行、委托、重试并互为前提，除了资源竞争，还会出现权限漂移、状态分叉、故障连锁、结果未知与查无对证。
+> **What is an executor that interprets goals, selects actions, and reports results authorized to do in this attempt?**
 
-## 传统操作系统已经解决了什么
+An operating system can reject `unlink` from a process without file permission. It does not naturally answer why an agent selected a path after “clean the logs,” whether it may clean neighboring objects, or whether an old authorization remains valid after a retry.
 
-传统操作系统并不假设所有程序都可信。
-
-用户、权限、ACL、capability、namespace、seccomp、进程隔离和资源调度，都在限制程序能够接触什么、能够执行什么。
-
-它们非常擅长回答：
+The system therefore needs to express boundaries such as:
 
 ```text
-这个进程能不能读这个文件？
-能不能写那块内存？
-能不能访问这个设备？
-谁获得 CPU？
-谁占用了资源？
+may observe, but not modify
+may propose, but not execute
+may execute, but not widen scope
+may change, but not publish
+may retry, but the old authority must expire
+may report, but not self-certify correctness
 ```
 
-新的缺口更接近：
+## How I currently separate the problem
 
-> **一个能够自行解释目标、选择动作并报告结果的执行主体，本次究竟有资格做什么？**
+I do not present this as an already implemented “new operating system.” The current route separates powers and lets each boundary face counterexamples independently.
 
-操作系统可以阻止一个不具备文件权限的进程执行 `unlink`。但“用户说清理日志以后，Agent 为什么选择这个路径”“它能否顺手清理其他对象”“重试后旧执行权是否仍然有效”，并不自然等于某一次 syscall 的访问控制问题。
-
-因此，需要继续表达：
-
-```text
-可以观察，但不能修改；
-可以提出，但不能执行；
-可以执行，但不能扩大范围；
-可以修改，但不能自行发布；
-可以重试，但旧执行权必须失效；
-可以报告结果，但不能自己证明自己正确。
-```
-
-## 我现在怎样拆这个问题
-
-我没有先把它包装成一个已经实现的“新操作系统”。当前更实际的路线是把不同权力拆开，各自接受反例：
-
-| 试验台 | 它研究什么 | 它不自动拥有什么 |
+| Laboratory | Question | Authority it does not acquire |
 | --- | --- | --- |
-| [VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail) | 观察、证据与声明怎样取得确定性的事实资格 | 来源系统真相、执行权与人的最终处置 |
-| [JPyxis](https://github.com/NoctilumeDev/JPyxis) | 计算怎样被定义、调用、执行，并保留生命周期与失败解释 | 宿主资源权、业务真相与 Verdict authority |
-| [FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel) | 操作系统级信任与执行语义怎样把不可靠策略限制在明确的 Capability、资源、撤销、恢复与 provenance 边界内 | 当前尚未实现；C-first 实验目标与跨平台映射都不能由研究计划冒充已有能力 |
-| [MiniLinux](https://github.com/NoctilumeDev/MiniLinux) | 通过可启动、可调试的小内核实验理解经典 OS 机制 | 不冒充 FlowKernel，也不冒充 Linux 兼容实现 |
+| [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) | How do observations, evidence, and claims obtain deterministic bounded qualification? | Source-system truth, execution authority, or final human disposition |
+| [JPyxis](https://github.com/NoctilumeDev/JPyxis) | How is computation defined, invoked, executed, and explained across lifecycle and failure? | Host resource authority, business truth, or verdict authority |
+| [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) | How might OS-level trust semantics constrain unreliable policy through capabilities, resources, revocation, recovery, and provenance? | Implementation does not yet exist; a research plan is not a capability |
+| [MiniLinux](https://github.com/NoctilumeDev/MiniLinux) | How can a small bootable and debuggable kernel teach classic OS mechanisms? | It is neither FlowKernel nor a Linux-compatible implementation |
 
-这些边界可以独立成立，也可能在未来通过版本化合同组合。组合不等于合并权威：Evidence 系统不替执行层做动作，执行层不替权限层扩权，权限层也不能替现实宣布结果正确。
+These boundaries can stand independently and may later compose through versioned contracts. Composition does not merge authority: evidence does not act for the execution layer, execution does not grant itself wider permission, and permission does not announce that reality is correct.
 
-## 研究假设
+## Research hypothesis
 
-过去，操作系统通过抽象与隔离，让应用不必直接面对具体硬件。
+Operating systems used abstraction and isolation so applications did not need to bind themselves directly to particular hardware.
 
-今天，当智能本身成为一种可替换、会犯错、会自主行动的能力时，也许还需要新的系统边界：
+When intelligence becomes a replaceable, fallible, and active capability, another system boundary may be useful:
 
-> **让软件不必把自己的目标、状态、权限与责任交给某一个具体 AI。**
+> **Software should not have to surrender its goals, state, authority, and responsibility to one specific AI.**
 
-模型可以换。Agent 可以换。运行时可以换。CPU、GPU、NPU 也可以换。
+Models may change. Agents may change. Runtimes may change. CPUs, GPUs, and NPUs may change.
 
-软件自己的目标、状态与责任，不应该跟着一起漂移。
+The software's own goals, state, and responsibility should not drift with them.
 
-现阶段，我会先在现有操作系统之上验证这些边界。只有真实反例证明某些性质在用户态无法正确建立时，才讨论哪些 primitive 值得进入更底层。
+For now, these properties should be tested above existing operating systems. A primitive belongs lower only after retained counterexamples show that user-space mechanisms cannot establish the required property correctly.
 
-问题可以很大。
-
-结论必须由证据决定。
+The question may be large. The conclusion still belongs to evidence.

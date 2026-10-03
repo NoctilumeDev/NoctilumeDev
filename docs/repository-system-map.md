@@ -1,52 +1,46 @@
-# Repository System Map / 仓库体系关系图
+# Repository System Map
 
-> 状态：`STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
+> Status: `STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
 >
-> 映射范围：本文覆盖十一个工程体系仓库。[dome](https://github.com/NoctilumeDev/dome) 保存课程作业、独立项目与文字记录，作为历史归档保留在体系图之外，不承担基础设施角色。
+> Scope: eleven mapped engineering repositories. [dome](https://github.com/NoctilumeDev/dome) remains outside this system map as a historical archive for course work, independent exercises, and writing.
 >
-> 本文只维护仓库之间相对稳定的职责、依赖方向与未来接缝。每个项目的精确里程碑、版本、
-> Release 与证据坐标，仍以该项目仓库自己的 README 和冻结记录为准。
+> [中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/main/docs/repository-system-map.md)
 
-## 一句话总纲
+This document maintains relatively stable roles, dependency directions, and possible future seams. Exact milestones, versions, Releases, and evidence coordinates remain owned by each project repository.
 
-> **FlowKernel 以操作系统级信任语义限定谁可以在什么能力与资源边界内行动；JPyxis 管理异构计算如何被定义、部署、调用与执行；
-> 来源系统拥有并报告各自事实；Evidence Adapter 负责有界观察与转换；VeriTrail 只裁定封存条件被现有
-> 证据支持到什么程度；Review Attention 提议人应优先检查哪里；人拥有前提、Seal 与最终处置；现实拥有真相。**
+## One-sentence model
 
-这里不能简化成“GitHub 证明外部世界，VeriTrail 证明内部世界”。GitHub 只拥有并暴露其信任域内的
-仓库、提交、PR、Checks、Release、Pages 与公开渲染状态；它不证明这些状态所表达的源头命题为真。
-VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 sealed Plan、标准 Evidence 与确定性规则
-产生有边界的 `PASS / FAIL / INCONCLUSIVE / PENDING`。
+> **FlowKernel may eventually constrain who can act inside which OS-level capability and resource envelope. JPyxis owns how heterogeneous computation is defined, deployed, invoked, and executed. Source systems own and report their facts. Evidence adapters perform bounded observation and conversion. VeriTrail judges how far existing evidence supports a sealed Plan. Review Attention proposes where a person should inspect first. Humans own premises, sealing, and final disposition. Reality owns truth.**
 
-## 十一个被映射的体系仓库不是一棵调用树
+GitHub is not an external-world oracle. It owns and exposes repository, commit, PR, Check, Release, Pages, and public-render state inside its platform trust domain. Those facts do not prove every source claim expressed through them.
 
-| 仓库 | 稳定角色 | 拥有的事实或责任 | 不拥有的责任 |
+VeriTrail also does not own source state or world truth. It applies sealed Plans, standard Evidence, and deterministic rules to produce bounded `PASS / FAIL / INCONCLUSIVE / PENDING` verdicts.
+
+## Eleven mapped repositories are not one call tree
+
+| Repository | Stable role | Owns | Does not own |
 | --- | --- | --- | --- |
-| **[NoctilumeDev](https://github.com/NoctilumeDev/NoctilumeDev)** | 公共入口与关系索引 | 稳定角色说明、跨仓库导航、公共方法入口 | 各项目精确版本、里程碑推进权、替其他仓库宣布完成 |
-| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | 证据与确定性裁决底座 | Plan/Evidence 合同、完整性与充分性检查、断言执行、Verdict 推导 | 来源系统状态、世界真相、人的最终处置 |
-| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | 合同驱动的异构计算框架 | 计算合同、制品与部署身份、调用生命周期、运行时绑定和执行事实 | 操作系统级 Capability、宿主业务真相、VeriTrail Verdict |
-| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 规划中的操作系统级信任与执行基座 | 未来的 Principal、Capability、资源硬边界、特权转换、撤销、恢复与来源记录 | Agent 的正确性、JPyxis 内部状态、外部验收结论；当前也不宣称已有 C-first target 或跨平台 adapter |
-| **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 分布式业务与可靠性参考系统 | 自身业务、数据和交易状态，以及已声明范围内的运行证据 | 基础设施项目的状态或通用真理 |
-| **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 完整增强型单体业务样本 | 图书业务、角色边界、协作流程及其项目证据 | VeriTrail、JPyxis 或 FlowKernel 的实现证明 |
-| **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** | 校园空间、稀缺资源分配与使用权治理参考系统 | 空间档案、资格、分配结果、预约、使用权、活动场地、冲突处置与维修治理事实 | 暗室账号和图书业务、外部身份提供方角色、其他系统的审批权或验收结论 |
-| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 框架机制重建与真实全栈验证样本 | IoC、AOP、Web/MVC、JDBC、事务与启动机制的项目事实 | Spring 官方实现等价性或其他仓库的验收结论 |
-| **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 操作系统机制教学与底层实验支线 | 自身构建、启动、串口、调试与逐轮机制实验事实 | Linux 兼容性、FlowKernel 实现或其他仓库的系统事实 |
-| **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** | 多商户未来架构研究 | 已声明的未来问题、边界与设计方向 | 尚未实现能力或可运行产品事实 |
-| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | 内容、排版与叙事视觉实验 | 自身静态作品与内容状态 | 工程基础设施的验证责任 |
+| [NoctilumeDev](https://github.com/NoctilumeDev/NoctilumeDev) | Canonical English Profile and relationship index | Stable role descriptions, cross-repository navigation, public method entry points | Exact project versions, milestone authority, or the right to announce completion for another repository |
+| [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) | Evidence and deterministic judgment substrate | Plan/Evidence contracts, integrity and sufficiency checks, assertion execution, bounded verdict derivation | Source-system state, world truth, or final human disposition |
+| [JPyxis](https://github.com/NoctilumeDev/JPyxis) | Contract-driven heterogeneous-compute framework | Compute contracts, artifact and deployment identity, invocation lifecycle, runtime binding, execution facts | OS-level capabilities, host business truth, or VeriTrail verdicts |
+| [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) | Planned OS-level trust and execution substrate | Future principals, capabilities, resource hard bounds, privilege transitions, revocation, recovery, and provenance | Agent correctness, JPyxis internal state, or external acceptance conclusions; it currently claims no implemented C-first target or cross-platform adapter |
+| [PlainJournal](https://github.com/NoctilumeDev/PlainJournal) | Distributed business and reliability reference system | Its business, data, transaction state, and evidence inside declared conditions | Infrastructure-project state or universal truth |
+| [DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary) | Complete enhanced-monolith business sample | Library business, role boundaries, collaboration workflows, and project evidence | Implementation proof for VeriTrail, JPyxis, or FlowKernel |
+| [Qixu](https://github.com/NoctilumeDev/Qixu) | Campus-space, scarce-resource allocation, and usage-right governance reference system | Spaces, eligibility, allocation, reservations, usage rights, venues, conflict handling, and maintenance governance | DarkRoomLibrary accounts and library facts, upstream roles, or another system's approval and acceptance authority |
+| [MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot) | Framework-mechanism reconstruction and full-stack validation sample | Project facts for IoC, AOP, Web/MVC, JDBC, transactions, and startup mechanics | Equivalence to the official Spring implementation or another repository's acceptance result |
+| [MiniLinux](https://github.com/NoctilumeDev/MiniLinux) | OS-mechanism teaching and low-level experiment branch | Its build, boot, serial, debugging, and staged mechanism experiments | Linux compatibility, FlowKernel implementation, or another repository's system facts |
+| [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) | Future multi-merchant architecture research | Declared future questions, boundaries, and design direction | Unimplemented capability or runnable-product facts |
+| [InkNarratives](https://github.com/NoctilumeDev/InkNarratives) | Content, typography, and narrative-visual experiment | Its static works and content state | Validation responsibility for engineering infrastructure |
 
-业务系统、框架与系统机制实验、内容实验提供真实问题、控制组与证据来源；基础设施仓库提炼可复用的合同、
-执行或验收方法。前者不是后者的“测试附件”，后者也不能反向接管前者的业务状态。
+Business systems, framework and OS experiments, and content work provide real problems, controls, and source evidence. Infrastructure repositories extract reusable contracts for authority, execution, observation, and judgment. The former are not test accessories for the latter, and the latter cannot seize ownership of business state.
 
-DarkRoomLibrary 与 Qixu 通过明确身份适配协作，不合并事实所有权：暗室继续拥有账号与图书业务，期序
-只把受控身份响应绑定到自己的本地主体，并继续独立判断空间资格与权限。该接缝不是 SSO，不继承暗室
-角色，不共享或直写对方数据库；任一系统都不能借协作关系取得另一个系统的审批权或业务真相。
+DarkRoomLibrary and Qixu cooperate through an explicit identity adapter without merging fact ownership. DarkRoomLibrary keeps account and library facts. Qixu binds a bounded identity response to its own local principal and independently decides space eligibility and permission. The seam is not SSO, does not inherit upstream roles, and does not share or directly write the other database.
 
-## 两张正交图
+## Two orthogonal views
 
-### 1. 可选的权限与执行栈
+### Optional authority and execution stack
 
-并非每个项目都必须经过 FlowKernel 或 JPyxis。只有当某个场景同时需要系统级能力约束和异构计算时，
-两者才通过版本化合同组合：
+Not every project must pass through FlowKernel or JPyxis. They compose only when a scenario genuinely needs both system-level authority bounds and heterogeneous computation.
 
 ```mermaid
 flowchart LR
@@ -63,18 +57,16 @@ flowchart LR
     Runtime --> Receipt
 ```
 
-这里存在两个不同作用域的 authority：
+Two different authority scopes remain:
 
-- FlowKernel 在未来只决定某个 Principal 或 workload **是否拥有系统级能力与资源额度**；
-- JPyxis Control 仍决定某个计算合同、制品、部署与调用 **是否满足计算域内部规则**。
+- FlowKernel may eventually decide whether a principal or workload holds a system capability and resource allowance.
+- JPyxis Control still decides whether a compute contract, artifact, deployment, and invocation satisfy compute-domain rules.
 
-因此 FlowKernel 不能直接写入 JPyxis 的 deployment/invocation state，JPyxis 也不能给自己签发宿主资源
-Capability。外层授权成功不等于内层调用成功，内层执行成功也不等于业务成功。
+FlowKernel must not write JPyxis deployment or invocation state directly. JPyxis must not issue its own host-resource capabilities. Outer authorization does not imply inner invocation success; inner execution success does not imply business success.
 
-### 2. 通用的观察、裁决与注意力栈
+### Observation, judgment, and review-attention stack
 
-所有来源系统继续拥有自己的事实。适配器只把有界观察转换为标准 Evidence，不能继承来源系统的状态
-所有权，也不能预先生成 Verdict。
+Every source system keeps ownership of its facts. An adapter converts a bounded observation into standard Evidence; it does not inherit source authority and cannot precompute a verdict.
 
 ```mermaid
 flowchart LR
@@ -84,7 +76,7 @@ flowchart LR
         GitHub["GitHub platform facts"]
         JPyxis["JPyxis execution facts"]
         FlowFacts["FlowKernel authority / resource facts<br/>future"]
-        Projects["Business, framework and content project facts"]
+        Projects["Business, framework, and content project facts"]
     end
 
     GitHub --> Adapters["Evidence Adapters<br/>bounded observation + provenance"]
@@ -103,11 +95,9 @@ flowchart LR
     Attention --> Human
 ```
 
-Review Attention 不是 Verdict 流水线的固定最后一步。它可以从精确 Source Snapshot、Analyzer Evidence
-或经过声明的 Evidence 产生 `AttentionProposal` 和 `AttentionMap`，但不能确认缺陷、生成 Core Verdict
-或冒充 `HumanDisposition`。未来若把 ReviewBundle 交给 Core，也必须使用另一份 sealed AcceptancePlan。
+Review Attention is not a mandatory final stage of the verdict pipeline. It may generate `AttentionProposal` and `AttentionMap` from declared source snapshots or analyzer evidence, but it cannot confirm a defect, issue a Core verdict, or impersonate `HumanDisposition`.
 
-## 事实链不能压成一个状态
+## One fact chain cannot be collapsed into one status
 
 ```text
 Intent / Claim
@@ -121,22 +111,20 @@ Intent / Claim
     != Reality / Truth
 ```
 
-这条分离同时适用于人和 Agent：人拥有前提与 Seal 权，不因此拥有世界真相；Agent 可以忠实质疑和
-执行，不得擅自改题或扩权；来源系统可以报告成功，不得把成功自升格为验收通过；VeriTrail 可以得出
-有边界的 Verdict，不得替人做最终处置。
+The separation applies to humans and agents. A human owns premises and sealing authority, not world truth. An agent may challenge and execute faithfully, but may not silently rewrite the question or widen authority. A source system may report success, but cannot promote success into acceptance. VeriTrail may derive a bounded verdict, but does not make the human's final disposition.
 
-## 插件与跨仓库接缝
+## Cross-repository seams
 
-| 来源 | 可跨边界的产物 | 接入方式 | 明确禁止 |
+| Source | Boundary artifact | Intended integration | Explicitly forbidden |
 | --- | --- | --- | --- |
-| GitHub | API 与 Public Render 的有界平台观察 | GitHub Evidence Plugin → VeriTrail Evidence | 把 GitHub 当独立真理锚；让插件生成 Verdict |
-| DarkRoomLibrary → Qixu | 有界的当前账号验证响应 | 明确身份适配 → 显式本地主体绑定与期序会话 | 把适配说成 SSO；继承暗室角色或学生资格；共享或直写对方数据库 |
-| JPyxis | contract/artifact/deployment/invocation/runtime/input/output 等执行收据 | 未来 JPyxis Evidence Adapter → VeriTrail Evidence | 把 JPyxis 本体做成 VeriTrail 插件；让 VeriTrail 回写调用状态 |
-| FlowKernel | capability、Guard、资源、特权转换、恢复与 provenance 记录 | 未来 FlowKernel Evidence Adapter → VeriTrail Evidence | 让验收系统签发 Capability 或控制调度器 |
-| 项目仓库与运行系统 | 精确源码、测试、业务读回、运行与交付事实 | 项目专用 Adapter 或现有 VeriTrail 能力 | 用通用插件猜测领域事实 |
-| 源码与分析工具 | SourceSnapshot、CodeFact、AnalyzerEvidence | Review Attention Provider → AttentionProposal | 把提案当缺陷真值；用自动策略代签 HumanDisposition |
+| GitHub | Bounded API and public-render observations | GitHub Evidence Plugin to VeriTrail Evidence | Treating GitHub as an independent truth anchor; letting the plugin issue verdicts |
+| DarkRoomLibrary to Qixu | Bounded current-account validation response | Explicit identity adapter to explicit local-principal binding and Qixu session | Calling the adapter SSO; inheriting roles or student eligibility; sharing or directly writing databases |
+| JPyxis | Contract, artifact, deployment, invocation, runtime, input, and output receipts | Future JPyxis Evidence Adapter to VeriTrail Evidence | Making JPyxis itself a VeriTrail plugin; letting VeriTrail write invocation state |
+| FlowKernel | Capability, guard, resource, privilege-transition, recovery, and provenance records | Future FlowKernel Evidence Adapter to VeriTrail Evidence | Letting an acceptance system issue capabilities or control a scheduler |
+| Project repositories and running systems | Exact source, tests, business readback, runtime, and delivery facts | Project-specific adapters or existing VeriTrail capability | Letting a generic plugin guess domain facts |
+| Source and analysis tools | SourceSnapshot, CodeFact, AnalyzerEvidence | Review Attention Provider to AttentionProposal | Treating attention proposals as defect truth or allowing policy to sign HumanDisposition |
 
-所以正确关系是：
+The short relation is:
 
 ```text
 JPyxis != VeriTrail Plugin
@@ -146,46 +134,39 @@ Review Attention != Verdict Engine
 NoctilumeDev != Project Authority
 ```
 
-“一切皆插件”只适用于**可替换能力**。契约语义、状态所有权、权限边界、Verdict authority 与人的 Seal
-决定不能为了插件化而被抽空。
+“Everything is a plugin” applies to replaceable capability. Contract semantics, state ownership, authority boundaries, verdict authority, and human sealing must not be hollowed out merely to make a system look pluggable.
 
-## 闭环是反馈回路，不是循环权威
+## A loop is feedback, not circular authority
 
 ```text
 human premise and Seal
-→ authorized bounded action
-→ source-owned execution/platform facts
-→ bounded observation and retained Evidence
-→ deterministic Verdict + review attention
-→ human disposition
-→ if needed, a new Plan and a new Seal
+-> authorized bounded action
+-> source-owned execution and platform facts
+-> bounded observation and retained Evidence
+-> deterministic Verdict + review attention
+-> human disposition
+-> if needed, a new Plan and a new Seal
 ```
 
-最后一步只能产生新的声明与授权，不能反向改写旧 Plan、旧执行状态、旧 Evidence 或旧 Verdict。这样
-系统可以闭环，却不会形成“下游为了让结果好看而修改上游事实”的循环依赖。
+The last step may create a new claim and new authorization. It may not rewrite the old Plan, execution state, Evidence, or verdict. The system can therefore close a feedback loop without allowing downstream presentation to edit upstream reality.
 
-## 路线图放置规则
+## Roadmap placement rule
 
-- 本文维护跨仓库的稳定角色、依赖方向、可选接缝与禁止越界；
-- 主页 README 只保留一张简图和本文入口；
-- 每个项目自己的阶段、版本、Release 与停止线只在该项目仓库维护；
-- JPyxis/FlowKernel 与 VeriTrail 的 Adapter 尚未建立实现事实，不在任何仓库提前创建空壳；
-- 将来真正开工时，先由事实来源仓库冻结“可导出的只读收据合同”，再由消费侧建立 Adapter 合同和
-  一条真实纵向切片；是否独立成包或仓库，由依赖、发布和故障边界的实际证据决定。
-
-跨仓库组合只按下面的依赖顺序演进，不复制各项目自己的阶段编号：
+- This document owns stable cross-repository roles, dependency direction, possible seams, and prohibited authority crossings.
+- The Profile keeps only a compact journey and a link here.
+- Exact stages, versions, Releases, and stop lines stay in each project repository.
+- No empty JPyxis/FlowKernel-to-VeriTrail adapters are created before implementation facts exist.
+- Future integration begins with a source-owned, read-only, versioned receipt contract and one real vertical slice. Package or repository boundaries follow observed dependency, release, and failure boundaries.
 
 ```text
-各仓库先独立闭合自己的事实与停止线
-→ 来源仓库定义只读、版本化、可离线保存的导出收据
-→ 消费侧定义 Adapter 合同，保留来源与不确定性
-→ 用最小真实纵向切片验证 Source → Evidence → Core
-→ 再决定是否接入 Review Attention 帮助人工复核
-→ 最后依据真实发布、卸载与故障边界决定包或仓库形态
+each repository first closes its own facts and stop line
+-> the source defines a read-only, versioned, offline-retainable receipt
+-> the consumer defines an adapter that preserves provenance and uncertainty
+-> one minimal real Source -> Evidence -> Core slice is tested
+-> Review Attention is considered only if it helps human inspection
+-> packaging follows actual release, uninstall, and failure boundaries
 ```
 
-任何一步若必须共享可变状态、复制对方的 Verdict 或绕过对方 authority 才能成立，就停止组合并回到
-合同层，而不是继续增加兼容分支。
+If integration requires shared mutable state, copied verdicts, or bypassed authority, stop and return to the contract boundary instead of adding another compatibility branch.
 
-这张图描述的是可组合体系，不是强制部署拓扑，也不是把十一个被映射的仓库改造成一组互相启动才能工作的
-微服务。仓库之间共享方法和版本化产物，不共享可变控制状态。
+This is a composable system map, not a mandatory deployment topology and not a plan to turn eleven repositories into mutually required microservices.

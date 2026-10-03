@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "language": "en",
+  "role": "canonical-profile",
+  "splitFromMixedProfileCommit": "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102",
+  "chineseEdition": "https://github.com/NoctilumeDev/NoctilumeDev-ZH",
+  "splitDate": "2026-10-04",
+  "projectRoutePolicy": "cataloged-and-profile-routable-only"
+}
