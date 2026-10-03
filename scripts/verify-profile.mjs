@@ -3,23 +3,33 @@ import path from "node:path";
 
 const root = process.cwd();
 const failures = [];
+const splitSource = "3fddab9d64401a93b6ec9be7175c5b0d2c3d9102";
+const chineseRepository = "https://github.com/NoctilumeDev/NoctilumeDev-ZH";
 const requiredFiles = [
+  ".gitattributes",
+  ".github/workflows/profile-gates.yml",
+  "PROFILE_EDITION.json",
   "README.md",
+  "assets/philosophers-kpi.svg",
   "assets/project-journey.svg",
+  "docs/README.md",
+  "docs/philosophers-kpi.md",
   "docs/repository-system-map.md",
+  "docs/adversarial-engineering-validation.md",
+  "docs/ai-cognitive-feedback-loop.md",
+  "docs/docker-desktop-windows-socket-recovery.md",
+  "docs/engineering-judgment.md",
+  "docs/fresh-checkout-independent-audit.md",
+  "docs/iteration-decision-fact-record.md",
+  "docs/protecting-zero.md",
+  "docs/public-verification-loop.md",
   "docs/single-machine-engineering-environment.md",
   "docs/solo-engineering-method.md",
   "docs/solo-engineering-runtime-diagnostics.md",
-  "docs/public-verification-loop.md",
-  "docs/fresh-checkout-independent-audit.md",
-  "docs/ai-cognitive-feedback-loop.md",
-  "docs/engineering-judgment.md",
-  "docs/adversarial-engineering-validation.md",
-  "docs/adversarial-engineering-validation.pdf",
-  "docs/protecting-zero.md",
-  "docs/protecting-zero-from-answer-to-fact.pdf",
-  "docs/from-tool-gain-to-collaborative-compounding.pdf",
-  "docs/one-person-big-company.pdf",
+  "docs/from-tool-gain-to-collaborative-compounding.md",
+  "docs/one-person-big-company.md",
+  "docs/protecting-zero-from-answer-to-fact.md",
+  "scripts/verify-profile.mjs",
 ];
 const mappedRepositories = [
   "DarkRoomLibrary",
@@ -33,7 +43,22 @@ const mappedRepositories = [
   "Qixu",
   "VeriTrail",
 ];
-const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
+const forwardingPages = [
+  "adversarial-engineering-validation.md",
+  "ai-cognitive-feedback-loop.md",
+  "docker-desktop-windows-socket-recovery.md",
+  "engineering-judgment.md",
+  "fresh-checkout-independent-audit.md",
+  "iteration-decision-fact-record.md",
+  "protecting-zero.md",
+  "public-verification-loop.md",
+  "single-machine-engineering-environment.md",
+  "solo-engineering-method.md",
+  "solo-engineering-runtime-diagnostics.md",
+  "from-tool-gain-to-collaborative-compounding.md",
+  "one-person-big-company.md",
+  "protecting-zero-from-answer-to-fact.md",
+];
 
 function fail(message) {
   failures.push(message);
@@ -48,30 +73,53 @@ function listFiles(directory) {
 }
 
 for (const relative of requiredFiles) {
-  if (!fs.existsSync(path.join(root, relative))) fail(`Missing required profile artifact: ${relative}`);
+  if (!fs.existsSync(path.join(root, relative))) {
+    fail(`Missing required English-profile artifact: ${relative}`);
+  }
+}
+
+for (const removedPdf of [
+  "docs/adversarial-engineering-validation.pdf",
+  "docs/from-tool-gain-to-collaborative-compounding.pdf",
+  "docs/one-person-big-company.pdf",
+  "docs/protecting-zero-from-answer-to-fact.pdf",
+]) {
+  if (fs.existsSync(path.join(root, removedPdf))) {
+    fail(`${removedPdf}: Chinese binary must remain owned by NoctilumeDev-ZH`);
+  }
 }
 
 const files = listFiles(root);
 const textExtensions = new Set(["", ".md", ".yml", ".yaml", ".json", ".mjs", ".svg"]);
 const textFiles = files.filter((file) => textExtensions.has(path.extname(file).toLowerCase()));
 const markdownFiles = textFiles.filter((file) => path.extname(file).toLowerCase() === ".md");
-const linkPattern = /\[[^\]]+\]\(([^)]+)\)/g;
+const linkPattern = /\[[^\]]+\]\(([^)]+)\)/gu;
+const cjkPattern = /[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff]/u;
+const allowedCjkLiterals = ["中文版本"];
 const sensitivePatterns = [
-  { name: "Windows user path", pattern: /[A-Za-z]:\\Users\\/ },
-  { name: "Unix home path", pattern: /\/(?:Users|home)\/[^/\s]+\// },
-  { name: "private key", pattern: /BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY/ },
-  { name: "GitHub token", pattern: /\bgh[pousr]_[A-Za-z0-9]{20,}\b/ },
+  { name: "Windows user path", pattern: /[A-Za-z]:\\Users\\/u },
+  { name: "Unix home path", pattern: /\/(?:Users|home)\/[^/\s]+\//u },
+  { name: "private key", pattern: /BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY/u },
+  { name: "GitHub token", pattern: /\bgh[pousr]_[A-Za-z0-9]{20,}\b/u },
 ];
 
 for (const file of textFiles) {
   const relative = path.relative(root, file).replaceAll(path.sep, "/");
   const content = fs.readFileSync(file, "utf8");
   if (!content.endsWith("\n")) fail(`${relative}: missing final newline`);
-  content.split(/\r?\n/).forEach((line, index) => {
-    if (/[ \t]+$/.test(line)) fail(`${relative}:${index + 1}: trailing whitespace`);
+  content.split(/\r?\n/u).forEach((line, index) => {
+    if (/[ \t]+$/u.test(line)) fail(`${relative}:${index + 1}: trailing whitespace`);
   });
   for (const { name, pattern } of sensitivePatterns) {
     if (pattern.test(content)) fail(`${relative}: contains ${name}`);
+  }
+
+  const cjkCheckedContent = allowedCjkLiterals.reduce(
+    (current, literal) => current.replaceAll(literal, ""),
+    content,
+  );
+  if (cjkPattern.test(cjkCheckedContent)) {
+    fail(`${relative}: canonical English surface contains CJK outside the language-route label`);
   }
 }
 
@@ -80,7 +128,7 @@ for (const file of markdownFiles) {
   const content = fs.readFileSync(file, "utf8");
   for (const match of content.matchAll(linkPattern)) {
     const target = match[1].trim();
-    if (/^(?:https?:\/\/|mailto:|#)/.test(target)) continue;
+    if (/^(?:https?:\/\/|mailto:|#)/u.test(target)) continue;
     const pathname = decodeURIComponent(target.split("#", 1)[0]);
     if (!pathname) continue;
     if (!fs.existsSync(path.resolve(path.dirname(file), pathname))) {
@@ -89,73 +137,111 @@ for (const file of markdownFiles) {
   }
 }
 
-for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
-  const absolute = path.join(root, relative);
-  if (!fs.existsSync(absolute)) continue;
-  const bytes = fs.readFileSync(absolute);
-  if (bytes.length < 1024 || bytes.subarray(0, 5).toString("ascii") !== "%PDF-") {
-    fail(`${relative}: invalid or unexpectedly small PDF artifact`);
+let edition;
+try {
+  edition = JSON.parse(fs.readFileSync(path.join(root, "PROFILE_EDITION.json"), "utf8"));
+} catch (error) {
+  fail(`PROFILE_EDITION.json: invalid JSON: ${error.message}`);
+}
+if (edition) {
+  const expected = {
+    schemaVersion: 1,
+    language: "en",
+    role: "canonical-profile",
+    splitFromMixedProfileCommit: splitSource,
+    chineseEdition: chineseRepository,
+    splitDate: "2026-10-04",
+    projectRoutePolicy: "cataloged-and-profile-routable-only",
+  };
+  for (const [key, value] of Object.entries(expected)) {
+    if (edition[key] !== value) fail(`PROFILE_EDITION.json: ${key} must be ${value}`);
+  }
+  if (JSON.stringify(Object.keys(edition).sort()) !== JSON.stringify(Object.keys(expected).sort())) {
+    fail("PROFILE_EDITION.json: unexpected or missing keys");
   }
 }
 
-const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
+const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/gu, "\n");
 for (const heading of [
-  "## Flagship Work",
-  "## Selected Experiments",
-  "## Repository System Map / 仓库关系图",
-  "## Research / Planned",
-  "## Maintenance Posture",
-  "### Laboratory repositories and release projection / 实验室仓库与发行投影",
-  "## Solo Engineering Toolkit / 单兵工程三剑客",
-  "## Essays / 工程复盘与方法论",
+  "## The KPI Philosophers",
+  "## Project Journey",
+  "## Three Laboratories",
+  "## Selected Work",
+  "## Repository System Map",
+  "## Laboratory and Distribution Surfaces",
+  "## Engineering Method",
+  "## Essays and Notes",
+  "## Information Ownership",
 ]) {
-  if (!readme.includes(heading)) fail(`README.md: missing stable profile section ${heading}`);
+  if (!readme.includes(heading)) fail(`README.md: missing stable English-profile section ${heading}`);
 }
-
 for (const invariant of [
-  "### Evidence-feedback loop / 证据反馈施工回路",
-  "绑定当前坐标与最小计划",
-  "计划已定义\n≠ 执行完成\n≠ 资格成立\n≠ 状态生效\n≠ 下一步已授权",
-  "具体门禁由各仓库自己的风险与合同决定",
+  "[中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH)",
+  "Student” describes my current identity and age, not a project maturity level",
+  "plan defined\n   != execution complete\n   != qualification established\n   != state effective\n   != next step authorized",
+  "Language migration is not project-routing authorization.",
+  "Implementation has not started",
+  "A card will move to [Engineering Gallery]",
+  "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
 ]) {
-  if (!readme.includes(invariant)) fail(`README.md: missing evidence-feedback invariant ${invariant}`);
+  if (!readme.includes(invariant)) fail(`README.md: missing English-profile invariant ${invariant}`);
 }
-
-if (readme.includes("VeriTrail#发布状态")) {
-  fail("README.md: stale VeriTrail release-status anchor must not return");
+if (/EngineeringGallery\/(?:tree\/main\/)?projects\//u.test(readme)) {
+  fail("README.md: G3A must not route a project card into Engineering Gallery");
 }
-for (const anchor of ["VeriTrail#当前状态", "VeriTrail#发布坐标"]) {
-  if (!readme.includes(anchor)) fail(`README.md: missing current VeriTrail anchor ${anchor}`);
-}
-
 for (const repository of mappedRepositories) {
   const url = `https://github.com/NoctilumeDev/${repository}`;
-  if (!readme.includes(url)) fail(`README.md: missing mapped repository entry ${repository}`);
+  if (!readme.includes(url)) fail(`README.md: missing laboratory route for ${repository}`);
+}
+
+for (const forwardingPage of forwardingPages) {
+  const content = fs.readFileSync(path.join(root, "docs", forwardingPage), "utf8");
+  if (!content.includes("English edition status: not yet published.")) {
+    fail(`docs/${forwardingPage}: missing translation-debt status`);
+  }
+  if (!content.includes(chineseRepository)) {
+    fail(`docs/${forwardingPage}: missing canonical Chinese route`);
+  }
+}
+for (const publishedEnglishPage of ["philosophers-kpi.md", "repository-system-map.md"]) {
+  const content = fs.readFileSync(path.join(root, "docs", publishedEnglishPage), "utf8");
+  if (content.includes("English edition status: not yet published.")) {
+    fail(`docs/${publishedEnglishPage}: published English article cannot be a forwarding page`);
+  }
 }
 
 const journeySvg = fs.readFileSync(path.join(root, "assets/project-journey.svg"), "utf8");
 for (const marker of [
   "InkNarratives",
-  "暗室藏书",
-  "素简记",
-  "素简记 Pro",
-  "Qixu / 期序",
-  "身份适配 · 不共享数据库",
-  "VeriTrail / 验迹",
+  "DarkRoomLibrary",
+  "PlainJournal",
+  "PlainJournalPro",
+  "Qixu",
+  "IDENTITY ADAPTER · NO SHARED DATABASE",
+  "VeriTrail",
   "JPyxis",
-  "FlowKernel / 流核",
-  "回到素简记暴露的单机边界",
+  "FlowKernel",
+  "BACK TO PLAINJOURNAL'S MACHINE LIMIT",
 ]) {
-  if (!journeySvg.includes(marker)) fail(`project journey: missing semantic marker ${marker}`);
+  if (!journeySvg.includes(marker)) fail(`project journey: missing English semantic marker ${marker}`);
+}
+
+const philosophersSvg = fs.readFileSync(path.join(root, "assets/philosophers-kpi.svg"), "utf8");
+for (const marker of [
+  "The KPI Philosophers",
+  "REPORT ≠ FACT",
+  "CAPABILITY ≠ AUTHORITY",
+  "LOCAL TRUTH ≠ COMPLETE FACT",
+  "END STATE ≠ LAWFUL PATH",
+  "NOT SELF-CERTIFIED BY AN AGENT",
+]) {
+  if (!philosophersSvg.includes(marker)) fail(`KPI philosophers: missing English marker ${marker}`);
 }
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
-  "十一个被映射的体系仓库",
-  "Qixu / 期序](https://github.com/NoctilumeDev/Qixu)",
-  "该接缝不是 SSO",
-  "dome](https://github.com/NoctilumeDev/dome)",
-  "历史归档保留在体系图之外",
+  "eleven mapped engineering repositories",
+  "The seam is not SSO",
   "JPyxis != VeriTrail Plugin",
   "FlowKernel != Agent Harness",
   "GitHub != Truth Oracle",
@@ -166,75 +252,18 @@ for (const invariant of [
   "!= Reality / Truth",
 ]) {
   if (!systemMap.includes(invariant)) {
-    fail(`repository system map: missing authority invariant ${invariant}`);
+    fail(`repository system map: missing English authority invariant ${invariant}`);
   }
-}
-
-const protectingZero = fs.readFileSync(path.join(root, "docs/protecting-zero.md"), "utf8");
-for (const invariant of [
-  "Epistemic state / 命题状态",
-  "Run result / 本轮观察或验收结果",
-  "它们不是命题本身的认知状态",
-]) {
-  if (!protectingZero.includes(invariant)) {
-    fail(`protecting zero: missing two-axis invariant ${invariant}`);
-  }
-}
-if (protectingZero.includes("VERIFIED / REFUTED / BOUNDARY / INCONCLUSIVE")) {
-  fail("protecting zero: epistemic state and run disposition are merged again");
-}
-
-const adversarialValidation = fs.readFileSync(
-  path.join(root, "docs/adversarial-engineering-validation.md"),
-  "utf8",
-);
-for (const invariant of [
-  "覆盖单位是机制，不是切点",
-  "M7 与 M8 是期序的阶段编号，不是通用流程编号",
-  "新机制、新事实所有者、新状态机冲突、原证明反证或显著更高风险",
-]) {
-  if (!adversarialValidation.includes(invariant)) {
-    fail(`adversarial validation: missing representative-mechanism invariant ${invariant}`);
-  }
-}
-
-const singleMachineEnvironment = fs.readFileSync(
-  path.join(root, "docs/single-machine-engineering-environment.md"),
-  "utf8",
-);
-if (singleMachineEnvironment.includes("七个仓库")) {
-  fail("single-machine environment: live guidance must not depend on a historical repository count");
-}
-
-if (!readme.includes("implementation has not started")) {
-  fail("README.md: FlowKernel planned boundary is missing");
-}
-if (!readme.includes("explicitly not presented as implemented software")) {
-  fail("README.md: PlainJournalPro planned boundary is missing");
-}
-if (readme.includes("/releases/tag/")) {
-  fail("README.md: duplicated release tag coordinate; keep exact versions in project repositories");
-}
-for (const article of [
-  "docs/ai-cognitive-feedback-loop.md",
-  "docs/from-tool-gain-to-collaborative-compounding.pdf",
-  "docs/protecting-zero-from-answer-to-fact.pdf",
-  "docs/adversarial-engineering-validation.pdf",
-]) {
-  if (!readme.includes(article)) fail(`README.md: missing essay entry ${article}`);
-}
-
-const audit = fs.readFileSync(path.join(root, "docs/fresh-checkout-independent-audit.md"), "utf8");
-if (!audit.includes("GLM-5.3") || audit.includes("GLM-5.2")) {
-  fail("fresh checkout audit: recorded model provenance must remain GLM-5.3");
 }
 
 if (failures.length > 0) {
-  console.error(`Profile verification failed with ${failures.length} issue(s):`);
+  console.error(`English Profile verification failed with ${failures.length} issue(s):`);
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
 
 console.log(
-  `Profile verification passed: ${textFiles.length} text files, ${markdownFiles.length} Markdown files, ${mappedRepositoryCount} mapped repositories represented.`,
+  `English Profile verification passed: ${textFiles.length} text files, ` +
+    `${markdownFiles.length} Markdown files, ${mappedRepositories.length} laboratory routes, ` +
+    `${forwardingPages.length} preserved forwarding pages.`,
 );
