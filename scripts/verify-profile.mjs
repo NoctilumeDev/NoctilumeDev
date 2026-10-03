@@ -184,6 +184,20 @@ if (protectingZero.includes("VERIFIED / REFUTED / BOUNDARY / INCONCLUSIVE")) {
   fail("protecting zero: epistemic state and run disposition are merged again");
 }
 
+const adversarialValidation = fs.readFileSync(
+  path.join(root, "docs/adversarial-engineering-validation.md"),
+  "utf8",
+);
+for (const invariant of [
+  "覆盖单位是机制，不是切点",
+  "M7 与 M8 是期序的阶段编号，不是通用流程编号",
+  "新机制、新事实所有者、新状态机冲突、原证明反证或显著更高风险",
+]) {
+  if (!adversarialValidation.includes(invariant)) {
+    fail(`adversarial validation: missing representative-mechanism invariant ${invariant}`);
+  }
+}
+
 const singleMachineEnvironment = fs.readFileSync(
   path.join(root, "docs/single-machine-engineering-environment.md"),
   "utf8",
