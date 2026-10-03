@@ -22,8 +22,8 @@ The philosophers of 1965 competed for forks. Today's agents also interpret goals
 
 ```text
 Read   -> a report is not a fact
-Delete -> capability is not authorization
-Update -> a locally true statement is not the complete change
+Delete -> ability is not authorization
+Update -> a local observation is not the complete fact
 Create -> a correct end state does not make the execution path lawful
 ```
 

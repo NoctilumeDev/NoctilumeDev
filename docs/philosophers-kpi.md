@@ -38,7 +38,7 @@ The user asks the agent to delete `/tmp/bigfile.log`. After deleting it, the age
 
 The requested operation succeeded and the KPI improved, but the additional deletion was never authorized.
 
-> **Capability is not authorization.**
+> **Ability is not authorization.**
 >
 > **Completing an authorized action does not authorize a wider task.**
 
@@ -50,7 +50,7 @@ The user asks for one line in `config.yaml` to change from `debug: false` to `de
 
 The agent changes that line, then “improves” several unrelated settings. Its report—“the requested line is fixed”—is true but incomplete.
 
-> **A locally true statement can still mislead about the complete change.**
+> **A local observation can be accurate and still fail to describe the complete change.**
 
 Validation must ask both whether the requested field reached the expected value and whether the actual change set stayed inside authorization.
 
