@@ -33,18 +33,19 @@ AI-assisted solo engineer studying how unreliable code generation can enter reli
 
 ## 一张图看懂这些项目 / Project Journey
 
-![从五个 HTML、暗室藏书和素简记，到 VeriTrail、JPyxis 与 FlowKernel 的工程演化图](assets/project-journey.svg)
+![从五个 HTML 和暗室藏书分叉到期序与素简记，再到 VeriTrail、JPyxis 与 FlowKernel 的工程演化图](assets/project-journey.svg)
 
 <p align="center"><sub>实线表示问题演化；黄色虚线表示停止边界与经验回流。图中项目各自拥有状态，不是一条已经集成完成的调用链。<a href="assets/project-journey.svg">打开大图 / Open full-size diagram</a></sub></p>
 
-这条主线不是事后编出来的产品矩阵，而是前一个项目留下的问题，逼出了后一个边界：
+这不是事后编出来的产品矩阵，也不是一条单线时间轴：有些问题沿主线继续，有些从完整业务系统分叉成拥有独立事实边界的新系统。
 
 1. **[InkNarratives / 墨叙](https://github.com/NoctilumeDev/InkNarratives)** 保留五个零依赖 HTML，训练叙事、排版、交互与公开展示。
 2. **[DarkRoomLibrary / 暗室藏书](https://github.com/NoctilumeDev/DarkRoomLibrary)** 把页面推进成第一个完整业务系统，开始面对角色、数据、协作和交付闭环。
-3. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 成为分布式业务、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
-4. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
-5. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
-6. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。三者各自拥有独立问题与状态；已经落地的部分可以单独闭合自己的问题，未来也可以通过版本化合同形成更大系统的候选地基。
+3. **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** 从暗室藏书暴露出的校园空间需求长成独立业务支线：暗室继续拥有账号与图书业务，期序独立拥有空间、资格、分配结果、使用权和处置事实。两者通过明确身份适配协作，不共享数据库，也不继承上游角色。
+4. **[PlainJournal / 素简记](https://github.com/NoctilumeDev/PlainJournal)** 从另一条业务问题继续成为分布式、可靠性、降级、多实例与真实验收的训练场；也正是在这里，16 GiB 单机容量和“不能把没证明的部分写成完成”成为硬边界。
+5. **[PlainJournalPro / 素简记 Pro](https://github.com/NoctilumeDev/PlainJournalPro)** 保存多商户、平台账本和跨机演进问题。当前资源不足以完成同强度验收，所以它只保留未来架构，不冒充已实现产品。
+6. 这些停止线进一步暴露：AI 能协助生产代码，却不能凭自己的输出证明代码、测试、环境和发布事实。于是验收方法被抽成了独立的 **[VeriTrail / 验迹](https://github.com/NoctilumeDev/VeriTrail)**。
+7. 再往下追问“谁拥有执行权、谁拥有系统能力与资源权”，问题继续分成 **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** 与 **[FlowKernel / 流核](https://github.com/NoctilumeDev/FlowKernel)**。FlowKernel 的目标位置是面向不可信智能体的操作系统级信任与执行基座，当前计划以 C-first target 与 Linux reference lab 分别承载目标实验和对照实验，并非一个已经完成的跨平台“AI OS”。三者各自拥有独立问题与状态；已经落地的部分可以单独闭合自己的问题，未来也可以通过版本化合同形成更大系统的候选地基。
 
 ### 三个试验台分别回答什么
 
@@ -94,6 +95,10 @@ VeriTrail 本身是一个完整的小系统：单独用于本地 Web 项目、�
 
   [在线预览](https://noctilumedev.github.io/DarkRoomLibrary/) · [Release 证据](https://github.com/NoctilumeDev/DarkRoomLibrary/releases)
 
+- **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** — 校园空间预约与使用权管理系统；把资格、志愿、冻结输入、可复验分配、候补、短约、活动场地与治理拆成明确状态和事实所有权
+
+  [仓库与当前边界](https://github.com/NoctilumeDev/Qixu#当前状态)
+
 - **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** — 从头拆解 IoC、AOP、Web/MVC、配置、JDBC、事务与启动机制，并用真实 React + MySQL 链路反证纸面实现
 
   [架构与里程碑](https://github.com/NoctilumeDev/MiniSpringBoot#路线图)
@@ -112,7 +117,7 @@ restructuring, not necessarily project inception.
 主页图表达的是**历史因果与经验反馈**，不是把仓库画成一条强依赖调用链。真正组合时，每个系统仍保留自己的状态与权威：FlowKernel 未来以操作系统级信任语义约束系统能力、资源、撤销与恢复；JPyxis 管理异构计算合同与执行；Evidence Adapter 有界观察来源事实；VeriTrail 依据 sealed Plan 裁决现有 Evidence；Human 拥有前提、Seal 与最终处置；Reality 拥有真相。
 
 GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的真理证明；Review Attention 也不是 Verdict
-引擎。更完整的双层结构、十个被映射工程仓库的角色、插件接缝与禁止越界见
+引擎。更完整的双层结构、十一个被映射工程仓库的角色、插件接缝与禁止越界见
 **[Repository System Map / 仓库体系关系图](docs/repository-system-map.md)**。
 
 ## Research / Planned
@@ -135,6 +140,10 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
   个人构想形成于 5 月，7 月的大二短学期课程提供了落地窗口。主体在 7 月中旬成形，课程提交后继续补齐业务闭环、技术迁移、真实联调、并发验证与公开材料，并于 **2026-07-27** 形成最终交付事实基线。PlainJournal 启动时，暗室藏书仍有少量细节和发布收尾；后续版本继续完成了这些工程化加固。详细沿革见仓库内的[项目历史](https://github.com/NoctilumeDev/DarkRoomLibrary/blob/main/docs/project-history.md)和[项目起源 PDF](https://github.com/NoctilumeDev/DarkRoomLibrary/blob/main/docs/暗室藏书_项目起源.pdf)。
 
+- **2026 年 10 月 · Qixu / 期序**
+
+  这里按问题来源放在暗室藏书之后，不表示它在时间上先于素简记。期序从暗室暴露出的校园空间需求长成独立系统：暗室拥有账号与图书业务，期序拥有空间、资格、预约、长期分配、使用权、活动场地与治理事实。真实暗室身份适配已经进入主线，但它不是 SSO，不继承暗室角色，也不直接修改对方数据库；精确里程碑与当前资格仍以[期序仓库](https://github.com/NoctilumeDev/Qixu#当前状态)为准。
+
 - **2026 年 7-8 月 · PlainJournal / 素简记**
 
   在暗室藏书收尾期间，我开始尝试微服务，并于 **2026-07-16** 建立 PlainJournal 的可运行基线。M0-M8 完成后，项目于 **2026-08-03** 首次公开。后来确认 M9+ 的多商户、平台账本和 Java/Go 异构协作无法在当前 16GB 单机上完成同等严格的真实验收，因此把它们独立为 PlainJournalPro，等扩容后继续。
@@ -155,7 +164,7 @@ GitHub 只拥有并暴露其平台信任域内的状态，不是外部世界的�
 
 - **2026 年 9 月 · MiniLinux**
 
-  为了把系统机制理解继续向下推进，MiniLinux 从一个可启动、可调试、可复验的 C 内核实验台开始。当前只有 M0 成立；内存、调度、用户态、系统调用和文件系统仍要逐轮取得自己的证据。它为底层机制学习提供支线，不冒充 FlowKernel 的实现。
+  为了把系统机制理解继续向下推进，MiniLinux 从一个可启动、可调试、可复验的 C 内核实验台开始。当前主线已包含 M0–M6、用户态 init/shell、实时 LAB 与在线 REPLAY；这些仍是教学机制与体验边界，不冒充 Linux 兼容实现或 FlowKernel 的实现。
 
 - **2026 年 9 月 · FlowKernel / 流核**
 

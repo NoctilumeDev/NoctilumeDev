@@ -2,7 +2,7 @@
 
 > 状态：`STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
 >
-> 映射范围：本文覆盖十个工程体系仓库。[dome](https://github.com/NoctilumeDev/dome) 保存课程作业、独立项目与文字记录，作为历史归档保留在体系图之外，不承担基础设施角色。
+> 映射范围：本文覆盖十一个工程体系仓库。[dome](https://github.com/NoctilumeDev/dome) 保存课程作业、独立项目与文字记录，作为历史归档保留在体系图之外，不承担基础设施角色。
 >
 > 本文只维护仓库之间相对稳定的职责、依赖方向与未来接缝。每个项目的精确里程碑、版本、
 > Release 与证据坐标，仍以该项目仓库自己的 README 和冻结记录为准。
@@ -18,7 +18,7 @@
 VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 sealed Plan、标准 Evidence 与确定性规则
 产生有边界的 `PASS / FAIL / INCONCLUSIVE / PENDING`。
 
-## 十个被映射的体系仓库不是一棵调用树
+## 十一个被映射的体系仓库不是一棵调用树
 
 | 仓库 | 稳定角色 | 拥有的事实或责任 | 不拥有的责任 |
 | --- | --- | --- | --- |
@@ -28,6 +28,7 @@ VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 
 | **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | 规划中的操作系统级信任与执行基座 | 未来的 Principal、Capability、资源硬边界、特权转换、撤销、恢复与来源记录 | Agent 的正确性、JPyxis 内部状态、外部验收结论；当前也不宣称已有 C-first target 或跨平台 adapter |
 | **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | 分布式业务与可靠性参考系统 | 自身业务、数据和交易状态，以及已声明范围内的运行证据 | 基础设施项目的状态或通用真理 |
 | **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | 完整增强型单体业务样本 | 图书业务、角色边界、协作流程及其项目证据 | VeriTrail、JPyxis 或 FlowKernel 的实现证明 |
+| **[Qixu / 期序](https://github.com/NoctilumeDev/Qixu)** | 校园空间、稀缺资源分配与使用权治理参考系统 | 空间档案、资格、分配结果、预约、使用权、活动场地、冲突处置与维修治理事实 | 暗室账号和图书业务、外部身份提供方角色、其他系统的审批权或验收结论 |
 | **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | 框架机制重建与真实全栈验证样本 | IoC、AOP、Web/MVC、JDBC、事务与启动机制的项目事实 | Spring 官方实现等价性或其他仓库的验收结论 |
 | **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | 操作系统机制教学与底层实验支线 | 自身构建、启动、串口、调试与逐轮机制实验事实 | Linux 兼容性、FlowKernel 实现或其他仓库的系统事实 |
 | **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** | 多商户未来架构研究 | 已声明的未来问题、边界与设计方向 | 尚未实现能力或可运行产品事实 |
@@ -35,6 +36,10 @@ VeriTrail 也不拥有任何来源系统的状态或世界真相，它只依据 
 
 业务系统、框架与系统机制实验、内容实验提供真实问题、控制组与证据来源；基础设施仓库提炼可复用的合同、
 执行或验收方法。前者不是后者的“测试附件”，后者也不能反向接管前者的业务状态。
+
+DarkRoomLibrary 与 Qixu 通过明确身份适配协作，不合并事实所有权：暗室继续拥有账号与图书业务，期序
+只把受控身份响应绑定到自己的本地主体，并继续独立判断空间资格与权限。该接缝不是 SSO，不继承暗室
+角色，不共享或直写对方数据库；任一系统都不能借协作关系取得另一个系统的审批权或业务真相。
 
 ## 两张正交图
 
@@ -125,6 +130,7 @@ Intent / Claim
 | 来源 | 可跨边界的产物 | 接入方式 | 明确禁止 |
 | --- | --- | --- | --- |
 | GitHub | API 与 Public Render 的有界平台观察 | GitHub Evidence Plugin → VeriTrail Evidence | 把 GitHub 当独立真理锚；让插件生成 Verdict |
+| DarkRoomLibrary → Qixu | 有界的当前账号验证响应 | 明确身份适配 → 显式本地主体绑定与期序会话 | 把适配说成 SSO；继承暗室角色或学生资格；共享或直写对方数据库 |
 | JPyxis | contract/artifact/deployment/invocation/runtime/input/output 等执行收据 | 未来 JPyxis Evidence Adapter → VeriTrail Evidence | 把 JPyxis 本体做成 VeriTrail 插件；让 VeriTrail 回写调用状态 |
 | FlowKernel | capability、Guard、资源、特权转换、恢复与 provenance 记录 | 未来 FlowKernel Evidence Adapter → VeriTrail Evidence | 让验收系统签发 Capability 或控制调度器 |
 | 项目仓库与运行系统 | 精确源码、测试、业务读回、运行与交付事实 | 项目专用 Adapter 或现有 VeriTrail 能力 | 用通用插件猜测领域事实 |
@@ -181,5 +187,5 @@ human premise and Seal
 任何一步若必须共享可变状态、复制对方的 Verdict 或绕过对方 authority 才能成立，就停止组合并回到
 合同层，而不是继续增加兼容分支。
 
-这张图描述的是可组合体系，不是强制部署拓扑，也不是把十个被映射的仓库改造成一组互相启动才能工作的
+这张图描述的是可组合体系，不是强制部署拓扑，也不是把十一个被映射的仓库改造成一组互相启动才能工作的
 微服务。仓库之间共享方法和版本化产物，不共享可变控制状态。
