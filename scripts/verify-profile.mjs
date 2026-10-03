@@ -13,6 +13,7 @@ const requiredFiles = [
   "docs/public-verification-loop.md",
   "docs/fresh-checkout-independent-audit.md",
   "docs/ai-cognitive-feedback-loop.md",
+  "docs/engineering-judgment.md",
   "docs/adversarial-engineering-validation.md",
   "docs/adversarial-engineering-validation.pdf",
   "docs/protecting-zero.md",
@@ -96,7 +97,7 @@ for (const relative of requiredFiles.filter((file) => file.endsWith(".pdf"))) {
   }
 }
 
-const readme = fs.readFileSync(path.join(root, "README.md"), "utf8");
+const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/g, "\n");
 for (const heading of [
   "## Flagship Work",
   "## Selected Experiments",

@@ -229,7 +229,7 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 
 ## Essays / 工程复盘与方法论
 
-这些文章分别讨论能力生产、事实资格、验收方法，以及 AI 进入人的认知反馈回路以后怎样接受选择与治理。它们来自同一段连续实践，但不互相代替：
+这些文章分别讨论工程取舍、能力生产、事实资格、验收方法，以及 AI 进入人的认知反馈回路以后怎样接受选择与治理。它们来自同一段连续实践，但不互相代替：
 
 - **[AI 的上限，不在答案里](docs/ai-cognitive-feedback-loop.md)**
   - **它问：** 当 AI 从任务工具进入人的认知反馈回路，什么机制负责生成变化、有效选择、保留经验并约束权力？
@@ -243,8 +243,9 @@ Detailed architecture decisions, test evidence, and release artifacts live in ea
 - **[对抗性工程验收：怎样让“完成”脱离作者仍然成立](docs/adversarial-engineering-validation.pdf)**
   - **它问：** 怎样用固定坐标、独立证据、环境扰动、失败保留和停止条件完成归档验收？
   - **状态：** `论文体工程复盘 · 归档方法篇`，19 页 PDF。
+- **[何为工程判断力](docs/engineering-judgment.md)**
 
-《AI 的上限，不在答案里》讨论认知耦合、选择机制与治理；其后三篇依次解释“能力如何共同产生”“未知为什么必须被保护”以及“如何把原则变成工程事实”。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
+这些文章从不同方向记录认知耦合、能力生产、事实资格、验收方法与工程取舍。它们不是学术论文，也不把单一使用者的纵向案例包装成普遍规律。
 
 需要网页内概念检索或沿链接复核时，可使用两份配套导读：[《保护零》导读](docs/protecting-zero.md)与[《对抗性工程验收》导读](docs/adversarial-engineering-validation.md)。导读不是 PDF 正文的缩写替代品。
 
