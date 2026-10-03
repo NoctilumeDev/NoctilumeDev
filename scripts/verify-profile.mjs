@@ -104,6 +104,7 @@ for (const heading of [
   "## Repository System Map / 仓库关系图",
   "## Research / Planned",
   "## Maintenance Posture",
+  "### Laboratory repositories and release projection / 实验室仓库与发行投影",
   "## Solo Engineering Toolkit / 单兵工程三剑客",
   "## Essays / 工程复盘与方法论",
 ]) {
