@@ -32,7 +32,8 @@
       .status { fill: #f8fafc; font: 700 14px Inter, "Segoe UI", "Microsoft YaHei", sans-serif; letter-spacing: 0.5px; }
       .center { text-anchor: middle; }
       .line { fill: none; stroke: #72a9c5; stroke-width: 3; marker-end: url(#arrow); }
-      .feedback-line { fill: none; stroke: #d5a85b; stroke-width: 3; stroke-dasharray: 10 9; marker-end: url(#arrow-warm); }
+      .stop-line { fill: none; stroke: #d5a85b; stroke-width: 3; stroke-dasharray: 10 9; marker-end: url(#arrow-warm); }
+      .return-line { fill: none; stroke: #e7bd73; stroke-width: 2; stroke-dasharray: 3 10; opacity: 0.86; marker-end: url(#arrow-warm); }
     </style>
   </defs>
 
@@ -43,7 +44,7 @@
 
   <path class="line" d="M 330 215 H 382"/>
   <path class="line" d="M 650 215 H 702"/>
-  <path class="feedback-line" d="M 970 215 H 1022"/>
+  <path class="stop-line" d="M 970 215 H 1022"/>
 
   <g filter="url(#shadow)">
     <rect x="70" y="145" width="260" height="140" rx="18" fill="#152239" stroke="#35516e"/>
@@ -84,7 +85,7 @@
   </g>
 
   <path class="line" d="M 840 285 V 486"/>
-  <path class="feedback-line" d="M 1200 285 V 486"/>
+  <path class="stop-line" d="M 1200 285 V 486"/>
   <g filter="url(#shadow)">
     <rect x="170" y="495" width="1100" height="105" rx="22" fill="#20233a" stroke="#76648f"/>
     <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">ABSTRACT THE QUESTION INSTEAD OF ADDING MORE FEATURES</text>
@@ -130,14 +131,14 @@
   <g filter="url(#shadow)">
     <rect x="210" y="885" width="1020" height="112" rx="24" fill="url(#feedback)" stroke="#567594"/>
     <text x="720" y="914" class="eyebrow center">COMPOSABLE, NOT COLLAPSED · AUTHORITY REMAINS SEPARATE</text>
-    <text x="720" y="945" class="card-title center" style="font-size:21px">Three foundations may compose; current boundaries remain single-machine and single-node</text>
+    <text x="720" y="945" class="card-title center" style="font-size:20px">Three roles may compose; implemented boundaries remain single-machine and single-node</text>
     <text x="720" y="972" class="card-copy center">Capacity, deployment, recovery, and real load return PlainJournal's experience to the center</text>
     <text x="720" y="991" class="small center">This is an evidence-feedback loop, not an abandoned-project story</text>
   </g>
 
-  <path class="feedback-line" d="M 1228 940 C 1390 900 1410 230 1360 175 C 1280 92 1090 104 1000 205"/>
-  <rect x="1050" y="102" width="320" height="34" rx="17" fill="#3d3328" stroke="#a77b45"/>
-  <text x="1210" y="124" class="status center" fill="#e7bd73">BACK TO PLAINJOURNAL'S MACHINE LIMIT</text>
+  <path class="return-line" d="M 1228 940 C 1390 900 1410 230 1360 175 C 1280 92 1090 104 1000 205"/>
+  <rect x="1010" y="615" width="360" height="34" rx="17" fill="#3d3328" stroke="#a77b45"/>
+  <text x="1190" y="637" class="status center" fill="#e7bd73">FEEDBACK TO PLAINJOURNAL'S MACHINE LIMIT</text>
 
   <rect x="70" y="1018" width="620" height="44" rx="16" fill="#121d31" stroke="#30445f"/>
   <text x="380" y="1046" class="card-copy center">MiniSpringBoot · framework reconstruction challenged by a real full-stack path</text>

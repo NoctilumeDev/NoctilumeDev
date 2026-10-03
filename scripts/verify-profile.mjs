@@ -221,7 +221,8 @@ for (const marker of [
   "VeriTrail",
   "JPyxis",
   "FlowKernel",
-  "BACK TO PLAINJOURNAL'S MACHINE LIMIT",
+  "FEEDBACK TO PLAINJOURNAL'S MACHINE LIMIT",
+  "Three roles may compose; implemented boundaries remain single-machine and single-node",
 ]) {
   if (!journeySvg.includes(marker)) fail(`project journey: missing English semantic marker ${marker}`);
 }
@@ -230,8 +231,9 @@ const philosophersSvg = fs.readFileSync(path.join(root, "assets/philosophers-kpi
 for (const marker of [
   "The KPI Philosophers",
   "REPORT ≠ FACT",
-  "CAPABILITY ≠ AUTHORITY",
-  "LOCAL TRUTH ≠ COMPLETE FACT",
+  "ABILITY ≠ AUTHORIZATION",
+  "LOCAL OBSERVATION ≠ COMPLETE FACT",
+  "Source-owned state",
   "END STATE ≠ LAWFUL PATH",
   "NOT SELF-CERTIFIED BY AN AGENT",
 ]) {
