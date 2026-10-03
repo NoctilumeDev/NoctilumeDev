@@ -225,6 +225,7 @@ v1.0.0 / v1.1.0 / v1.1.1
    - **[V1：施工与交付](docs/solo-engineering-method.md)** - 从需求、架构、实现和粗糙可操作前端一路推进到验收、发布与冻结。
    - **[V2：运行诊断与运维验收](docs/solo-engineering-runtime-diagnostics.md)** - 用 F12 进入真实用户链，再沿 HTTP、进程、端口、runtime、中间件和宿主分层诊断；保存首败、控制变量、验证恢复与清理，不用“重启后好了”冒充根因。
 3. **[单兵工程公共验证闭环法](docs/public-verification-loop.md)** - 把本地测试、干净环境、平台依赖、GitHub Actions 触发器、PR 提交归属和公开证据入口闭合起来。
+   - **[对抗性工程验收：代表性失败机制与独立产品复验](docs/adversarial-engineering-validation.md#8-代表性失败机制与独立产品复验)** - 从项目承诺、事实所有者与不变量生成有限反例，再由独立测试和产品视角检查真实实现；它增强第三剑，不另造一套阶段体系。
 
 ### Evidence-feedback loop / 证据反馈施工回路
 
