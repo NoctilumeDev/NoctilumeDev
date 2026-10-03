@@ -30,6 +30,7 @@ const mappedRepositories = [
   "MiniSpringBoot",
   "PlainJournal",
   "PlainJournalPro",
+  "Qixu",
   "VeriTrail",
 ];
 const mappedRepositoryCount = mappedRepositories.length + 1; // Includes this profile repository.
@@ -138,6 +139,8 @@ for (const marker of [
   "暗室藏书",
   "素简记",
   "素简记 Pro",
+  "Qixu / 期序",
+  "身份适配 · 不共享数据库",
   "VeriTrail / 验迹",
   "JPyxis",
   "FlowKernel / 流核",
@@ -148,7 +151,9 @@ for (const marker of [
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
-  "十个被映射的体系仓库",
+  "十一个被映射的体系仓库",
+  "Qixu / 期序](https://github.com/NoctilumeDev/Qixu)",
+  "该接缝不是 SSO",
   "dome](https://github.com/NoctilumeDev/dome)",
   "历史归档保留在体系图之外",
   "JPyxis != VeriTrail Plugin",
