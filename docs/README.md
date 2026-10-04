@@ -4,6 +4,7 @@
 
 ## Available in English
 
+- [Engineering Judgment](engineering-judgment-interview.md)
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](philosophers-kpi.md)
 - [Repository System Map](repository-system-map.md)
 

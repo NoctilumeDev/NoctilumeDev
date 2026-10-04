@@ -19,6 +19,7 @@ const requiredFiles = [
   "docs/ai-cognitive-feedback-loop.md",
   "docs/docker-desktop-windows-socket-recovery.md",
   "docs/engineering-judgment.md",
+  "docs/engineering-judgment-interview.md",
   "docs/fresh-checkout-independent-audit.md",
   "docs/iteration-decision-fact-record.md",
   "docs/protecting-zero.md",
@@ -183,6 +184,7 @@ for (const invariant of [
   "Implementation has not started",
   "A card will move to [Engineering Gallery]",
   "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
+  "[Engineering Judgment](docs/engineering-judgment-interview.md)",
 ]) {
   if (!readme.includes(invariant)) fail(`README.md: missing English-profile invariant ${invariant}`);
 }
@@ -203,10 +205,30 @@ for (const forwardingPage of forwardingPages) {
     fail(`docs/${forwardingPage}: missing canonical Chinese route`);
   }
 }
-for (const publishedEnglishPage of ["philosophers-kpi.md", "repository-system-map.md"]) {
+for (const publishedEnglishPage of [
+  "engineering-judgment-interview.md",
+  "philosophers-kpi.md",
+  "repository-system-map.md",
+]) {
   const content = fs.readFileSync(path.join(root, "docs", publishedEnglishPage), "utf8");
   if (content.includes("English edition status: not yet published.")) {
     fail(`docs/${publishedEnglishPage}: published English article cannot be a forwarding page`);
+  }
+}
+
+const engineeringJudgment = fs.readFileSync(
+  path.join(root, "docs/engineering-judgment-interview.md"),
+  "utf8",
+);
+for (const marker of [
+  "No Single Answer, but a Bounded Solution Space",
+  "acceptable solution space Ω",
+  "Use AI. Do Not Outsource Judgment.",
+  "me\n!=\nmy answer",
+  "37daa83b37918210561f8fe69ccb0ee9a72cdb79",
+]) {
+  if (!engineeringJudgment.includes(marker)) {
+    fail(`engineering judgment: missing translated invariant ${marker}`);
   }
 }
 
