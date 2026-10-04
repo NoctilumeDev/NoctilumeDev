@@ -8,13 +8,10 @@
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](philosophers-kpi.md)
 - [Protecting Zero: From Generated Answers to Qualified Facts](protecting-zero.md)
 - [Adversarial Engineering Validation: Making “Done” Survive Its Author](adversarial-engineering-validation.md)
+- [AI’s Ceiling Is Not in the Answer](ai-cognitive-feedback-loop.md)
 - [Repository System Map](repository-system-map.md)
 
-## Selected for Future English Publication
-
-- [The Ceiling of AI Is Not in the Answer](ai-cognitive-feedback-loop.md)
-
-Selection records publication intent. It does not claim that an edition already exists, and it does not impose the same obligation on every Chinese article.
+No unpublished English edition is currently scheduled. Future selection will record publication intent; it will not claim that an edition already exists or impose the same obligation on every Chinese article.
 
 ## Publication Policy
 
@@ -34,7 +31,7 @@ Chinese PDF / Markdown format
 
 The Chinese repository is the complete body of work. This repository publishes a small, stable English selection with its own editorial structure and release cadence.
 
-The two publication surfaces share provenance. They do not require symmetrical directories, identical formats, or simultaneous releases. A Chinese-only article creates no translation debt. Only an article explicitly selected above is pending English publication.
+The two publication surfaces share provenance. They do not require symmetrical directories, identical formats, or simultaneous releases. A Chinese-only article creates no translation debt. A future translation obligation begins only when an article is explicitly selected for English publication.
 
 ## Legacy Compatibility Routes
 
