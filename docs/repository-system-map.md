@@ -4,7 +4,7 @@
 >
 > Scope: eleven mapped engineering repositories. [dome](https://github.com/NoctilumeDev/dome) remains outside this system map as a historical archive for course work, independent exercises, and writing.
 >
-> [中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/main/docs/repository-system-map.md)
+> [中文版本 / Chinese source edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/7997b43c7767e9f6cc6546046c2c7475a49de347/docs/repository-system-map.md)
 
 This document maintains relatively stable roles, dependency directions, and possible future seams. Exact milestones, versions, Releases, and evidence coordinates remain owned by each project repository.
 
@@ -22,7 +22,7 @@ VeriTrail also does not own source state or world truth. It applies sealed Plans
 | --- | --- | --- | --- |
 | [NoctilumeDev](https://github.com/NoctilumeDev/NoctilumeDev) | Canonical English Profile and relationship index | Stable role descriptions, cross-repository navigation, public method entry points | Exact project versions, milestone authority, or the right to announce completion for another repository |
 | [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) | Evidence and deterministic judgment substrate | Plan/Evidence contracts, integrity and sufficiency checks, assertion execution, bounded verdict derivation | Source-system state, world truth, or final human disposition |
-| [JPyxis](https://github.com/NoctilumeDev/JPyxis) | Contract-driven heterogeneous-compute framework | Compute contracts, artifact and deployment identity, invocation lifecycle, runtime binding, execution facts | OS-level capabilities, host business truth, or VeriTrail verdicts |
+| [JPyxis](https://github.com/NoctilumeDev/JPyxis) | Contract-driven heterogeneous-compute framework | Compute contracts, artifact and deployment identity, invocation lifecycle, runtime binding, execution facts | OS-level capabilities, business truth owned by the host or source system, or VeriTrail verdicts |
 | [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) | Planned OS-level trust and execution substrate | Future principals, capabilities, resource hard bounds, privilege transitions, revocation, recovery, and provenance | Agent correctness, JPyxis internal state, or external acceptance conclusions; it currently claims no implemented C-first target or cross-platform adapter |
 | [PlainJournal](https://github.com/NoctilumeDev/PlainJournal) | Distributed business and reliability reference system | Its business, data, transaction state, and evidence inside declared conditions | Infrastructure-project state or universal truth |
 | [DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary) | Complete enhanced-monolith business sample | Library business, role boundaries, collaboration workflows, and project evidence | Implementation proof for VeriTrail, JPyxis, or FlowKernel |

@@ -205,14 +205,18 @@ for (const forwardingPage of forwardingPages) {
     fail(`docs/${forwardingPage}: missing canonical Chinese route`);
   }
 }
-for (const publishedEnglishPage of [
-  "engineering-judgment-interview.md",
-  "philosophers-kpi.md",
-  "repository-system-map.md",
-]) {
+const publishedEnglishPages = new Map([
+  ["engineering-judgment-interview.md", "37daa83b37918210561f8fe69ccb0ee9a72cdb79"],
+  ["philosophers-kpi.md", "7997b43c7767e9f6cc6546046c2c7475a49de347"],
+  ["repository-system-map.md", "7997b43c7767e9f6cc6546046c2c7475a49de347"],
+]);
+for (const [publishedEnglishPage, sourceCommit] of publishedEnglishPages) {
   const content = fs.readFileSync(path.join(root, "docs", publishedEnglishPage), "utf8");
   if (content.includes("English edition status: not yet published.")) {
     fail(`docs/${publishedEnglishPage}: published English article cannot be a forwarding page`);
+  }
+  if (!content.includes(`/NoctilumeDev-ZH/blob/${sourceCommit}/docs/${publishedEnglishPage}`)) {
+    fail(`docs/${publishedEnglishPage}: missing exact Chinese source edition ${sourceCommit}`);
   }
 }
 

@@ -2,7 +2,7 @@
 
 > This is a research-question note, not a claim that a next-generation operating system has already been implemented.
 
-[中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/main/docs/philosophers-kpi.md)
+[中文版本 / Chinese source edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/7997b43c7767e9f6cc6546046c2c7475a49de347/docs/philosophers-kpi.md)
 
 ## The changed problem
 
@@ -127,7 +127,7 @@ I do not present this as an already implemented “new operating system.” The 
 | [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) | How might OS-level trust semantics constrain unreliable policy through capabilities, resources, revocation, recovery, and provenance? | Implementation does not yet exist; a research plan is not a capability |
 | [MiniLinux](https://github.com/NoctilumeDev/MiniLinux) | How can a small bootable and debuggable kernel teach classic OS mechanisms? | It is neither FlowKernel nor a Linux-compatible implementation |
 
-These boundaries can stand independently and may later compose through versioned contracts. Composition does not merge authority: evidence does not act for the execution layer, execution does not grant itself wider permission, and permission does not announce that reality is correct.
+These boundaries can stand independently and may later compose through versioned contracts. Composition does not merge authority: evidence does not act for the execution layer, execution does not grant itself wider authority, and authority cannot certify that the real-world outcome is correct.
 
 ## Research hypothesis
 

@@ -43,7 +43,7 @@ If you hear “microservices” and immediately begin with:
 
 then the interview is basically over.
 
-**Start splitting immediately and you are done.** 😂
+**If you start splitting immediately, you're out.** 😂
 
 The fact that I asked *how* to split it does not mean “it should be split” was ever a valid premise.
 
@@ -118,7 +118,7 @@ One candidate might say:
 
 Good.
 
-This person has clearly borrowed a few frameworks.
+This person is clearly drawing on some familiar patterns.
 
 That is fine.
 
@@ -142,7 +142,7 @@ There is hardly any showing off here.
 
 No “control plane,” “leases,” or “shard autonomy.”
 
-But this candidate's brain is still switched on.
+But this candidate is still thinking.
 
 They understand:
 
@@ -241,9 +241,9 @@ AI says:
 
 You paste it directly?
 
-Then the AI interviewed pretty well.
+Then the AI did pretty well in the interview.
 
-What did *you* have to do with it? 😂
+What exactly did *you* contribute? 😂
 
 But suppose you read it for a moment and say:
 
