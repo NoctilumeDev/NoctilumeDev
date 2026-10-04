@@ -7,11 +7,11 @@
 - [Engineering Judgment](engineering-judgment-interview.md)
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](philosophers-kpi.md)
 - [Protecting Zero: From Generated Answers to Qualified Facts](protecting-zero.md)
+- [Adversarial Engineering Validation: Making “Done” Survive Its Author](adversarial-engineering-validation.md)
 - [Repository System Map](repository-system-map.md)
 
 ## Selected for Future English Publication
 
-- [Adversarial Engineering Validation](adversarial-engineering-validation.md)
 - [The Ceiling of AI Is Not in the Answer](ai-cognitive-feedback-loop.md)
 
 Selection records publication intent. It does not claim that an edition already exists, and it does not impose the same obligation on every Chinese article.
