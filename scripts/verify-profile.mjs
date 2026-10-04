@@ -44,14 +44,15 @@ const mappedRepositories = [
   "Qixu",
   "VeriTrail",
 ];
-const forwardingPages = [
+const selectedUnpublishedPages = [
   "adversarial-engineering-validation.md",
   "ai-cognitive-feedback-loop.md",
+];
+const legacyCompatibilityPages = [
   "docker-desktop-windows-socket-recovery.md",
   "engineering-judgment.md",
   "fresh-checkout-independent-audit.md",
   "iteration-decision-fact-record.md",
-  "protecting-zero.md",
   "public-verification-loop.md",
   "single-machine-engineering-environment.md",
   "solo-engineering-method.md",
@@ -185,6 +186,7 @@ for (const invariant of [
   "A card will move to [Engineering Gallery]",
   "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
   "[Engineering Judgment](docs/engineering-judgment-interview.md)",
+  "[Protecting Zero: From Generated Answers to Qualified Facts](docs/protecting-zero.md)",
 ]) {
   if (!readme.includes(invariant)) fail(`README.md: missing English-profile invariant ${invariant}`);
 }
@@ -196,27 +198,81 @@ for (const repository of mappedRepositories) {
   if (!readme.includes(url)) fail(`README.md: missing laboratory route for ${repository}`);
 }
 
-for (const forwardingPage of forwardingPages) {
-  const content = fs.readFileSync(path.join(root, "docs", forwardingPage), "utf8");
-  if (!content.includes("English edition status: not yet published.")) {
-    fail(`docs/${forwardingPage}: missing translation-debt status`);
+for (const selectedUnpublishedPage of selectedUnpublishedPages) {
+  const content = fs.readFileSync(path.join(root, "docs", selectedUnpublishedPage), "utf8");
+  if (!content.includes("Publication status: selected for English publication; not yet published.")) {
+    fail(`docs/${selectedUnpublishedPage}: missing selected-publication status`);
   }
   if (!content.includes(chineseRepository)) {
-    fail(`docs/${forwardingPage}: missing canonical Chinese route`);
+    fail(`docs/${selectedUnpublishedPage}: missing canonical Chinese route`);
   }
 }
-const publishedEnglishPages = new Map([
-  ["engineering-judgment-interview.md", "37daa83b37918210561f8fe69ccb0ee9a72cdb79"],
-  ["philosophers-kpi.md", "7997b43c7767e9f6cc6546046c2c7475a49de347"],
-  ["repository-system-map.md", "7997b43c7767e9f6cc6546046c2c7475a49de347"],
-]);
-for (const [publishedEnglishPage, sourceCommit] of publishedEnglishPages) {
+for (const legacyCompatibilityPage of legacyCompatibilityPages) {
+  const content = fs.readFileSync(path.join(root, "docs", legacyCompatibilityPage), "utf8");
+  if (!content.includes("Legacy compatibility route.")) {
+    fail(`docs/${legacyCompatibilityPage}: missing legacy-compatibility status`);
+  }
+  if (!content.includes(chineseRepository)) {
+    fail(`docs/${legacyCompatibilityPage}: missing canonical Chinese route`);
+  }
+}
+const publishedEnglishPages = [
+  {
+    page: "engineering-judgment-interview.md",
+    sourceCommit: "37daa83b37918210561f8fe69ccb0ee9a72cdb79",
+    sourcePath: "docs/engineering-judgment-interview.md",
+  },
+  {
+    page: "philosophers-kpi.md",
+    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourcePath: "docs/philosophers-kpi.md",
+  },
+  {
+    page: "protecting-zero.md",
+    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourcePath: "docs/protecting-zero-from-answer-to-fact.pdf",
+  },
+  {
+    page: "repository-system-map.md",
+    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourcePath: "docs/repository-system-map.md",
+  },
+];
+for (const { page: publishedEnglishPage, sourceCommit, sourcePath } of publishedEnglishPages) {
   const content = fs.readFileSync(path.join(root, "docs", publishedEnglishPage), "utf8");
-  if (content.includes("English edition status: not yet published.")) {
+  if (content.includes("not yet published")) {
     fail(`docs/${publishedEnglishPage}: published English article cannot be a forwarding page`);
   }
-  if (!content.includes(`/NoctilumeDev-ZH/blob/${sourceCommit}/docs/${publishedEnglishPage}`)) {
+  if (!content.includes(`/NoctilumeDev-ZH/blob/${sourceCommit}/${sourcePath}`)) {
     fail(`docs/${publishedEnglishPage}: missing exact Chinese source edition ${sourceCommit}`);
+  }
+}
+
+const publicationIndex = fs.readFileSync(path.join(root, "docs/README.md"), "utf8");
+for (const invariant of [
+  "## Published in English",
+  "## Selected for Future English Publication",
+  "## Publication Policy",
+  "Chinese article exists\n!= English edition required",
+  "English essays\n= GitHub-native Markdown",
+  "A Chinese-only article creates no translation debt.",
+  "They are not English publications, do not appear in the published index",
+]) {
+  if (!publicationIndex.includes(invariant)) {
+    fail(`English publication index: missing invariant ${invariant}`);
+  }
+}
+
+const protectingZero = fs.readFileSync(path.join(root, "docs/protecting-zero.md"), "utf8");
+for (const marker of [
+  "A model can produce an answer. It cannot own a fact.",
+  "UNKNOWN\n-> UNVERIFIED\n-> VERIFIED / REFUTED",
+  "PENDING / PASS / FAIL / INCONCLUSIVE / BOUNDARY",
+  "Human-with-independent-evidence-in-the-loop",
+  "It lowers `alpha`, but it also raises `beta`.",
+]) {
+  if (!protectingZero.includes(marker)) {
+    fail(`protecting zero: missing published invariant ${marker}`);
   }
 }
 
@@ -293,5 +349,6 @@ if (failures.length > 0) {
 console.log(
   `English Profile verification passed: ${textFiles.length} text files, ` +
     `${markdownFiles.length} Markdown files, ${mappedRepositories.length} laboratory routes, ` +
-    `${forwardingPages.length} preserved forwarding pages.`,
+    `${publishedEnglishPages.length} published essays, ${selectedUnpublishedPages.length} selected drafts, ` +
+    `${legacyCompatibilityPages.length} preserved legacy routes.`,
 );

@@ -1,10 +1,11 @@
 # Protecting Zero: From Answer Generation to Established Fact
 
-> English edition status: not yet published.
+> Legacy compatibility route.
 
-The complete current essay is owned by the independently revisioned Chinese edition.
+The English publication now has a canonical GitHub-native path:
 
-- [Chinese PDF edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/main/docs/protecting-zero-from-answer-to-fact.pdf)
+- [Read Protecting Zero](protecting-zero.md)
+- [View the exact Chinese PDF source](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/7997b43c7767e9f6cc6546046c2c7475a49de347/docs/protecting-zero-from-answer-to-fact.pdf)
 - [Return to the English Profile](../README.md)
 
-The missing English edition is translation debt, not a change to the essay's argument.
+This page preserves the previously exposed URL. It is not a second English edition.
