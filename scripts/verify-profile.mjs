@@ -44,9 +44,7 @@ const mappedRepositories = [
   "Qixu",
   "VeriTrail",
 ];
-const selectedUnpublishedPages = [
-  "ai-cognitive-feedback-loop.md",
-];
+const selectedUnpublishedPages = [];
 const legacyCompatibilityPages = [
   "docker-desktop-windows-socket-recovery.md",
   "engineering-judgment.md",
@@ -237,6 +235,11 @@ const publishedEnglishPages = [
     sourcePath: "docs/adversarial-engineering-validation.md",
   },
   {
+    page: "ai-cognitive-feedback-loop.md",
+    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourcePath: "docs/ai-cognitive-feedback-loop.md",
+  },
+  {
     page: "repository-system-map.md",
     sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
     sourcePath: "docs/repository-system-map.md",
@@ -255,11 +258,12 @@ for (const { page: publishedEnglishPage, sourceCommit, sourcePath } of published
 const publicationIndex = fs.readFileSync(path.join(root, "docs/README.md"), "utf8");
 for (const invariant of [
   "## Published in English",
-  "## Selected for Future English Publication",
   "## Publication Policy",
+  "No unpublished English edition is currently scheduled.",
   "Chinese article exists\n!= English edition required",
   "English essays\n= GitHub-native Markdown",
   "A Chinese-only article creates no translation debt.",
+  "A future translation obligation begins only when an article is explicitly selected",
   "They are not English publications, do not appear in the published index",
 ]) {
   if (!publicationIndex.includes(invariant)) {
@@ -293,6 +297,20 @@ for (const marker of [
 ]) {
   if (!adversarialValidation.includes(marker)) {
     fail(`adversarial engineering validation: missing published invariant ${marker}`);
+  }
+}
+
+const aiCeiling = fs.readFileSync(path.join(root, "docs/ai-cognitive-feedback-loop.md"), "utf8");
+for (const marker of [
+  "AI accelerates cognitive variation. It does not automatically accelerate cognitive progress.",
+  "Multi-agent consensus is not truth.",
+  "Under a wrong fitness function, strong selection accelerates the wrong objective.",
+  "Explaining the past earns candidate status.",
+  "Intelligence can be distributed.",
+  "Responsibility must remain attributable.",
+]) {
+  if (!aiCeiling.includes(marker)) {
+    fail(`AI ceiling: missing published invariant ${marker}`);
   }
 }
 
