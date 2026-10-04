@@ -45,7 +45,6 @@ const mappedRepositories = [
   "VeriTrail",
 ];
 const selectedUnpublishedPages = [
-  "adversarial-engineering-validation.md",
   "ai-cognitive-feedback-loop.md",
 ];
 const legacyCompatibilityPages = [
@@ -233,6 +232,11 @@ const publishedEnglishPages = [
     sourcePath: "docs/protecting-zero-from-answer-to-fact.pdf",
   },
   {
+    page: "adversarial-engineering-validation.md",
+    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourcePath: "docs/adversarial-engineering-validation.md",
+  },
+  {
     page: "repository-system-map.md",
     sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
     sourcePath: "docs/repository-system-map.md",
@@ -273,6 +277,22 @@ for (const marker of [
 ]) {
   if (!protectingZero.includes(marker)) {
     fail(`protecting zero: missing published invariant ${marker}`);
+  }
+}
+
+const adversarialValidation = fs.readFileSync(
+  path.join(root, "docs/adversarial-engineering-validation.md"),
+  "utf8",
+);
+for (const marker of [
+  "Can a project still explain what is true after it loses its author",
+  "A successful workflow is an execution fact. A required check is a governance fact.",
+  "The unit of coverage is the failure mechanism",
+  "M7` and `M8`. Those identifiers belong to Qixu.",
+  "Now we know why we are allowed to stop.",
+]) {
+  if (!adversarialValidation.includes(marker)) {
+    fail(`adversarial engineering validation: missing published invariant ${marker}`);
   }
 }
 
@@ -349,6 +369,7 @@ if (failures.length > 0) {
 console.log(
   `English Profile verification passed: ${textFiles.length} text files, ` +
     `${markdownFiles.length} Markdown files, ${mappedRepositories.length} laboratory routes, ` +
-    `${publishedEnglishPages.length} published essays, ${selectedUnpublishedPages.length} selected drafts, ` +
+    `${publishedEnglishPages.length} published essays, ${selectedUnpublishedPages.length} selected ` +
+    `${selectedUnpublishedPages.length === 1 ? "draft" : "drafts"}, ` +
     `${legacyCompatibilityPages.length} preserved legacy routes.`,
 );
