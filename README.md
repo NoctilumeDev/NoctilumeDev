@@ -148,6 +148,7 @@ The full Chinese method library remains available in the [Chinese edition](https
 
 Available in English:
 
+- [Engineering Judgment](docs/engineering-judgment-interview.md)
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](docs/philosophers-kpi.md)
 - [Repository System Map](docs/repository-system-map.md)
 
