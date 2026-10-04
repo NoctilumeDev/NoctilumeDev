@@ -150,9 +150,10 @@ Available in English:
 
 - [Engineering Judgment](docs/engineering-judgment-interview.md)
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](docs/philosophers-kpi.md)
+- [Protecting Zero: From Generated Answers to Qualified Facts](docs/protecting-zero.md)
 - [Repository System Map](docs/repository-system-map.md)
 
-The complete current essay and engineering-method library is available in [NoctilumeDev-ZH](https://github.com/NoctilumeDev/NoctilumeDev-ZH/tree/main/docs). Existing English-repository article URLs remain as thin forwarding pages where link continuity matters.
+The complete current essay and engineering-method library is available in [NoctilumeDev-ZH](https://github.com/NoctilumeDev/NoctilumeDev-ZH/tree/main/docs). The English collection is a curated publication surface, not a complete translation mirror. Existing English-repository article URLs remain as thin forwarding pages where link continuity matters.
 
 ## Information Ownership
 
