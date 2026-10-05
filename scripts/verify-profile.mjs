@@ -18,6 +18,7 @@ const requiredFiles = [
   "docs/adversarial-engineering-validation.md",
   "docs/ai-cognitive-feedback-loop.md",
   "docs/docker-desktop-windows-socket-recovery.md",
+  "docs/decision-epistemology.md",
   "docs/engineering-judgment.md",
   "docs/engineering-judgment-interview.md",
   "docs/fresh-checkout-independent-audit.md",
@@ -183,6 +184,7 @@ for (const invariant of [
   "A card will move to [Engineering Gallery]",
   "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
   "[Engineering Judgment](docs/engineering-judgment-interview.md)",
+  "[Decision Epistemology](docs/decision-epistemology.md)",
   "[Protecting Zero: From Generated Answers to Qualified Facts](docs/protecting-zero.md)",
 ]) {
   if (!readme.includes(invariant)) fail(`README.md: missing English-profile invariant ${invariant}`);
@@ -218,6 +220,11 @@ const publishedEnglishPages = [
     page: "engineering-judgment-interview.md",
     sourceCommit: "37daa83b37918210561f8fe69ccb0ee9a72cdb79",
     sourcePath: "docs/engineering-judgment-interview.md",
+  },
+  {
+    page: "decision-epistemology.md",
+    sourceCommit: "eb963cf4beb84148cfa5717e3251b5c1a822d252",
+    sourcePath: "docs/decision-epistemology.md",
   },
   {
     page: "philosophers-kpi.md",
@@ -327,6 +334,23 @@ for (const marker of [
 ]) {
   if (!engineeringJudgment.includes(marker)) {
     fail(`engineering judgment: missing translated invariant ${marker}`);
+  }
+}
+
+const decisionEpistemology = fs.readFileSync(
+  path.join(root, "docs/decision-epistemology.md"),
+  "utf8",
+);
+for (const marker of [
+  "They are more like seven projections of the same dark world.",
+  "A sense of direction is not an answer.",
+  "Decision is therefore not an eighth way of thinking.",
+  "It is a refusal to grant error unlimited power.",
+  "a sense of direction still cannot be downloaded",
+  "The value of the paper is that the next collision does not have to be exactly the same.",
+]) {
+  if (!decisionEpistemology.includes(marker)) {
+    fail(`decision epistemology: missing translated invariant ${marker}`);
   }
 }
 

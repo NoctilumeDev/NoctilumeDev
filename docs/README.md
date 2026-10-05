@@ -5,6 +5,7 @@
 ## Published in English
 
 - [Engineering Judgment](engineering-judgment-interview.md)
+- [Decision Epistemology](decision-epistemology.md)
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](philosophers-kpi.md)
 - [Protecting Zero: From Generated Answers to Qualified Facts](protecting-zero.md)
 - [Adversarial Engineering Validation: Making “Done” Survive Its Author](adversarial-engineering-validation.md)
