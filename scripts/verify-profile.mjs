@@ -347,7 +347,7 @@ for (const marker of [
   "Decision is therefore not an eighth way of thinking.",
   "It is a refusal to grant error unlimited power.",
   "a sense of direction still cannot be downloaded",
-  "The value of the paper is that the next collision does not have to be exactly the same.",
+  "the next time we hit a wall",
 ]) {
   if (!decisionEpistemology.includes(marker)) {
     fail(`decision epistemology: missing translated invariant ${marker}`);
