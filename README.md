@@ -149,6 +149,7 @@ The full Chinese method library remains available in the [Chinese edition](https
 Available in English:
 
 - [Engineering Judgment](docs/engineering-judgment-interview.md)
+- [Decision Epistemology](docs/decision-epistemology.md)
 - [The KPI Philosophers: When Executors Begin to Interpret Goals](docs/philosophers-kpi.md)
 - [Protecting Zero: From Generated Answers to Qualified Facts](docs/protecting-zero.md)
 - [Adversarial Engineering Validation: Making “Done” Survive Its Author](docs/adversarial-engineering-validation.md)
