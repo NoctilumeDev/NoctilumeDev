@@ -111,7 +111,7 @@ There are far fewer constraints that are genuinely solid.
 
 Money cannot appear from nowhere.
 
-The same exclusive resource cannot legally belong to two subjects at once.
+The same exclusive resource cannot legitimately belong to two owners at once.
 
 A person without authorization does not acquire decision authority merely because they are technically capable of acting.
 
@@ -239,7 +239,7 @@ Declaring the risk to be 0.37% may simply replace “I do not know” with a num
 
 What probability truly offers may not be predictive power.
 
-It may be caution toward certainty.
+It may be caution about certainty.
 
 It did not happen does not mean it cannot happen.
 
@@ -457,7 +457,7 @@ Different people may draw different maps.
 
 They may even find different exits.
 
-But whether a path can be walked must still be asked of reality.
+But whether a path is actually walkable is still a question only reality can answer.
 
 This is also the strangest thing I notice when I look back at my projects.
 
