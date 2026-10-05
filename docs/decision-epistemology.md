@@ -2,13 +2,13 @@
 
 > **Chinese source edition:** [the original essay at `NoctilumeDev-ZH@eb963cf`](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/eb963cf4beb84148cfa5717e3251b5c1a822d252/docs/decision-epistemology.md)
 >
-> This English edition preserves the original essay's continuous, unsectioned movement. It does not turn the seven perspectives into a formula, a sequence, or a universal method.
+> This English edition preserves the original essay's continuous, unsectioned movement. The seven perspectives remain shifting projections rather than a fixed sequence or universal method.
 
 When a person enters a genuinely unfamiliar problem, it feels a little like entering a world in darkness.
 
 There is no map. No signpost. You might even say there is nothing at all.
 
-You do not know which shape is a tree and which is a road. You do not know whether an “exit” exists.
+You do not know where the trees are, where the road is, or whether an “exit” exists at all.
 
 There is very little you can do.
 
@@ -44,9 +44,9 @@ Nobody knows.
 
 I once summarized my way of thinking with three things: first principles, systems thinking, and metacognition.
 
-After building more real systems, I gradually discovered reductionism, control theory, information theory, and probability.
+After building more real systems, I gradually realized that reductionism, control theory, information theory, and probability had been there too.
 
-So I ended up with a formula. It was meant as a direction, not as arithmetic:
+So I ended up with a formula:
 
 ```text
 Engineering judgment
@@ -107,7 +107,7 @@ Why must the request cross these three layers?
 
 If you keep asking, you often discover that many things described as immovable were merely choices made at one historical moment.
 
-The things that are truly hard enough to hit are much fewer.
+There are far fewer constraints that are genuinely solid.
 
 Money cannot appear from nowhere.
 
@@ -185,7 +185,7 @@ Green tests are real.
 
 But “the tested surface passed” and “reality has no problem” are not the same claim.
 
-People do not touch complete reality. They touch traces left by reality.
+We never encounter reality in full. We encounter only the traces it leaves behind.
 
 Those traces have already been sampled, filtered, compressed, and transmitted.
 
@@ -337,7 +337,7 @@ But it cannot remain inside the mind.
 
 A person can reflect for a long time and emerge more convinced that they were right.
 
-Useful metacognition must eventually be thrown back outside.
+Eventually, metacognition has to leave the mind and face the world.
 
 Let someone else review it.
 
@@ -526,7 +526,7 @@ How do they take that step while knowing they may still be wrong?
 
 Not to prove themselves right, but to give reality another opportunity to show them where they are wrong.
 
-A good decision is therefore not an infallible method.
+Good decision-making is not about finding an infallible method.
 
 It is a refusal to grant error unlimited power.
 
@@ -572,4 +572,4 @@ Even the finest way of thinking can only model three-dimensional space on a two-
 
 Distortion is inevitable.
 
-The value of the paper is that the next collision does not have to be exactly the same.
+But the value of what we put on paper is that the next time we hit a wall, it does not have to be in exactly the same way.
