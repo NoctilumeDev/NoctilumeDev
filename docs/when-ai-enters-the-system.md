@@ -1,8 +1,8 @@
 # When AI Enters the System
 
-## The guardrails held. The product still answered the wrong question.
+## The model could not drop the database. One ordinary sentence still sent the product down the wrong path.
 
-> **Chinese source edition:** [the original essay at `NoctilumeDev-ZH@7efe9e1`](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/7efe9e1c40bf3f3494ad28fa4ccb316e87481c81/docs/when-ai-enters-the-system.md)
+> **Chinese source edition:** [the original essay at `NoctilumeDev-ZH@cbb17ee`](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/cbb17ee13273343a9f24d9a53fc2cb2ca449181e/docs/when-ai-enters-the-system.md)
 >
 > This English edition preserves the original experiment's narrative order. Its numbers describe one bounded test run; they are observations, not universal model benchmarks.
 
@@ -144,7 +144,7 @@ Everything appeared to be behaving as expected.
 
 So I changed the way I tested it.
 
-Instead of adding more ordinary questions, I used a simple controlled-variable method.
+Instead of adding more ordinary questions, I used a simple method: change one variable at a time.
 
 First, hold the final objective constant: check projector inventory.
 
@@ -278,13 +278,13 @@ Do near-synonyms interfere with one another?
 
 Does negation actually take effect?
 
-After the user changes their mind, does the old request remain behind?
+After the user changes their mind, does the old request linger?
 
 When two legitimate requests appear together, does the system forcibly merge them?
 
 When a sentence grows long, does the real request at the end disappear beneath everything before it?
 
-This is where controlled-variable testing began to show its value.
+This is where changing one variable at a time began to show its value.
 
 If I merely asked one hundred assorted questions and ten came back wrong, I still would not know why.
 
@@ -298,7 +298,7 @@ The same database.
 
 The same questions.
 
-The same wait time.
+The same timeout.
 
 The same local rules.
 
@@ -306,7 +306,7 @@ DeepSeek ran first.
 
 Then Qwen.
 
-If the models behaved differently, that suggested a model difference.
+If the models behaved differently, that pointed to the model layer.
 
 If both models understood correctly but the local program still returned the wrong result, the problem was local.
 
@@ -314,11 +314,11 @@ If the model misunderstood and the local program recovered the right result, the
 
 If the model was right and the local program blocked it, the guard itself had become the problem.
 
-Eventually, we expanded the controlled-variable table to 133 cases.
+Eventually, we expanded the one-variable-at-a-time test matrix to 133 cases.
 
 Both runs used the same code, the same database, the same question order, and the same local rules.
 
-Twenty-one cases were ambiguous by construction or fell outside the explicitly supported scope. I did not force them into pass or fail.
+Twenty-one cases were ambiguous in their own wording or fell outside the explicitly supported scope. I did not force them into pass or fail.
 
 The cases that could be judged clearly produced an interesting result.
 
@@ -326,7 +326,7 @@ DeepSeek ended with 16 product-level errors.
 
 Qwen also ended with 16.
 
-In 12 of those cases, the system chose the wrong query branch.
+At the product level, the errors fell into two categories. In 12 cases, the system chose the wrong query branch.
 
 In the other four, the local program rejected a question that should have been supported.
 
@@ -352,11 +352,11 @@ At this point, changing models became more interesting too.
 
 The two models had not performed alike at the interpretation layer.
 
-Among the cases where model understanding could be judged independently, DeepSeek interpreted 53 correctly. Qwen interpreted 71 correctly.
+Among the cases where model understanding could be judged independently, DeepSeek interpreted 53 cases correctly. Qwen interpreted 71 correctly.
 
-At least on this fixed set of questions, Qwen was much more likely to understand what the user actually wanted.
+On this fixed set of questions, Qwen correctly identified what the user actually wanted more often.
 
-But at the point where the product finally executed, both sides still produced 16 errors.
+But when the product produced its final result, both runs still ended with 16 errors.
 
 The model got smarter. The system did not.
 
@@ -374,7 +374,7 @@ But in 12 cases, the model had understood correctly and the local program still 
 
 In other words, the fallback sometimes rescued the model and sometimes redid work the model had already done correctly—and made it wrong.
 
-Two models with genuinely different interpretation performance passed through the same local rules and emerged with the same product score.
+Two models with genuinely different interpretation performance passed through the same local rules and emerged with the same final error count.
 
 The other side of the result was equally interesting.
 
@@ -400,7 +400,7 @@ And the system still answered incorrectly.
 
 That was when I realized the final result could not be summarized as merely safe or unsafe.
 
-There is another deeply awkward condition:
+There is another deeply awkward outcome:
 
 No unauthorized access.
 
@@ -424,7 +424,7 @@ The program is running normally.
 
 It simply answered a different question.
 
-So one more category has to be counted: harmful fallback.
+So one more category has to be counted: errors introduced by fallback.
 
 “No incident occurred” is not the same as “the system did the right thing.”
 
@@ -468,7 +468,7 @@ Reference resolution.
 
 Local misclassification.
 
-Harmful fallback.
+Fallback-induced errors.
 
 And to find out which layer was actually wrong, I had to compare different models under the same conditions.
 
@@ -486,7 +486,7 @@ Add one action, and you must ask whether a user might request it, cancel it, and
 
 Add one permission level, and you must ask what happens when several roles appear in the same sentence.
 
-Natural language does not arrive one box at a time according to the boxes drawn by the program.
+Natural language does not arrive one neat box at a time just because the program drew those boxes.
 
 People change their minds.
 
@@ -494,7 +494,7 @@ They omit things.
 
 They remember the past.
 
-They suddenly insert something unrelated.
+They suddenly insert something else.
 
 They explain the reason before stating the request.
 
@@ -522,7 +522,7 @@ Administrator queries.
 
 The possible interactions can still be listed one by one.
 
-I can still sit there, slowly build a controlled-variable table, and test every case.
+I can still sit there, slowly build a one-variable-at-a-time test matrix, and test every case.
 
 What happens when the system gets larger?
 

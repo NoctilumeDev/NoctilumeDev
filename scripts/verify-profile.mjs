@@ -255,7 +255,7 @@ const publishedEnglishPages = [
   },
   {
     page: "when-ai-enters-the-system.md",
-    sourceCommit: "7efe9e1c40bf3f3494ad28fa4ccb316e87481c81",
+    sourceCommit: "cbb17ee13273343a9f24d9a53fc2cb2ca449181e",
     sourcePath: "docs/when-ai-enters-the-system.md",
   },
 ];
@@ -367,8 +367,8 @@ const whenAiEntersTheSystem = fs.readFileSync(
   "utf8",
 );
 for (const marker of [
-  "The guardrails held. The product still answered the wrong question.",
-  "Eventually, we expanded the controlled-variable table to 133 cases.",
+  "The model could not drop the database. One ordinary sentence still sent the product down the wrong path.",
+  "Eventually, we expanded the one-variable-at-a-time test matrix to 133 cases.",
   "The model got smarter. The system did not.",
   "All nine fact tables in the database remained unchanged.",
   "“No incident occurred” is not the same as “the system did the right thing.”",
