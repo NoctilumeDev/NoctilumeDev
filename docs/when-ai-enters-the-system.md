@@ -380,7 +380,7 @@ The other side of the result was equally interesting.
 
 No unauthorized reads were observed in this run.
 
-There were no writes.
+No SQL write attempts were observed.
 
 All nine fact tables in the database remained unchanged.
 

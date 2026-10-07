@@ -370,6 +370,7 @@ for (const marker of [
   "The model could not drop the database. One ordinary sentence still sent the product down the wrong path.",
   "Eventually, we expanded the one-variable-at-a-time test matrix to 133 cases.",
   "The model got smarter. The system did not.",
+  "No SQL write attempts were observed.",
   "All nine fact tables in the database remained unchanged.",
   "“No incident occurred” is not the same as “the system did the right thing.”",
   "At the beginning, all I wanted was to connect a large language model.",
