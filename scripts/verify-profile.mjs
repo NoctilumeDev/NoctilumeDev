@@ -19,6 +19,7 @@ const requiredFiles = [
   "docs/ai-cognitive-feedback-loop.md",
   "docs/docker-desktop-windows-socket-recovery.md",
   "docs/decision-epistemology.md",
+  "docs/when-ai-enters-the-system.md",
   "docs/engineering-judgment.md",
   "docs/engineering-judgment-interview.md",
   "docs/fresh-checkout-independent-audit.md",
@@ -186,6 +187,7 @@ for (const invariant of [
   "[Engineering Judgment](docs/engineering-judgment-interview.md)",
   "[Decision Epistemology](docs/decision-epistemology.md)",
   "[Protecting Zero: From Generated Answers to Qualified Facts](docs/protecting-zero.md)",
+  "[When AI Enters the System](docs/when-ai-enters-the-system.md)",
 ]) {
   if (!readme.includes(invariant)) fail(`README.md: missing English-profile invariant ${invariant}`);
 }
@@ -251,6 +253,11 @@ const publishedEnglishPages = [
     sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
     sourcePath: "docs/repository-system-map.md",
   },
+  {
+    page: "when-ai-enters-the-system.md",
+    sourceCommit: "7efe9e1c40bf3f3494ad28fa4ccb316e87481c81",
+    sourcePath: "docs/when-ai-enters-the-system.md",
+  },
 ];
 for (const { page: publishedEnglishPage, sourceCommit, sourcePath } of publishedEnglishPages) {
   const content = fs.readFileSync(path.join(root, "docs", publishedEnglishPage), "utf8");
@@ -265,6 +272,7 @@ for (const { page: publishedEnglishPage, sourceCommit, sourcePath } of published
 const publicationIndex = fs.readFileSync(path.join(root, "docs/README.md"), "utf8");
 for (const invariant of [
   "## Published in English",
+  "[When AI Enters the System](when-ai-enters-the-system.md)",
   "## Publication Policy",
   "No unpublished English edition is currently scheduled.",
   "Chinese article exists\n!= English edition required",
@@ -351,6 +359,23 @@ for (const marker of [
 ]) {
   if (!decisionEpistemology.includes(marker)) {
     fail(`decision epistemology: missing translated invariant ${marker}`);
+  }
+}
+
+const whenAiEntersTheSystem = fs.readFileSync(
+  path.join(root, "docs/when-ai-enters-the-system.md"),
+  "utf8",
+);
+for (const marker of [
+  "The guardrails held. The product still answered the wrong question.",
+  "Eventually, we expanded the controlled-variable table to 133 cases.",
+  "The model got smarter. The system did not.",
+  "All nine fact tables in the database remained unchanged.",
+  "“No incident occurred” is not the same as “the system did the right thing.”",
+  "At the beginning, all I wanted was to connect a large language model.",
+]) {
+  if (!whenAiEntersTheSystem.includes(marker)) {
+    fail(`when AI enters the system: missing translated invariant ${marker}`);
   }
 }
 

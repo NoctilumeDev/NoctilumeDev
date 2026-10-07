@@ -10,6 +10,7 @@
 - [Protecting Zero: From Generated Answers to Qualified Facts](protecting-zero.md)
 - [Adversarial Engineering Validation: Making “Done” Survive Its Author](adversarial-engineering-validation.md)
 - [AI’s Ceiling Is Not in the Answer](ai-cognitive-feedback-loop.md)
+- [When AI Enters the System](when-ai-enters-the-system.md)
 - [Repository System Map](repository-system-map.md)
 
 No unpublished English edition is currently scheduled. Future selection will record publication intent; it will not claim that an edition already exists or impose the same obligation on every Chinese article.
