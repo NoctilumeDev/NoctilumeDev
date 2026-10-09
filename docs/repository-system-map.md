@@ -4,7 +4,7 @@
 >
 > Scope: twelve mapped engineering repositories. [dome](https://github.com/NoctilumeDev/dome) remains outside this system map as a historical archive for course work, independent exercises, and writing.
 >
-> [中文版本 / Chinese source edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/7997b43c7767e9f6cc6546046c2c7475a49de347/docs/repository-system-map.md)
+> [中文版本 / Chinese edition at a fixed revision](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/17fbc487eb10fd610d5ab5bc34bdf9ace2974fb2/docs/repository-system-map.md)
 
 This document maintains relatively stable roles, dependency directions, and possible future seams. Exact milestones, versions, Releases, and evidence coordinates remain owned by each project repository.
 
