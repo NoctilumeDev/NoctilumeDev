@@ -253,7 +253,7 @@ const publishedEnglishPages = [
   },
   {
     page: "repository-system-map.md",
-    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourceCommit: "17fbc487eb10fd610d5ab5bc34bdf9ace2974fb2",
     sourcePath: "docs/repository-system-map.md",
   },
   {
