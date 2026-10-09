@@ -2,7 +2,7 @@
 
 > Status: `STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
 >
-> Scope: eleven mapped engineering repositories. [dome](https://github.com/NoctilumeDev/dome) remains outside this system map as a historical archive for course work, independent exercises, and writing.
+> Scope: twelve mapped engineering repositories. [dome](https://github.com/NoctilumeDev/dome) remains outside this system map as a historical archive for course work, independent exercises, and writing.
 >
 > [中文版本 / Chinese source edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/7997b43c7767e9f6cc6546046c2c7475a49de347/docs/repository-system-map.md)
 
@@ -10,13 +10,13 @@ This document maintains relatively stable roles, dependency directions, and poss
 
 ## One-sentence model
 
-> **FlowKernel may eventually constrain who can act inside which OS-level capability and resource envelope. JPyxis owns how heterogeneous computation is defined, deployed, invoked, and executed. Source systems own and report their facts. Evidence adapters perform bounded observation and conversion. VeriTrail judges how far existing evidence supports a sealed Plan. Review Attention proposes where a person should inspect first. Humans own premises, sealing, and final disposition. Reality owns truth.**
+> **Drift Algorithm studies whether a proxy still supports a fixed objective under bounded observation and feedback. FlowKernel may eventually constrain who can act inside which OS-level capability and resource envelope. JPyxis owns how heterogeneous computation is defined, deployed, invoked, and executed. Source systems own and report their facts. Evidence adapters perform bounded observation and conversion. VeriTrail judges how far existing evidence supports a sealed Plan. Review Attention proposes where a person should inspect first. Humans own objectives, authorization, premises, sealing, and final disposition. Reality owns truth.**
 
 GitHub is not an external-world oracle. It owns and exposes repository, commit, PR, Check, Release, Pages, and public-render state inside its platform trust domain. Those facts do not prove every source claim expressed through them.
 
 VeriTrail also does not own source state or world truth. It applies sealed Plans, standard Evidence, and deterministic rules to produce bounded `PASS / FAIL / INCONCLUSIVE / PENDING` verdicts.
 
-## Eleven mapped repositories are not one call tree
+## Twelve mapped repositories are not one call tree
 
 | Repository | Stable role | Owns | Does not own |
 | --- | --- | --- | --- |
@@ -24,6 +24,7 @@ VeriTrail also does not own source state or world truth. It applies sealed Plans
 | [VeriTrail](https://github.com/NoctilumeDev/VeriTrail) | Evidence and deterministic judgment substrate | Plan/Evidence contracts, integrity and sufficiency checks, assertion execution, bounded verdict derivation | Source-system state, world truth, or final human disposition |
 | [JPyxis](https://github.com/NoctilumeDev/JPyxis) | Contract-driven heterogeneous-compute framework | Compute contracts, artifact and deployment identity, invocation lifecycle, runtime binding, execution facts | OS-level capabilities, business truth owned by the host or source system, or VeriTrail verdicts |
 | [FlowKernel](https://github.com/NoctilumeDev/FlowKernel) | Planned OS-level trust and execution substrate | Future principals, capabilities, resource hard bounds, privilege transitions, revocation, recovery, and provenance | Agent correctness, JPyxis internal state, or external acceptance conclusions; it currently claims no implemented C-first target or cross-platform adapter |
+| [AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab) | Prepared Drift Algorithm research line for proxy validity under fixed definitions | Its research scope, experiment artifacts, and bounded conclusions about whether a proxy supports a fixed objective under declared conditions | Human objectives or authorization; an implemented detector, a unified drift mechanism, real-world utility, or a proven link between proxy-validity drift and adjacent objective, obligation, or derivation changes |
 | [PlainJournal](https://github.com/NoctilumeDev/PlainJournal) | Distributed business and reliability reference system | Its business, data, transaction state, and evidence inside declared conditions | Infrastructure-project state or universal truth |
 | [DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary) | Complete enhanced-monolith business sample | Library business, role boundaries, collaboration workflows, and project evidence | Implementation proof for VeriTrail, JPyxis, or FlowKernel |
 | [Qixu](https://github.com/NoctilumeDev/Qixu) | Campus-space, scarce-resource allocation, and usage-right governance reference system | Spaces, eligibility, allocation, reservations, usage rights, venues, conflict handling, and maintenance governance | DarkRoomLibrary accounts and library facts, upstream roles, or another system's approval and acceptance authority |
@@ -32,7 +33,7 @@ VeriTrail also does not own source state or world truth. It applies sealed Plans
 | [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) | Future multi-merchant architecture research | Declared future questions, boundaries, and design direction | Unimplemented capability or runnable-product facts |
 | [InkNarratives](https://github.com/NoctilumeDev/InkNarratives) | Content, typography, and narrative-visual experiment | Its static works and content state | Validation responsibility for engineering infrastructure |
 
-Business systems, framework and OS experiments, and content work provide real problems, controls, and source evidence. Infrastructure repositories extract reusable contracts for authority, execution, observation, and judgment. The former are not test accessories for the latter, and the latter cannot seize ownership of business state.
+Business systems, algorithm research, framework and OS experiments, and content work provide real problems, controls, and source evidence. Infrastructure repositories extract reusable contracts for authority, execution, observation, and judgment. The former are not test accessories for the latter, and the latter cannot seize ownership of business state.
 
 DarkRoomLibrary and Qixu cooperate through an explicit identity adapter without merging fact ownership. DarkRoomLibrary keeps account and library facts. Qixu binds a bounded identity response to its own local principal and independently decides space eligibility and permission. The seam is not SSO, does not inherit upstream roles, and does not share or directly write the other database.
 
@@ -156,6 +157,7 @@ The last step may create a new claim and new authorization. It may not rewrite t
 - The Profile keeps only a compact journey and a link here.
 - Exact stages, versions, Releases, and stop lines stay in each project repository.
 - No empty JPyxis/FlowKernel-to-VeriTrail adapters are created before implementation facts exist.
+- AlgorithmResearchLab remains independent: no Drift Algorithm detector, cross-project adapter, or shared mechanism is claimed before its own evidence establishes one.
 - Future integration begins with a source-owned, read-only, versioned receipt contract and one real vertical slice. Package or repository boundaries follow observed dependency, release, and failure boundaries.
 
 ```text
@@ -169,4 +171,4 @@ each repository first closes its own facts and stop line
 
 If integration requires shared mutable state, copied verdicts, or bypassed authority, stop and return to the contract boundary instead of adding another compatibility branch.
 
-This is a composable system map, not a mandatory deployment topology and not a plan to turn eleven repositories into mutually required microservices.
+This is a composable system map, not a mandatory deployment topology and not a plan to turn twelve repositories into mutually required microservices.

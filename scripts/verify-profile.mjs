@@ -35,6 +35,7 @@ const requiredFiles = [
   "scripts/verify-profile.mjs",
 ];
 const mappedRepositories = [
+  "AlgorithmResearchLab",
   "DarkRoomLibrary",
   "FlowKernel",
   "InkNarratives",
@@ -166,7 +167,7 @@ const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r
 for (const heading of [
   "## The KPI Philosophers",
   "## Project Journey",
-  "## Three Laboratories",
+  "## Four Research Lines",
   "## Selected Work",
   "## Repository System Map",
   "## Laboratory and Distribution Surfaces",
@@ -182,6 +183,8 @@ for (const invariant of [
   "plan defined\n   != execution complete\n   != qualification established\n   != state effective\n   != next step authorized",
   "Language migration is not project-routing authorization.",
   "Implementation has not started",
+  "RESEARCH_NOT_STARTED",
+  "Objective substitution, obligation substitution, and derivation gaps remain adjacent candidates",
   "A card will move to [Engineering Gallery]",
   "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
   "[Engineering Judgment](docs/engineering-judgment-interview.md)",
@@ -391,8 +394,10 @@ for (const marker of [
   "VeriTrail",
   "JPyxis",
   "FlowKernel",
+  "Drift Algorithm",
+  "RESEARCH_NOT_STARTED",
   "FEEDBACK TO PLAINJOURNAL'S MACHINE LIMIT",
-  "Three roles may compose; implemented boundaries remain single-machine and single-node",
+  "Human authority sets objectives; reality owns truth",
 ]) {
   if (!journeySvg.includes(marker)) fail(`project journey: missing English semantic marker ${marker}`);
 }
@@ -412,7 +417,8 @@ for (const marker of [
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
-  "eleven mapped engineering repositories",
+  "twelve mapped engineering repositories",
+  "proxy still supports a fixed objective",
   "The seam is not SSO",
   "JPyxis != VeriTrail Plugin",
   "FlowKernel != Agent Harness",
