@@ -74,7 +74,7 @@ This is not a product matrix invented after the fact, and it is not a single int
 
 **Question:** While objective and proxy definitions remain fixed, does the proxy still support decisions for that objective as observation, optimization, and environmental feedback accumulate?
 
-**Boundary:** AlgorithmResearchLab currently contains scope and method documents only; its research state is `RESEARCH_NOT_STARTED`. It claims no implemented detector, unified drift mechanism, or real-world utility. Objective or obligation replacement and missing derivation support remain adjacent research candidates until evidence shows how, or whether, they relate.
+**Boundary:** AlgorithmResearchLab currently contains research-preparation materials only: naming conventions, scope, method, literature leads, and directory guidance. Its research state is `RESEARCH_NOT_STARTED`. It claims no implemented detector, unified drift mechanism, or real-world utility. Objective or obligation replacement and missing derivation support remain adjacent candidates outside the current research scope; their classification and relationships remain open.
 
 Each research line can close its own problem independently. They are not a mandatory pipeline. If they later cooperate, the default seam is a source-owned, read-only, versioned artifact; composition does not merge authority. Humans own objectives and authorization. Reality owns truth.
 
@@ -86,7 +86,7 @@ Each research line can close its own problem independently. They are not a manda
 - **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** — local system for controlled variables, immutable evidence, browser observation, and deterministic bounded verdicts.
 - **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** — contract-driven heterogeneous-compute framework separating Control, definition frontends, and runtimes.
 - **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** — planned OS-level trust and execution substrate for bounded agentic authority, resources, revocation, and recovery.
-- **[Drift Algorithm / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** — prepared research line for proxy validity under fixed objective and proxy definitions; research has not started, and adjacent objective or obligation substitution remains unclassified.
+- **[Drift Algorithm / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** — prepared research line for proxy validity under fixed objective and proxy definitions; research has not started, and adjacent objective substitution, obligation substitution, and derivation gaps remain candidates outside its current scope.
 
 ### Systems and experiments
 
