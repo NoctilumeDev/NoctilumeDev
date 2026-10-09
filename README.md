@@ -4,11 +4,11 @@
 
 AI-assisted solo engineer studying how unreliable code generation can enter reliable software systems without quietly acquiring authority.
 
-Generating code, obtaining a green check, and establishing an engineering fact are different events. My projects began with five dependency-free HTML pages, grew through complete business systems and distributed-system exercises, reached real single-machine stop lines, and eventually separated into three laboratories with distinct authority boundaries.
+Generating code, obtaining a green check, and establishing an engineering fact are different events. My projects began with five dependency-free HTML pages, grew through complete business systems and distributed-system exercises, reached real single-machine stop lines, and eventually separated into four research lines with distinct responsibility boundaries.
 
 *“Student” describes my current identity and age, not a project maturity level. Project maturity is stated through evidence, release state, and explicit limitations.*
 
-**Start here:** [Project journey](#project-journey) · [Three laboratories](#three-laboratories) · [Selected work](#selected-work) · [Engineering method](#engineering-method)
+**Start here:** [Project journey](#project-journey) · [Four research lines](#four-research-lines) · [Selected work](#selected-work) · [Engineering method](#engineering-method)
 
 > **Cognitive branch:** AI increases the rate of cognitive variation; it does not guarantee cognitive progress. Selection quality, retained counterexamples, and explicit ownership of goals, evidence, vetoes, and revisions still determine what survives. The current long-form edition is available in the [Chinese essay library](https://github.com/NoctilumeDev/NoctilumeDev-ZH/tree/main/docs).
 
@@ -35,7 +35,7 @@ For now, I test these boundaries above existing operating systems. A new kernel 
 
 ## Project Journey
 
-[![From five HTML experiments and DarkRoomLibrary to independent Qixu and PlainJournal branches, then to three decoupled laboratories](assets/project-journey.svg)](assets/project-journey.svg)
+[![From five HTML experiments and DarkRoomLibrary to independent Qixu and PlainJournal branches, then to four decoupled research lines](assets/project-journey.svg)](assets/project-journey.svg)
 
 [Open the full-size diagram](assets/project-journey.svg)
 
@@ -48,8 +48,9 @@ This is not a product matrix invented after the fact, and it is not a single int
 5. **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** preserves the future multi-merchant, platform-ledger, and cross-machine problem. It is a planned architecture, not an implemented product.
 6. Those stop lines exposed a separate question: AI can help produce code, but it cannot use its own output to prove source, test, environment, and release facts. That question became **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)**.
 7. Asking who owns computation and who owns system capabilities then separated the problem into **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** and **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)**.
+8. In parallel, **[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** now preserves a fourth question as **Drift Algorithm**: while objective and proxy definitions remain fixed, does the proxy still support decisions for that objective under bounded observation and feedback? Research has not started. Objective substitution, obligation substitution, and derivation gaps remain adjacent candidates, not established instances of one shared mechanism.
 
-## Three Laboratories
+## Four Research Lines
 
 ### VeriTrail — fact qualification
 
@@ -69,16 +70,23 @@ This is not a product matrix invented after the fact, and it is not a single int
 
 **Boundary:** FlowKernel is a planned operating-system-level trust and execution substrate. Implementation has not started. A C-first target and a Linux reference lab remain proposed experimental vehicles, not existing cross-platform capability.
 
-Each laboratory can close its own problem independently. When versioned contracts eventually connect them, their combination may produce capabilities none of them owns alone. Composition does not merge authority.
+### Drift Algorithm — proxy validity under a fixed objective
+
+**Question:** While objective and proxy definitions remain fixed, does the proxy still support decisions for that objective as observation, optimization, and environmental feedback accumulate?
+
+**Boundary:** AlgorithmResearchLab currently contains scope and method documents only; its research state is `RESEARCH_NOT_STARTED`. It claims no implemented detector, unified drift mechanism, or real-world utility. Objective or obligation replacement and missing derivation support remain adjacent research candidates until evidence shows how, or whether, they relate.
+
+Each research line can close its own problem independently. They are not a mandatory pipeline. If they later cooperate, the default seam is a source-owned, read-only, versioned artifact; composition does not merge authority. Humans own objectives and authorization. Reality owns truth.
 
 ## Selected Work
 
-### Flagship systems and laboratories
+### Flagship systems and research lines
 
 - **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** — distributed business and reliability laboratory; a continuing source of capacity, evidence, and runtime questions.
 - **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** — local system for controlled variables, immutable evidence, browser observation, and deterministic bounded verdicts.
 - **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** — contract-driven heterogeneous-compute framework separating Control, definition frontends, and runtimes.
 - **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** — planned OS-level trust and execution substrate for bounded agentic authority, resources, revocation, and recovery.
+- **[Drift Algorithm / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** — prepared research line for proxy validity under fixed objective and proxy definitions; research has not started, and adjacent objective or obligation substitution remains unclassified.
 
 ### Systems and experiments
 
@@ -94,7 +102,7 @@ All project cards still route to their laboratory repositories. Language separat
 
 The journey diagram shows historical causality and feedback. It does not turn the repositories into a mandatory deployment chain.
 
-FlowKernel may eventually constrain operating-system capabilities and resources. JPyxis owns heterogeneous-compute contracts and execution. Evidence adapters observe bounded source facts. VeriTrail judges existing evidence against a sealed Plan. Humans own premises, sealing, and final disposition. Reality owns truth.
+Drift Algorithm studies whether a proxy still supports a fixed objective under bounded observation and feedback. FlowKernel may eventually constrain operating-system capabilities and resources. JPyxis owns heterogeneous-compute contracts and execution. Evidence adapters observe bounded source facts. VeriTrail judges existing evidence against a sealed Plan. Humans own objectives, authorization, premises, sealing, and final disposition. Reality owns truth.
 
 GitHub owns and exposes facts inside its platform trust domain; it is not an oracle for the external world. Review Attention proposes where a person should inspect first; it is not a verdict engine.
 
