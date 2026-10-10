@@ -188,6 +188,8 @@ for (const invariant of [
   "### Why four lines?",
   "The four CRUD verbs and the four research lines are different partitions",
   "These are problem shapes to investigate, not findings already established by AlgorithmResearchLab.",
+  "the honest evidence state is `UNKNOWN` or `NOT_PROVEN`, not automatically `WRONG`",
+  "That is an authorization policy, not a claim that `B'` is false.",
   "Local success does not establish global correctness.",
   "new evidence may change the next plan, but must not silently widen the current one",
   "A card will move to [Engineering Gallery]",
@@ -238,7 +240,7 @@ const publishedEnglishPages = [
   },
   {
     page: "philosophers-kpi.md",
-    sourceCommit: "187837184ce7943e82756357a09bbcd73d5a46d1",
+    sourceCommit: "ac934c47a2893f067120465410156357fe05faca",
     sourcePath: "docs/philosophers-kpi.md",
   },
   {
@@ -297,6 +299,8 @@ for (const invariant of [
 const philosophersKpi = fs.readFileSync(path.join(root, "docs/philosophers-kpi.md"), "utf8");
 for (const invariant of [
   "## The problem can change before one operation finishes",
+  "`UNKNOWN` must not be promoted into `WRONG`, but it must not be promoted into `SAFE` either.",
+  "Worst-case treatment is a safety and authorization policy, not a factual verdict",
   "Enumeration can discover failures; it cannot certify the unvisited space as safe.",
   "## Local optima do not make a global optimum",
   "Read-only authority reduces action risk. It does not establish semantic correctness.",

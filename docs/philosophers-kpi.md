@@ -2,7 +2,7 @@
 
 > This is a research-question note, not a claim that a next-generation operating system has already been implemented.
 
-[中文版本 / Chinese source edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/187837184ce7943e82756357a09bbcd73d5a46d1/docs/philosophers-kpi.md)
+[中文版本 / Chinese source edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/ac934c47a2893f067120465410156357fe05faca/docs/philosophers-kpi.md)
 
 ## The changed problem
 
@@ -80,6 +80,16 @@ or whether it changed the original derivation
 ```
 
 These shapes may involve objective substitution, proof-obligation substitution, a derivation gap, or a change in proxy validity. They may overlap, but they should not be collapsed into one phenomenon called “drift” before the research exists. The immediate questions are simpler: what changed, who authorized the change, and does the new path still support the original conclusion?
+
+When `B` becomes `B'`, we usually do not yet know whether the change is right or wrong. It may be a legitimate new proof path, an unauthorized replacement of the obligation, or simply a path whose derivation has not been established. The honest epistemic state is therefore:
+
+```text
+Was B' authorized?             UNKNOWN
+Does B' preserve the obligation? NOT_PROVEN
+Is B' sufficient to establish A? NOT_PROVEN
+```
+
+`UNKNOWN` must not be promoted into `WRONG`, but it must not be promoted into `SAFE` either. If the action may cause irreversible effects and the system has no independent fallback, recovery, or review path, the execution layer must restrict authority, stop, or request confirmation under the worst plausible risk. Worst-case treatment is a safety and authorization policy, not a factual verdict on whether `B'` is true.
 
 ## Then run them together
 
