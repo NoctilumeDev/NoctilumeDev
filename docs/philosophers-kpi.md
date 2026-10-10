@@ -186,11 +186,11 @@ The inversion can be worse: the AI result may be right, while a deterministic fa
 
 The system cannot treat conventional code as truth and AI as risk by definition. Both need explicit fact ownership, contracts, and evidence; their failure shapes are different.
 
-## Two routes, both requiring explicit authority
+## Three responses, none eliminating uncertainty
 
-One route confines the agent to observation and proposals: no Create, Delete, or Update, only Read and candidate actions. This sharply reduces direct damage, but downstream systems still cannot promote its report into fact without qualification.
+The first response is **authority minimization**. It confines the agent to observation and proposals: no Create, Delete, or Update, only bounded Read and candidate actions. This sharply reduces direct damage, but downstream systems still cannot promote its report into fact without qualification. The experiments retained in `dome` provide evidence for this bounded domain, not a universal safety proof.
 
-The other route delegates bounded authority: the agent may act only on explicit objects, with explicit operations, conditions, resources, attempt identity, and expiry. The useful question is not whether “AI has permission,” but whether the system can state precisely:
+The second response is **bounded delegation**. The agent may act only on explicit objects, with explicit operations, conditions, resources, attempt identity, and expiry. The useful question is not whether “AI has permission,” but whether the system can state precisely:
 
 ```text
 which objects it may affect
@@ -201,7 +201,7 @@ who observes the result
 which evidence supports which conclusion
 ```
 
-The hard part of the second route is the information gap. The agent interprets the task from its context; the user cannot inspect how that judgment was formed, and the system cannot promote the agent's account of its own intention into engineering fact.
+The hard part is the information gap. The agent interprets the task from its context; the user cannot inspect how that judgment was formed, and the system cannot promote the agent's account of its own intention into engineering fact.
 
 The practical response is not to pretend that this gap can disappear, or to demand a persuasive-looking internal rationale. It is to externalize what must be constrained and observed:
 
@@ -215,6 +215,21 @@ human seals objective, constraints, and forbidden effects
 ```
 
 An explanation may help propose an action, but it cannot authorize itself. Self-report may become a claim to check, but not its own proof. Missing information should narrow authority, stop execution, or request human input. New evidence may rewrite the next plan; it must not silently widen the current attempt.
+
+The third response, built on bounded delegation, is **responsibility separation**. It does not give the model more truth. It makes explicit who owns which decision:
+
+```text
+user owns objectives, preferences, commitments, and accepted residual risk
+model owns candidate interpretations and proposed actions
+policy owns the decision to issue or refuse bounded authority
+executor owns only the sealed action for this attempt
+source systems own the resulting facts
+evidence and qualification own only the conclusions they can support
+human disposition resolves remaining authority questions
+reality still owns truth
+```
+
+Human review is therefore not an oracle. It can freeze an interpretation, authorize an action, reject a risk, or accept a residual uncertainty. It cannot make an interpretation true merely by approving it. Whether the system should execute, constrain, escalate, or stop depends on the combination of semantic uncertainty, consequence, reversibility, and observability—not on a confidence score alone.
 
 The information gap never reaches zero. The system can make it visible, bounded, revocable, attributable, and independently reviewable. That is why the four research lines can each own part of the problem without any one of them pretending to be the complete answer.
 

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="820" viewBox="0 0 1440 820" role="img" aria-labelledby="title description">
   <title id="title">The KPI Philosophers</title>
-  <desc id="description">Four agents with different optimization goals read, delete, update, and create against shared state, exposing boundaries between reports, authority, complete facts, and lawful execution.</desc>
+  <desc id="description">Four agents with different optimization goals read, delete, update, and create against shared state, exposing boundaries between reports, authority, complete facts, lawful execution, global correctness, and human disposition.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#09101f"/>
@@ -73,7 +73,8 @@
     <text x="720" y="447" class="principle centered">NOT SELF-CERTIFIED BY AN AGENT</text>
   </g>
 
-  <rect x="150" y="688" width="1140" height="84" rx="22" fill="#121d31" stroke="#4b6d88"/>
-  <text x="720" y="720" class="eyebrow centered">PARALLEL · DELEGATED · RETRIED · INTERDEPENDENT</text>
-  <text x="720" y="752" class="card-title centered">Not only who gets the resource—but who may act, and why the system may trust the result</text>
+  <rect x="150" y="674" width="1140" height="112" rx="22" fill="#121d31" stroke="#4b6d88"/>
+  <text x="720" y="706" class="eyebrow centered">PARALLEL · DELEGATED · RETRIED · INTERDEPENDENT</text>
+  <text x="720" y="742" class="card-title centered">LOCAL SUCCESS ≠ GLOBAL CORRECTNESS</text>
+  <text x="720" y="770" class="card-copy centered">Human disposition resolves authority under uncertainty; it does not certify truth</text>
 </svg>
