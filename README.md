@@ -52,6 +52,23 @@ This is not a product matrix invented after the fact, and it is not a single int
 
 ## Four Research Lines
 
+### Why four lines?
+
+Once AI can act inside a system, Create, Read, Update, and Delete stop being four ordinary API verbs. The same request can diverge along several independent axes: objective and proxy, authorization and scope, computation and lifecycle, evidence and verdict. An intended claim `A` may quietly become `A'`; an authorized obligation `B` may be replaced by `B'`; or `B'` may be inserted into `A -> B -> C` without establishing that it preserves the original path. These are problem shapes to investigate, not findings already established by AlgorithmResearchLab.
+
+Allowing Create, Update, and Delete expands the side-effect and ordering space. Restricting an agent to Read reduces direct mutation risk, but it does not remove semantic uncertainty: the model may misunderstand the request, optimize the wrong proxy, query the right facts for the wrong question, or hallucinate a synthesis. Retries, compensation, and eventual consistency can repair deterministic state transitions; they cannot certify that the original interpretation was correct. A fallback can even overwrite an AI result that was right.
+
+```text
+human objective and authorization
+-> agent interpretation
+-> bounded CRUD capability
+-> computation and lifecycle
+-> source-owned facts and evidence
+-> bounded verdict and human disposition
+```
+
+The four CRUD verbs and the four research lines are different partitions: the verbs describe what may happen; the research lines separate who owns which question. Distributed services, concurrency, synchronous and asynchronous coordination, lifecycle, and consistency can compound the same risks, but this Profile does not present those adjacent dimensions as solved capabilities.
+
 ### VeriTrail — fact qualification
 
 **Question:** What did this run actually prove, and is the retained evidence sufficient for the sealed claim?
