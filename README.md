@@ -52,6 +52,29 @@ This is not a product matrix invented after the fact, and it is not a single int
 
 ## Four Research Lines
 
+### Why four lines?
+
+Once AI can act inside a system, Create, Read, Update, and Delete stop being four ordinary API verbs. The same request can diverge along several independent axes: objective and proxy, authorization and scope, computation and lifecycle, evidence and verdict. An intended claim `A` may quietly become `A'`; an authorized obligation `B` may be replaced by `B'`; or `B'` may be inserted into `A -> B -> C` without establishing that it preserves the original path. These are problem shapes to investigate, not findings already established by AlgorithmResearchLab.
+
+When `B` becomes `B'`, the honest evidence state is `UNKNOWN` or `NOT_PROVEN`, not automatically `WRONG`. If harmful side effects have no independent fallback or recovery path, the system should still contain the attempt under the worst plausible risk. That is an authorization policy, not a claim that `B'` is false.
+
+Allowing Create, Update, and Delete expands the side-effect and ordering space. Restricting an agent to Read reduces direct mutation risk, but it does not remove semantic uncertainty: the model may misunderstand the request, optimize the wrong proxy, query the right facts for the wrong question, or hallucinate a synthesis. Retries, compensation, and eventual consistency can repair deterministic state transitions; they cannot certify that the original interpretation was correct. A fallback can even overwrite an AI result that was right.
+
+The same separation applies to composition. Every agent may improve its own KPI and every local action may appear reasonable, while the combined path violates a shared objective, invariant, or authorization boundary. Local success does not establish global correctness.
+
+Bounded delegation does not eliminate the information gap. Instead of trusting the agent's account of its own reasoning, the system can externalize a sealed objective, an exact proposed action, attempt-scoped authority, source-owned observation, retained evidence, and independent qualification. Missing information should narrow authority or stop the attempt; new evidence may change the next plan, but must not silently widen the current one.
+
+```text
+human objective and authorization
+-> agent interpretation
+-> bounded CRUD capability
+-> computation and lifecycle
+-> source-owned facts and evidence
+-> bounded verdict and human disposition
+```
+
+The four CRUD verbs and the four research lines are different partitions: the verbs describe what may happen; the research lines separate who owns which question. Distributed services, concurrency, synchronous and asynchronous coordination, lifecycle, and consistency can compound the same risks, but this Profile does not present those adjacent dimensions as solved capabilities.
+
 ### VeriTrail — fact qualification
 
 **Question:** What did this run actually prove, and is the retained evidence sufficient for the sealed claim?
