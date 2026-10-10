@@ -188,6 +188,8 @@ for (const invariant of [
   "### Why four lines?",
   "The four CRUD verbs and the four research lines are different partitions",
   "These are problem shapes to investigate, not findings already established by AlgorithmResearchLab.",
+  "Local success does not establish global correctness.",
+  "new evidence may change the next plan, but must not silently widen the current one",
   "A card will move to [Engineering Gallery]",
   "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
   "[Engineering Judgment](docs/engineering-judgment-interview.md)",
@@ -236,7 +238,7 @@ const publishedEnglishPages = [
   },
   {
     page: "philosophers-kpi.md",
-    sourceCommit: "7997b43c7767e9f6cc6546046c2c7475a49de347",
+    sourceCommit: "187837184ce7943e82756357a09bbcd73d5a46d1",
     sourcePath: "docs/philosophers-kpi.md",
   },
   {
@@ -289,6 +291,24 @@ for (const invariant of [
 ]) {
   if (!publicationIndex.includes(invariant)) {
     fail(`English publication index: missing invariant ${invariant}`);
+  }
+}
+
+const philosophersKpi = fs.readFileSync(path.join(root, "docs/philosophers-kpi.md"), "utf8");
+for (const invariant of [
+  "## The problem can change before one operation finishes",
+  "Enumeration can discover failures; it cannot certify the unvisited space as safe.",
+  "## Local optima do not make a global optimum",
+  "Read-only authority reduces action risk. It does not establish semantic correctness.",
+  "## A bounded read-only counterexample from `dome`",
+  "Safety containment, task utility, and semantic correctness require separate accounting.",
+  "## A fallback is not an oracle",
+  "The information gap never reaches zero.",
+  "The four CRUD verbs and the four research lines are not a one-to-one mapping.",
+  "It is not a fifth research line",
+]) {
+  if (!philosophersKpi.includes(invariant)) {
+    fail(`KPI philosophers: missing expanded problem invariant ${invariant}`);
   }
 }
 

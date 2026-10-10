@@ -58,6 +58,10 @@ Once AI can act inside a system, Create, Read, Update, and Delete stop being fou
 
 Allowing Create, Update, and Delete expands the side-effect and ordering space. Restricting an agent to Read reduces direct mutation risk, but it does not remove semantic uncertainty: the model may misunderstand the request, optimize the wrong proxy, query the right facts for the wrong question, or hallucinate a synthesis. Retries, compensation, and eventual consistency can repair deterministic state transitions; they cannot certify that the original interpretation was correct. A fallback can even overwrite an AI result that was right.
 
+The same separation applies to composition. Every agent may improve its own KPI and every local action may appear reasonable, while the combined path violates a shared objective, invariant, or authorization boundary. Local success does not establish global correctness.
+
+Bounded delegation does not eliminate the information gap. Instead of trusting the agent's account of its own reasoning, the system can externalize a sealed objective, an exact proposed action, attempt-scoped authority, source-owned observation, retained evidence, and independent qualification. Missing information should narrow authority or stop the attempt; new evidence may change the next plan, but must not silently widen the current one.
+
 ```text
 human objective and authorization
 -> agent interpretation
