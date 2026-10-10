@@ -14,7 +14,7 @@ Generating code, obtaining a green check, and establishing an engineering fact a
 
 ## The KPI Philosophers
 
-[![Four agents with different objectives act on shared software state, exposing boundaries between reports, authority, complete facts, and lawful execution](assets/philosophers-kpi.svg)](assets/philosophers-kpi.svg)
+[![Four agents with different objectives act on shared software state, exposing boundaries between reports, authority, complete facts, lawful execution, global correctness, and human disposition](assets/philosophers-kpi.svg)](assets/philosophers-kpi.svg)
 
 [Open the full-size diagram](assets/philosophers-kpi.svg)
 
@@ -35,7 +35,7 @@ For now, I test these boundaries above existing operating systems. A new kernel 
 
 ## Project Journey
 
-[![From five HTML experiments and DarkRoomLibrary to independent Qixu and PlainJournal branches, then to four decoupled research lines](assets/project-journey.svg)](assets/project-journey.svg)
+[![From product branches and machine limits through dome's bounded read-only experiment to four decoupled research lines](assets/project-journey.svg)](assets/project-journey.svg)
 
 [Open the full-size diagram](assets/project-journey.svg)
 
@@ -62,7 +62,13 @@ Allowing Create, Update, and Delete expands the side-effect and ordering space. 
 
 The same separation applies to composition. Every agent may improve its own KPI and every local action may appear reasonable, while the combined path violates a shared objective, invariant, or authorization boundary. Local success does not establish global correctness.
 
-Bounded delegation does not eliminate the information gap. Instead of trusting the agent's account of its own reasoning, the system can externalize a sealed objective, an exact proposed action, attempt-scoped authority, source-owned observation, retained evidence, and independent qualification. Missing information should narrow authority or stop the attempt; new evidence may change the next plan, but must not silently widen the current one.
+Three responses now define the bounded research map:
+
+1. **Authority minimization** removes Create, Update, and Delete and confines the model to bounded Read or proposals. [`dome`](https://github.com/NoctilumeDev/dome) supplies a concrete read-only counterexample: this reduces direct side effects without proving semantic correctness.
+2. **Bounded delegation** returns only explicit, attempt-scoped capability. Instead of trusting the agent's account of its own reasoning, the system externalizes a sealed objective, an exact proposed action, source-owned observation, retained evidence, and independent qualification.
+3. **Responsibility separation** builds on bounded delegation: the user owns objectives and commitments; the model proposes interpretations; policy grants authority; execution performs the sealed action; source systems own facts; humans dispose of residual uncertainty and risk. Human disposition does not become truth about the world.
+
+The information gap does not disappear. Missing information should narrow authority, request clarification, or stop the attempt according to consequence, reversibility, and observability; new evidence may change the next plan, but must not silently widen the current one. `dome` provides bounded evidence for the first response; the four research lines preserve different questions needed by the latter two. They are not an integrated solution.
 
 ```text
 human objective and authorization

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
   <title id="title">NoctilumeDev project journey</title>
-  <desc id="description">From five HTML experiments to DarkRoomLibrary, where Qixu and PlainJournal become separate business branches with distinct fact ownership, then through machine limits to four decoupled research lines for evidence, execution, authority, and proxy validity.</desc>
+  <desc id="description">From five HTML experiments to separate business branches and machine limits, then from dome's bounded read-only authority experiment to four decoupled research lines that preserve distinct open questions about evidence, execution, authority, and proxy validity.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#09101f"/>
@@ -88,9 +88,9 @@
   <path class="stop-line" d="M 1200 285 V 486"/>
   <g filter="url(#shadow)">
     <rect x="170" y="495" width="1100" height="105" rx="22" fill="#20233a" stroke="#76648f"/>
-    <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">ABSTRACT THE QUESTIONS INSTEAD OF ADDING MORE FEATURES</text>
-    <text x="720" y="558" class="card-title center">Evidence, execution, authority, and proxy validity need separate owners</text>
-    <text x="720" y="584" class="card-copy center">Four research lines may inform one another without becoming a mandatory stack</text>
+    <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">PROVEN BOUNDARY → RESEARCH FRONTIER</text>
+    <text x="720" y="558" class="card-title center" style="font-size:21px">dome bounds one read-only domain; four lines preserve distinct open questions</text>
+    <text x="720" y="584" class="card-copy center">Bounded delegation and responsibility separation remain a frontier, not a solved stack</text>
   </g>
 
   <text x="72" y="638" class="eyebrow">FOUR DECOUPLED RESEARCH LINES · DISTINCT RESPONSIBILITIES</text>
