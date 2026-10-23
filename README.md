@@ -8,13 +8,13 @@ My current work has two connected but independent layers: business systems that 
 
 *“Student” describes my current identity and age, not a project maturity level. Project maturity is stated through evidence, release state, and explicit limitations.*
 
-**Start here:** [What I am building now](#what-i-am-building-now) · [Project journey](#project-journey) · [Four research lines](#four-research-lines) · [Engineering method](#engineering-method)
+**Start here:** [Who I am and what I am doing now](#who-i-am-and-what-i-am-doing-now) · [Project journey](#project-journey) · [Four research lines](#four-research-lines) · [Engineering method](#engineering-method)
 
 > **Cognitive branch:** AI increases the rate of cognitive variation; it does not guarantee cognitive progress. Selection quality, retained counterexamples, and explicit ownership of goals, evidence, vetoes, and revisions still determine what survives. The current long-form edition is available in the [Chinese essay library](https://github.com/NoctilumeDev/NoctilumeDev-ZH/tree/main/docs).
 
-## What I Am Building Now
+## Who I Am and What I Am Doing Now
 
-These are stable public roles, not a deployment topology and not a claim that every project has the same maturity. Exact milestones, frozen baselines, releases, and active tasks remain owned by each project repository.
+This is a current snapshot, not a permanent identity or roadmap. The repository roles below are comparatively stable, but the work can change as projects close, split, or expose new questions. This is not a deployment topology and not a claim that every project has the same maturity. Exact milestones, frozen baselines, releases, and active tasks remain owned by each project repository.
 
 ### Business and product systems
 

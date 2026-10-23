@@ -167,7 +167,7 @@ if (edition) {
 
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/gu, "\n");
 for (const heading of [
-  "## What I Am Building Now",
+  "## Who I Am and What I Am Doing Now",
   "## Project Journey",
   "## The KPI Philosophers",
   "## Four Research Lines",
@@ -183,6 +183,7 @@ for (const invariant of [
   "[中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH)",
   "Student” describes my current identity and age, not a project maturity level",
   "Problems may become research questions. Authority and state do not cross that boundary automatically.",
+  "This is a current snapshot, not a permanent identity or roadmap.",
   "### Business and product systems",
   "### Research and foundations",
   "plan defined\n   != execution complete\n   != qualification established\n   != state effective\n   != next step authorized",
