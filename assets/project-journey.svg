@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1080" viewBox="0 0 1440 1080" role="img" aria-labelledby="title description">
   <title id="title">NoctilumeDev project journey</title>
-  <desc id="description">From five HTML experiments to separate business branches and machine limits, then from dome's bounded read-only authority experiment to four decoupled research lines that preserve distinct open questions about evidence, execution, authority, and proxy validity.</desc>
+  <desc id="description">From five HTML experiments to complete and distributed business systems, later independent product branches, machine limits, and four decoupled research lines that preserve distinct questions about evidence, execution, authority, and proxy validity.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#09101f"/>
@@ -34,13 +34,14 @@
       .line { fill: none; stroke: #72a9c5; stroke-width: 3; marker-end: url(#arrow); }
       .stop-line { fill: none; stroke: #d5a85b; stroke-width: 3; stroke-dasharray: 10 9; marker-end: url(#arrow-warm); }
       .return-line { fill: none; stroke: #e7bd73; stroke-width: 2; stroke-dasharray: 3 10; opacity: 0.86; marker-end: url(#arrow-warm); }
+      .bridge { fill: none; stroke: #72a9c5; stroke-width: 2; opacity: 0.55; }
     </style>
   </defs>
 
   <rect width="1440" height="1080" rx="28" fill="url(#background)"/>
 
   <text x="72" y="64" class="eyebrow">PROJECT JOURNEY · HOW THE QUESTIONS GREW</text>
-  <text x="72" y="103" class="title">From product branches to machine limits and four decoupled research lines</text>
+  <text x="72" y="103" class="title">From visual practice to business systems, independent branches, and research</text>
 
   <path class="line" d="M 330 215 H 382"/>
   <path class="line" d="M 650 215 H 702"/>
@@ -72,25 +73,38 @@
     <text x="1200" y="270" class="small center">No equal evidence, no implementation claim</text>
   </g>
 
-  <path class="line" d="M 520 285 V 327"/>
-  <rect x="360" y="296" width="320" height="26" rx="13" fill="#163b4d" stroke="#4f93ad"/>
-  <text x="520" y="314" class="status center">IDENTITY ADAPTER · NO SHARED DATABASE</text>
+  <rect x="370" y="300" width="700" height="28" rx="14" fill="#163b4d" stroke="#4f93ad"/>
+  <text x="720" y="319" class="status center">LATER INDEPENDENT SYSTEMS · DISTINCT FACT OWNERSHIP</text>
 
   <g filter="url(#shadow)">
-    <rect x="360" y="335" width="320" height="130" rx="20" fill="#152b42" stroke="#4f93ad"/>
-    <text x="520" y="365" class="eyebrow center">INDEPENDENT BUSINESS BRANCH</text>
-    <text x="520" y="399" class="card-title center">Qixu</text>
-    <text x="520" y="430" class="card-copy center">Space · eligibility · allocation · rights</text>
-    <text x="520" y="453" class="small center">Owns facts · inherits no upstream role</text>
+    <rect x="70" y="345" width="380" height="120" rx="20" fill="#152b42" stroke="#4f93ad"/>
+    <text x="260" y="374" class="eyebrow center">BOUNDED AI INTEGRATION</text>
+    <text x="260" y="407" class="card-title center">Qingye</text>
+    <text x="260" y="434" class="card-copy center" style="font-size:15px">Spring Boot · native WeChat · read-only AI</text>
+    <text x="260" y="456" class="small center" style="font-size:13px">Smaller blast radius ≠ semantic proof</text>
+
+    <rect x="530" y="345" width="380" height="120" rx="20" fill="#152b42" stroke="#4f93ad"/>
+    <text x="720" y="374" class="eyebrow center">FAIR ALLOCATION &amp; USAGE RIGHTS</text>
+    <text x="720" y="407" class="card-title center">Qixu</text>
+    <text x="720" y="434" class="card-copy center" style="font-size:15px">Eligibility · preferences · allocation · rights</text>
+    <text x="720" y="456" class="small center" style="font-size:13px">IDENTITY ADAPTER · NO SHARED DATABASE</text>
+
+    <rect x="990" y="345" width="380" height="120" rx="20" fill="#152b42" stroke="#4f93ad"/>
+    <text x="1180" y="374" class="eyebrow center">POLYGLOT SERVICE BOUNDARIES</text>
+    <text x="1180" y="407" class="card-title center">GuiHongMail</text>
+    <text x="1180" y="434" class="card-copy center" style="font-size:15px">Go services · Python contract · TS client</text>
+    <text x="1180" y="456" class="small center" style="font-size:13px">Real SMTP · current single-machine stop line</text>
   </g>
 
-  <path class="line" d="M 840 285 V 486"/>
-  <path class="stop-line" d="M 1200 285 V 486"/>
+  <path class="bridge" d="M 260 465 V 482 H 720"/>
+  <path class="bridge" d="M 720 465 V 486"/>
+  <path class="bridge" d="M 1180 465 V 482 H 720"/>
+
   <g filter="url(#shadow)">
     <rect x="170" y="495" width="1100" height="105" rx="22" fill="#20233a" stroke="#76648f"/>
     <text x="720" y="526" class="eyebrow center" fill="#c4a7e7">PROVEN BOUNDARY → RESEARCH FRONTIER</text>
-    <text x="720" y="558" class="card-title center" style="font-size:21px">dome bounds one read-only domain; four lines preserve distinct open questions</text>
-    <text x="720" y="584" class="card-copy center">Bounded delegation and responsibility separation remain a frontier, not a solved stack</text>
+    <text x="720" y="558" class="card-title center" style="font-size:21px">Business stop lines expose questions; four laboratories preserve separate responsibilities</text>
+    <text x="720" y="584" class="card-copy center">Questions may cross the boundary; authority, state, and qualification do not</text>
   </g>
 
   <text x="72" y="638" class="eyebrow">FOUR DECOUPLED RESEARCH LINES · DISTINCT RESPONSIBILITIES</text>

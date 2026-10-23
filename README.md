@@ -2,15 +2,65 @@
 
 [中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH)
 
-AI-assisted solo engineer studying how unreliable code generation can enter reliable software systems without quietly acquiring authority.
+I am a student and AI-assisted solo engineer building complete software systems and studying how AI can enter them without quietly acquiring authority.
 
-Generating code, obtaining a green check, and establishing an engineering fact are different events. My projects began with five dependency-free HTML pages, grew through complete business systems and distributed-system exercises, reached real single-machine stop lines, and eventually separated into four research lines with distinct responsibility boundaries.
+My current work has two connected but independent layers: business systems that own real domain facts, and research laboratories that isolate the questions those systems expose. Problems may become research questions. Authority and state do not cross that boundary automatically.
 
 *“Student” describes my current identity and age, not a project maturity level. Project maturity is stated through evidence, release state, and explicit limitations.*
 
-**Start here:** [Project journey](#project-journey) · [Four research lines](#four-research-lines) · [Selected work](#selected-work) · [Engineering method](#engineering-method)
+**Start here:** [What I am building now](#what-i-am-building-now) · [Project journey](#project-journey) · [Four research lines](#four-research-lines) · [Engineering method](#engineering-method)
 
 > **Cognitive branch:** AI increases the rate of cognitive variation; it does not guarantee cognitive progress. Selection quality, retained counterexamples, and explicit ownership of goals, evidence, vetoes, and revisions still determine what survives. The current long-form edition is available in the [Chinese essay library](https://github.com/NoctilumeDev/NoctilumeDev-ZH/tree/main/docs).
+
+## What I Am Building Now
+
+These are stable public roles, not a deployment topology and not a claim that every project has the same maturity. Exact milestones, frozen baselines, releases, and active tasks remain owned by each project repository.
+
+### Business and product systems
+
+| Project | Stable role |
+| --- | --- |
+| **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** | Five zero-dependency HTML works where composition, typography, motion, and interaction are part of the narrative itself. |
+| **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** | A complete library product spanning identity, circulation, governance, procurement, logistics, delivery, and acceptance—not a CRUD showcase. |
+| **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** | A distributed B2C commerce laboratory for service ownership, Outbox and RocketMQ recovery, idempotency, multi-instance contention, degradation, and real acceptance. |
+| **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** | The planned multi-merchant and cross-machine evolution of PlainJournal. It is a design surface, not an implemented product. |
+| **[Qingye](https://github.com/NoctilumeDev/Qingye)** | A Spring Boot and native WeChat campus system exploring how an LLM can enter an existing application through read-only capabilities, explicit scope confirmation, local qualification, and business-owned facts. |
+| **[Qixu](https://github.com/NoctilumeDev/Qixu)** | A campus-space allocation and usage-right system where eligibility, frozen preferences, maximum participation, fixed randomness, waiting lists, and explainability make fairness a first-class objective—not a score ranking or first-come-first-served queue. |
+| **[GuiHongMail](https://github.com/NoctilumeDev/GuiHongMail)** | A real-SMTP, single-machine three-service mail system: Go owns backend services, Python enters through a replaceable algorithm contract, and TypeScript powers the client. It explores polyglot service boundaries without claiming cross-machine proof. |
+
+### Research and foundations
+
+| Project | Stable role |
+| --- | --- |
+| **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** | Evidence qualification and bounded verdicts: what did a run actually prove? |
+| **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** | Computation and execution ownership: who defines computation, who invokes it, and how does its lifecycle remain attributable? |
+| **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** | A planned operating-system-level research line for capability, resources, revocation, recovery, and provenance. Implementation has not started. |
+| **[Drift Algorithm](https://github.com/NoctilumeDev/AlgorithmResearchLab)** | A prepared research line asking whether a proxy still supports a fixed objective under bounded observation and feedback. Research has not started. |
+| **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** | An OS-mechanism laboratory for boot, memory, CPU, user boundaries, files, init, shell, live experiments, and replay. |
+| **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** | A framework-mechanism reconstruction covering IoC, AOP, Web/MVC, configuration, JDBC, transactions, and startup, challenged through a real full-stack path. |
+
+Business systems and research laboratories may exchange questions and, one day, versioned artifacts. They do not inherit one another's authority, state, qualification, or completion claims.
+
+All project links still route to their laboratory repositories. Language separation does not authorize a distribution route. A project will move to [Engineering Gallery](https://github.com/NoctilumeDev/EngineeringGallery) only after it is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`.
+
+## Project Journey
+
+[![From visual experiments through complete and distributed business systems, later independent product branches, machine limits, and four decoupled research lines](assets/project-journey.svg)](assets/project-journey.svg)
+
+[Open the full-size diagram](assets/project-journey.svg)
+
+This is not a product matrix invented after the fact, and it is not a single integrated runtime chain. Some questions continued forward; others split into independent systems with their own fact ownership.
+
+1. **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** preserves five dependency-free HTML works used to learn narrative structure, typography, interaction, and public presentation.
+2. **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** turned pages into the first complete business system and introduced identity, role, data, collaboration, delivery, and acceptance boundaries.
+3. **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** became a training ground for distributed behavior, reliability, degradation, multiple instances, and real acceptance. It also made a 16 GiB single-machine boundary—and the refusal to claim what was not proven—impossible to ignore.
+4. **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** preserves the future multi-merchant, platform-ledger, and cross-machine problem. It is a planned architecture, not an implemented product.
+5. **[Qingye](https://github.com/NoctilumeDev/Qingye)** returned to a conventional Spring Boot business system and introduced an LLM through bounded, read-only capabilities. Its natural-language counterexamples showed that removing write authority reduces damage without proving semantic correctness.
+6. **[Qixu](https://github.com/NoctilumeDev/Qixu)** grew from campus-space needs exposed by DarkRoomLibrary, but became an independent system. DarkRoomLibrary owns accounts and library facts; Qixu owns spaces, eligibility, allocation results, reservations, usage rights, and governance facts. Their explicit identity adapter is not SSO, does not inherit upstream roles, and does not merge databases.
+7. **[GuiHongMail](https://github.com/NoctilumeDev/GuiHongMail)** used a real-SMTP mail product to test another engineering composition: three state-owning Go services, a replaceable Python algorithm boundary, and a TypeScript client, while retaining its present single-machine stop line.
+8. The product systems exposed questions that should no longer be owned by any one business repository. Evidence qualification became **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)**; computation ownership became **[JPyxis](https://github.com/NoctilumeDev/JPyxis)**; system capability and resource authority became **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)**.
+9. In parallel, **[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** preserves a fourth question as **Drift Algorithm**: while objective and proxy definitions remain fixed, does the proxy still support decisions for that objective under bounded observation and feedback? Research has not started. Objective substitution, obligation substitution, and derivation gaps remain adjacent candidates, not established instances of one shared mechanism.
+10. **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** and **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** remain mechanism laboratories. They deepen framework and operating-system understanding without becoming hidden implementation claims for the four research lines.
 
 ## The KPI Philosophers
 
@@ -33,23 +83,6 @@ For now, I test these boundaries above existing operating systems. A new kernel 
 
 > Exact milestones, frozen baselines, and active tasks belong to each project repository. This Profile records stable project roles and routes; it does not duplicate high-frequency project state.
 
-## Project Journey
-
-[![From product branches and machine limits through dome's bounded read-only experiment to four decoupled research lines](assets/project-journey.svg)](assets/project-journey.svg)
-
-[Open the full-size diagram](assets/project-journey.svg)
-
-This is not a product matrix invented after the fact, and it is not a single integrated runtime chain. Some questions continued forward; others split into independent systems with their own fact ownership.
-
-1. **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** preserves five dependency-free HTML works used to learn narrative structure, typography, interaction, and public presentation.
-2. **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** turned pages into the first complete business system and introduced role, data, collaboration, and delivery boundaries.
-3. **[Qixu](https://github.com/NoctilumeDev/Qixu)** grew from campus-space needs exposed by DarkRoomLibrary, but became an independent system. DarkRoomLibrary owns accounts and library facts; Qixu owns spaces, eligibility, allocation results, reservations, usage rights, and governance facts. Their explicit identity adapter is not SSO, does not inherit upstream roles, and does not merge databases.
-4. **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** became a training ground for distributed behavior, reliability, degradation, multiple instances, and real acceptance. It also made a 16 GiB single-machine boundary—and the refusal to claim what was not proven—impossible to ignore.
-5. **[PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro)** preserves the future multi-merchant, platform-ledger, and cross-machine problem. It is a planned architecture, not an implemented product.
-6. Those stop lines exposed a separate question: AI can help produce code, but it cannot use its own output to prove source, test, environment, and release facts. That question became **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)**.
-7. Asking who owns computation and who owns system capabilities then separated the problem into **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** and **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)**.
-8. In parallel, **[AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** now preserves a fourth question as **Drift Algorithm**: while objective and proxy definitions remain fixed, does the proxy still support decisions for that objective under bounded observation and feedback? Research has not started. Objective substitution, obligation substitution, and derivation gaps remain adjacent candidates, not established instances of one shared mechanism.
-
 ## Four Research Lines
 
 ### Why four lines?
@@ -64,11 +97,11 @@ The same separation applies to composition. Every agent may improve its own KPI 
 
 Three responses now define the bounded research map:
 
-1. **Authority minimization** removes Create, Update, and Delete and confines the model to bounded Read or proposals. [`dome`](https://github.com/NoctilumeDev/dome) supplies a concrete read-only counterexample: this reduces direct side effects without proving semantic correctness.
+1. **Authority minimization** removes Create, Update, and Delete and confines the model to bounded Read or proposals. [Qingye](https://github.com/NoctilumeDev/Qingye) supplies a concrete read-only counterexample: this reduces direct side effects without proving semantic correctness.
 2. **Bounded delegation** returns only explicit, attempt-scoped capability. Instead of trusting the agent's account of its own reasoning, the system externalizes a sealed objective, an exact proposed action, source-owned observation, retained evidence, and independent qualification.
 3. **Responsibility separation** builds on bounded delegation: the user owns objectives and commitments; the model proposes interpretations; policy grants authority; execution performs the sealed action; source systems own facts; humans dispose of residual uncertainty and risk. Human disposition does not become truth about the world.
 
-The information gap does not disappear. Missing information should narrow authority, request clarification, or stop the attempt according to consequence, reversibility, and observability; new evidence may change the next plan, but must not silently widen the current one. `dome` provides bounded evidence for the first response; the four research lines preserve different questions needed by the latter two. They are not an integrated solution.
+The information gap does not disappear. Missing information should narrow authority, request clarification, or stop the attempt according to consequence, reversibility, and observability; new evidence may change the next plan, but must not silently widen the current one. Qingye provides bounded evidence for the first response; the four research lines preserve different questions needed by the latter two. They are not an integrated solution.
 
 ```text
 human objective and authorization
@@ -106,26 +139,6 @@ The four CRUD verbs and the four research lines are different partitions: the ve
 **Boundary:** AlgorithmResearchLab currently contains research-preparation materials only: naming conventions, scope, method, literature leads, and directory guidance. Its research state is `RESEARCH_NOT_STARTED`. It claims no implemented detector, unified drift mechanism, or real-world utility. Objective or obligation replacement and missing derivation support remain adjacent candidates outside the current research scope; their classification and relationships remain open.
 
 Each research line can close its own problem independently. They are not a mandatory pipeline. If they later cooperate, the default seam is a source-owned, read-only, versioned artifact; composition does not merge authority. Humans own objectives and authorization. Reality owns truth.
-
-## Selected Work
-
-### Flagship systems and research lines
-
-- **[PlainJournal](https://github.com/NoctilumeDev/PlainJournal)** — distributed business and reliability laboratory; a continuing source of capacity, evidence, and runtime questions.
-- **[VeriTrail](https://github.com/NoctilumeDev/VeriTrail)** — local system for controlled variables, immutable evidence, browser observation, and deterministic bounded verdicts.
-- **[JPyxis](https://github.com/NoctilumeDev/JPyxis)** — contract-driven heterogeneous-compute framework separating Control, definition frontends, and runtimes.
-- **[FlowKernel](https://github.com/NoctilumeDev/FlowKernel)** — planned OS-level trust and execution substrate for bounded agentic authority, resources, revocation, and recovery.
-- **[Drift Algorithm / AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab)** — prepared research line for proxy validity under fixed objective and proxy definitions; research has not started, and adjacent objective substitution, obligation substitution, and derivation gaps remain candidates outside its current scope.
-
-### Systems and experiments
-
-- **[InkNarratives](https://github.com/NoctilumeDev/InkNarratives)** — five zero-dependency HTML works and a unified visual gallery.
-- **[DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary)** — the first complete Spring Boot and Vue business baseline.
-- **[Qixu](https://github.com/NoctilumeDev/Qixu)** — campus-space reservation and usage-right management, with explicit ownership of eligibility, allocation, waiting lists, short reservations, venues, and governance.
-- **[MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot)** — reconstruction of IoC, AOP, Web/MVC, configuration, JDBC, transactions, and startup mechanics, challenged through a real React and MySQL path.
-- **[MiniLinux](https://github.com/NoctilumeDev/MiniLinux)** — a bootable C kernel laboratory for memory, CPU, user boundaries, files, init, shell, live LAB, and replay; not a Linux-compatible implementation.
-
-All project cards still route to their laboratory repositories. Language separation does not authorize a distribution route. A card will move to [Engineering Gallery](https://github.com/NoctilumeDev/EngineeringGallery) only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`.
 
 ## Repository System Map
 

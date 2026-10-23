@@ -2,7 +2,7 @@
 
 > Status: `STABLE ROLE MAP · NO NEW IMPLEMENTATION CLAIM`
 >
-> Scope: twelve mapped engineering repositories. [dome](https://github.com/NoctilumeDev/dome) remains outside this system map as a historical archive for course work, independent exercises, and writing.
+> Scope: stable roles for the canonical Profile and its mapped engineering repositories. `dome` remains outside this map as a historical archive rather than a featured project.
 >
 > [中文版本 / Chinese edition at a fixed revision](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/17fbc487eb10fd610d5ab5bc34bdf9ace2974fb2/docs/repository-system-map.md)
 
@@ -16,7 +16,7 @@ GitHub is not an external-world oracle. It owns and exposes repository, commit, 
 
 VeriTrail also does not own source state or world truth. It applies sealed Plans, standard Evidence, and deterministic rules to produce bounded `PASS / FAIL / INCONCLUSIVE / PENDING` verdicts.
 
-## Twelve mapped repositories are not one call tree
+## Mapped repositories are not one call tree
 
 | Repository | Stable role | Owns | Does not own |
 | --- | --- | --- | --- |
@@ -27,11 +27,15 @@ VeriTrail also does not own source state or world truth. It applies sealed Plans
 | [AlgorithmResearchLab](https://github.com/NoctilumeDev/AlgorithmResearchLab) | Prepared Drift Algorithm research line for proxy validity under fixed definitions | Its research scope, experiment artifacts, and bounded conclusions about whether a proxy supports a fixed objective under declared conditions | Human objectives or authorization; an implemented detector, a unified drift mechanism, real-world utility, or a proven link between proxy-validity drift and adjacent objective, obligation, or derivation changes |
 | [PlainJournal](https://github.com/NoctilumeDev/PlainJournal) | Distributed business and reliability reference system | Its business, data, transaction state, and evidence inside declared conditions | Infrastructure-project state or universal truth |
 | [DarkRoomLibrary](https://github.com/NoctilumeDev/DarkRoomLibrary) | Complete enhanced-monolith business sample | Library business, role boundaries, collaboration workflows, and project evidence | Implementation proof for VeriTrail, JPyxis, or FlowKernel |
+| [Qingye](https://github.com/NoctilumeDev/Qingye) | Campus organization, shared-equipment, and bounded AI-assistant system | Club, activity, equipment, local identity-binding, and assistant-capability facts inside its own domain | General natural-language correctness, write authority for the model, or another system's business facts |
 | [Qixu](https://github.com/NoctilumeDev/Qixu) | Campus-space, scarce-resource allocation, and usage-right governance reference system | Spaces, eligibility, allocation, reservations, usage rights, venues, conflict handling, and maintenance governance | DarkRoomLibrary accounts and library facts, upstream roles, or another system's approval and acceptance authority |
+| [GuiHongMail](https://github.com/NoctilumeDev/GuiHongMail) | Real-SMTP, single-machine polyglot mail system with three state-owning services | Mailbox, SMTP-ingress, delivery-worker, message, attachment, recovery, and bounded algorithm-contract facts | Proven cross-machine distribution, public Internet interoperability, or another project's service state |
 | [MiniSpringBoot](https://github.com/NoctilumeDev/MiniSpringBoot) | Framework-mechanism reconstruction and full-stack validation sample | Project facts for IoC, AOP, Web/MVC, JDBC, transactions, and startup mechanics | Equivalence to the official Spring implementation or another repository's acceptance result |
 | [MiniLinux](https://github.com/NoctilumeDev/MiniLinux) | OS-mechanism teaching and low-level experiment branch | Its build, boot, serial, debugging, and staged mechanism experiments | Linux compatibility, FlowKernel implementation, or another repository's system facts |
 | [PlainJournalPro](https://github.com/NoctilumeDev/PlainJournalPro) | Future multi-merchant architecture research | Declared future questions, boundaries, and design direction | Unimplemented capability or runnable-product facts |
 | [InkNarratives](https://github.com/NoctilumeDev/InkNarratives) | Content, typography, and narrative-visual experiment | Its static works and content state | Validation responsibility for engineering infrastructure |
+
+The public landscape has two useful reading layers. Business and product systems own domain facts and user-visible workflows. Research and foundation repositories isolate questions about evidence, computation, authority, proxy validity, frameworks, and operating-system mechanisms. Problems may cross from the first layer into the second; authority, state, qualification, and completion claims do not cross automatically.
 
 Business systems, algorithm research, framework and OS experiments, and content work provide real problems, controls, and source evidence. Infrastructure repositories extract reusable contracts for authority, execution, observation, and judgment. The former are not test accessories for the latter, and the latter cannot seize ownership of business state.
 
@@ -171,4 +175,4 @@ each repository first closes its own facts and stop line
 
 If integration requires shared mutable state, copied verdicts, or bypassed authority, stop and return to the contract boundary instead of adding another compatibility branch.
 
-This is a composable system map, not a mandatory deployment topology and not a plan to turn twelve repositories into mutually required microservices.
+This is a composable system map, not a mandatory deployment topology and not a plan to turn the mapped repositories into mutually required microservices.
