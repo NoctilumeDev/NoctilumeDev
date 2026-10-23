@@ -4,7 +4,7 @@
 >
 > Scope: stable roles for the canonical Profile and its mapped engineering repositories. `dome` remains outside this map as a historical archive rather than a featured project.
 >
-> [中文版本 / Chinese edition at a fixed revision](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/17fbc487eb10fd610d5ab5bc34bdf9ace2974fb2/docs/repository-system-map.md)
+> [中文版本 / Chinese edition at a fixed revision](https://github.com/NoctilumeDev/NoctilumeDev-ZH/blob/12a703ff8297ac2b4dba01134222ec0880790123/docs/repository-system-map.md)
 
 This document maintains relatively stable roles, dependency directions, and possible future seams. Exact milestones, versions, Releases, and evidence coordinates remain owned by each project repository.
 
