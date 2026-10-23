@@ -151,9 +151,9 @@ Read can still fail semantically:
 
 The first restriction lowers complexity. Once the observation enters another decision, objective, derivation, and evidence problems re-enter the system.
 
-## A bounded read-only counterexample from `dome`
+## A bounded read-only counterexample from Qingye
 
-This is not only a thought experiment. The Qingye and library assistants retained at `dome@dbb32160` constrained the models to bounded read-only plans and still exposed shifts in natural-language targets and conditions.
+This is not only a thought experiment. [Qingye](https://github.com/NoctilumeDev/Qingye) constrained the model to bounded read-only plans and still exposed shifts in natural-language targets and conditions. Qingye now has its own canonical repository; the original experiment coordinates remain retained at `dome@dbb32160` and are linked below.
 
 In Qingye's [earlier frozen semantic comparison](https://github.com/NoctilumeDev/dome/blob/dbb32160a811fd06c826a8d9eafbc660a0548219/qingye/docs/semantic-comparison-20261008.md):
 
@@ -188,7 +188,7 @@ The system cannot treat conventional code as truth and AI as risk by definition.
 
 ## Three responses, none eliminating uncertainty
 
-The first response is **authority minimization**. It confines the agent to observation and proposals: no Create, Delete, or Update, only bounded Read and candidate actions. This sharply reduces direct damage, but downstream systems still cannot promote its report into fact without qualification. The experiments retained in `dome` provide evidence for this bounded domain, not a universal safety proof.
+The first response is **authority minimization**. It confines the agent to observation and proposals: no Create, Delete, or Update, only bounded Read and candidate actions. This sharply reduces direct damage, but downstream systems still cannot promote its report into fact without qualification. The Qingye experiments provide evidence for this bounded domain, not a universal safety proof.
 
 The second response is **bounded delegation**. The agent may act only on explicit objects, with explicit operations, conditions, resources, attempt identity, and expiry. The useful question is not whether “AI has permission,” but whether the system can state precisely:
 

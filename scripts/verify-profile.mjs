@@ -38,12 +38,14 @@ const mappedRepositories = [
   "AlgorithmResearchLab",
   "DarkRoomLibrary",
   "FlowKernel",
+  "GuiHongMail",
   "InkNarratives",
   "JPyxis",
   "MiniLinux",
   "MiniSpringBoot",
   "PlainJournal",
   "PlainJournalPro",
+  "Qingye",
   "Qixu",
   "VeriTrail",
 ];
@@ -165,10 +167,10 @@ if (edition) {
 
 const readme = fs.readFileSync(path.join(root, "README.md"), "utf8").replace(/\r\n/gu, "\n");
 for (const heading of [
-  "## The KPI Philosophers",
+  "## What I Am Building Now",
   "## Project Journey",
+  "## The KPI Philosophers",
   "## Four Research Lines",
-  "## Selected Work",
   "## Repository System Map",
   "## Laboratory and Distribution Surfaces",
   "## Engineering Method",
@@ -180,6 +182,9 @@ for (const heading of [
 for (const invariant of [
   "[中文版本 / Chinese edition](https://github.com/NoctilumeDev/NoctilumeDev-ZH)",
   "Student” describes my current identity and age, not a project maturity level",
+  "Problems may become research questions. Authority and state do not cross that boundary automatically.",
+  "### Business and product systems",
+  "### Research and foundations",
   "plan defined\n   != execution complete\n   != qualification established\n   != state effective\n   != next step authorized",
   "Language migration is not project-routing authorization.",
   "Implementation has not started",
@@ -192,8 +197,8 @@ for (const invariant of [
   "That is an authorization policy, not a claim that `B'` is false.",
   "Local success does not establish global correctness.",
   "new evidence may change the next plan, but must not silently widen the current one",
-  "A card will move to [Engineering Gallery]",
-  "only after that project is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
+  "A project will move to [Engineering Gallery]",
+  "only after it is released, has a usable Chinese edition, is cataloged, and becomes `PROFILE_ROUTABLE`",
   "[Engineering Judgment](docs/engineering-judgment-interview.md)",
   "[Decision Epistemology](docs/decision-epistemology.md)",
   "[Protecting Zero: From Generated Answers to Qualified Facts](docs/protecting-zero.md)",
@@ -304,7 +309,7 @@ for (const invariant of [
   "Enumeration can discover failures; it cannot certify the unvisited space as safe.",
   "## Local optima do not make a global optimum",
   "Read-only authority reduces action risk. It does not establish semantic correctness.",
-  "## A bounded read-only counterexample from `dome`",
+  "## A bounded read-only counterexample from Qingye",
   "Safety containment, task utility, and semantic correctness require separate accounting.",
   "## A fallback is not an oracle",
   "The information gap never reaches zero.",
@@ -417,6 +422,8 @@ for (const marker of [
   "PlainJournal",
   "PlainJournalPro",
   "Qixu",
+  "Qingye",
+  "GuiHongMail",
   "IDENTITY ADAPTER · NO SHARED DATABASE",
   "VeriTrail",
   "JPyxis",
@@ -444,7 +451,8 @@ for (const marker of [
 
 const systemMap = fs.readFileSync(path.join(root, "docs/repository-system-map.md"), "utf8");
 for (const invariant of [
-  "twelve mapped engineering repositories",
+  "Mapped repositories are not one call tree",
+  "Problems may cross from the first layer into the second; authority, state, qualification, and completion claims do not cross automatically.",
   "proxy still supports a fixed objective",
   "The seam is not SSO",
   "JPyxis != VeriTrail Plugin",
